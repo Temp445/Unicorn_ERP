@@ -62,11 +62,13 @@ export async function GET(req: NextRequest) {
 
 
 //update
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request) {
   try {
     await dbConnect();
     const formData = await req.formData();
-    const { id } = params;
+    const url = new URL(req.url);
+    const parts = url.pathname.split('/');
+    const id = parts[parts.length - 1];
 
     const product = await Product.findById(id);
     if (!product) {
@@ -166,11 +168,13 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 }
 
 
-export async function DELETE(  req: NextRequest, { params }: { params: { id: string } } ) {
+export async function DELETE( req: NextRequest) {
   try {
     await dbConnect();
+      const url = new URL(req.url);
+    const parts = url.pathname.split('/');
+    const id = parts[parts.length - 1];
 
-    const { id } = params;
 
     if (!id) {
       return NextResponse.json(
@@ -188,7 +192,6 @@ export async function DELETE(  req: NextRequest, { params }: { params: { id: str
       );
     }
 
-    // Helper function to delete files safely
     const deleteFile = (filePath: string) => {
       if (!filePath) return;
 
@@ -200,15 +203,12 @@ export async function DELETE(  req: NextRequest, { params }: { params: { id: str
         }
       });
     };
-
-    // Delete mainImage(s)
     if (Array.isArray(product.mainImage)) {
       product.mainImage.forEach(deleteFile);
     } else {
       deleteFile(product.mainImage);
     }
 
-    // Delete productImage(s)
     if (Array.isArray(product.productImage)) {
       product.productImage.forEach(deleteFile);
     } else {
