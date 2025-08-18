@@ -4,23 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import bg from '@/assets/bg.jpg';
-import erp1 from '@/assets/Erp1.jpg';
-import erp2 from '@/assets/Erp3.jpg';
-import erp3 from '@/assets/Erp3.jpg';
-import WhatIsERP from './WhatIsERP';
-import WhoWe from './WhoWe';
-import BusinessSector from './BusinessSector';
-import CustomerSay from './CustomerSay';
+import image from '@/assets/Erp.png';
+import image1 from '@/assets/Erp4.jpg';
+import image2 from '@/assets/Erp2.jpg';
+import image3 from '@/assets/Erp3.jpg';
 
 export default function HeroSection() {
   return (
     <>
       <section className="relative py-14 md:py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden">
-   
-
         <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-14 relative z-10">
- 
           <motion.div
             className="flex-1 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
@@ -53,7 +46,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Image Section */}
+    
           <motion.div
             className="flex-1 grid grid-cols-2 gap-5"
             initial="hidden"
@@ -69,8 +62,8 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
-                  src={bg}
-                  alt="ERP Analytics"
+                  src={image}
+                  alt="ERP"
                   className="rounded-xl shadow-2xl object-cover w-full h-56 border-4 border-orange-200"
                 />
               </motion.div>
@@ -79,8 +72,8 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
-                  src={erp1}
-                  alt="ERP Reports"
+                  src={image1}
+                  alt="ERP"
                   className="rounded-xl shadow-2xl object-cover w-full h-48 border-4 border-orange-100"
                 />
               </motion.div>
@@ -92,8 +85,8 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
-                  src={erp2}
-                  alt="ERP Dashboard"
+                  src={image2}
+                  alt="ERP"
                   className="rounded-xl shadow-2xl object-cover w-full h-64 border-4 border-orange-200"
                 />
               </motion.div>
@@ -102,8 +95,8 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
-                  src={erp3}
-                  alt="ERP Inventory"
+                  src={image3}
+                  alt="ERP"
                   className="rounded-xl shadow-2xl object-cover w-full h-40 border-4 border-orange-100"
                 />
               </motion.div>
@@ -111,11 +104,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </section>
-
-      <WhatIsERP />
-      <BusinessSector />
-      <WhoWe />
-      <CustomerSay />
     </>
   );
 }

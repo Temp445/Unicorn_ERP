@@ -2,7 +2,7 @@
 
 import { CheckCircle } from 'lucide-react';
 import { motion} from 'framer-motion';
-import erp from '@/assets/Erp5.png';
+import image1 from '@/assets/Erp1.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,8 +15,8 @@ const benefits = [
   'Enhanced Security'
 ];
 
-export default function WhatIsERP() {
-  
+const WhatIsERP = () => {
+
   const containerVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: { 
@@ -32,7 +32,7 @@ export default function WhatIsERP() {
   };
 
   return (
-    <section className="min-h-screen  relative overflow-hidden">
+        <section className="min-h-screen  relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10 py-14">
         <motion.div
           className="text-center mb-24 mx-auto"
@@ -79,11 +79,8 @@ export default function WhatIsERP() {
           </motion.div>
         </motion.div>
 
-        
         <div className="p-8 lg:p-16  relative overflow-hidden shadow-2xl rounded-lg mb-20 bg-[url('/bg1.jpg')] bg-cover bg-center" >
-
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-       
             <motion.div 
               className="w-full lg:w-1/2 flex-shrink-0 relative overflow-hidden rounded-xl shadow-lg"
               initial={{ opacity: 0, x: -40 }}
@@ -92,13 +89,12 @@ export default function WhatIsERP() {
               transition={{ duration: 0.8 }}
             >
               <Image 
-                src={erp} 
-                alt="ACE ERP Dashboard Preview" 
+                src={image1} 
+                alt="unicorn erp" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300" 
               />
             </motion.div>
 
-      
             <motion.div 
               className="w-full lg:w-1/2 space-y-6"
               initial={{ opacity: 0, x: 40 }}
@@ -123,8 +119,7 @@ export default function WhatIsERP() {
                 with automation, real-time analytics, and seamless collaboration for accelerated growth.
               </p>
 
-              <div className="pt-4">
-            
+        <div className="pt-4">   
         <div className="flex flex-wrap gap-3 mb-10">
           <span className="px-3 py-1 text-orange-700 bg-orange-100 rounded-full text-sm font-medium">
             Automation
@@ -137,7 +132,7 @@ export default function WhatIsERP() {
           </span>
         </div>
 
-                <Link href="#"
+                <Link href="/products"
                   className="text-gray-800 bg-white px-5 py-2.5 rounded-lg font-semibold border transition-all duration-300  hover:scale-105 shadow-lg"
                 >
                 Learn More
@@ -148,5 +143,7 @@ export default function WhatIsERP() {
         </div>
       </div>
     </section>
-  );
+  )
 }
+
+export default WhatIsERP

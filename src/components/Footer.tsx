@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -7,8 +5,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-6 lg:pr-10 py-12 flex  md:flex-row gap-20 flex-wrap md:justify-evenly">
-
-        {/* Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">Unicorn ERP</h2>
           <p className="text-sm leading-relaxed max-w-sm">
@@ -16,7 +12,6 @@ const Footer = () => {
             streamline operations, enhance productivity, and drive growth.
           </p>
 
-          {/* Social Links */}
           <div className="flex gap-4 mt-4">
             <Link href="#" className="hover:text-orange-500 transition-colors">
               <Facebook className="w-5 h-5" />
@@ -33,7 +28,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className='hidden md:block'>
           <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2">
@@ -60,7 +54,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info with Map */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
           <ul className="space-y-3 mb-4">
@@ -79,7 +72,6 @@ const Footer = () => {
           </ul>
         </div>
 
-         {/* Google Map */}
           <div className=" w-full md:w-72 h-46 rounded-lg overflow-hidden border border-gray-700 lg:hidden xl:block">
             <iframe
               title="Unicorn ERP Location"
@@ -93,7 +85,6 @@ const Footer = () => {
           </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-400">
         © 2025 Unicorn ERP. All rights reserved.
       </div>

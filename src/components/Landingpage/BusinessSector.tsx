@@ -69,8 +69,8 @@ useEffect(() => {
 }, [isPaused, cards.length]);
 
   return (
-    <div className='container mx-auto px-6 lg:px-12 pb-10'>
-             <motion.div
+    <section className='container mx-auto px-6 lg:px-12 pb-10'>
+        <motion.div
           className="mb-20 px-4 mx-auto text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,8 +91,8 @@ useEffect(() => {
             variants={itemVariants}
           >
         Providing customized solutions that address the specific needs of your industry.
-Our team blends deep domain expertise with innovative technology to maximize efficiency.
-From planning to execution, we ensure every solution drives measurable business growth.
+        Our team blends deep domain expertise with innovative technology to maximize efficiency.
+        From planning to execution, we ensure every solution drives measurable business growth.
           </motion.p>
 
       
@@ -165,7 +165,7 @@ From planning to execution, we ensure every solution drives measurable business 
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="bg-gradient-to-t from-orange-400 via-orange-500 to-orange-500 rounded-3xl p-5 md:p-16 text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-gray-900  rounded-3xl p-5 md:p-16 text-white relative overflow-hidden shadow-2xl">
             <div className="relative z-10">
               <h3 className="text-xl lg:text-4xl font-black mb-6">
                 Ready to Transform Your Business?
@@ -181,20 +181,20 @@ From planning to execution, we ensure every solution drives measurable business 
                   whileHover={{ scale: 1.1, rotate: 1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore All Products
+                  <Link href="/products">Explore All Products</Link>
                 </motion.button>
                 <motion.button
                   className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white px-5 py-2.5 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-black text-base hover:bg-white/20 transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: -1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Request Demo
+                  <Link href="/contact">Request Demo</Link>
                 </motion.button>
               </div>
             </div>
           </div>
         </motion.div>
-    </div>
+    </section>
   )
 }
 

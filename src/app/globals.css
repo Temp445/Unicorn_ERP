@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(to bottom left, #f8fafc, #e0f2fe, #cceafb);
+  /* --background: linear-gradient(to bottom left, #f8fafc, #e0f2fe, #cceafb); */
   --foreground: #171717;
 }
 
@@ -12,12 +12,12 @@
   --font-mono: var(--font-geist-mono);
 } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(to bottom left, #f8fafc, #e0f2fe, #fbe5cc);
+    --background: linear-gradient(to top , #f8fafc, #fef2e027, #fbe5cc3d);
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
