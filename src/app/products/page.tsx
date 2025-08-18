@@ -114,7 +114,7 @@ const ProductList = () => {
               {filteredProducts.map((product, index) => (
                 <div
                   key={product._id}
-                  className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1"
+                  className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 transform hover:scale-105 "
                   style={{
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                   }}

@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { writeFile, mkdir, unlink } from "fs/promises";
 import dbConnect from "@/lib/mongoose";
@@ -7,7 +7,7 @@ import fs from "fs";
 
 
 // Get product by ID
-export async function GET({ params }: { params: { id: string } }) {
+export async function GET( req: NextRequest, { params }: { params: { id: string } }) {
   try {
     await dbConnect();
     const { id } = params;
@@ -135,7 +135,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 }
 
 
-export async function DELETE({ params }: { params: { id: string } } ) {
+export async function DELETE(  req: NextRequest, { params }: { params: { id: string } } ) {
   try {
     await dbConnect();
 
