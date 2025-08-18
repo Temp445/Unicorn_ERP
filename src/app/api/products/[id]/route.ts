@@ -30,9 +30,6 @@ import fs from "fs";
 //   }
 // }
 
-import { NextRequest, NextResponse } from "next/server";
-import dbConnect from "@/lib/mongoose";
-import Product from "@/models/Product";
 
 export async function GET(req: NextRequest) {
   try {
