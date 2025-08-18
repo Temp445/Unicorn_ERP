@@ -1,12 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
 import Product from "@/models/Product";
+import { Params } from "next/dist/server/request/params";
 
-export async function GET( _req: Request,{ params }: { params: { productpath: string } } ) {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: Record<string, string> }
+) {
   try {
     await dbConnect();
 
-    const { productpath } = params;
+      const productpath = params.productpath as string;
 
     if (!productpath || typeof productpath !== "string") {
       return NextResponse.json(
