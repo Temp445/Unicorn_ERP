@@ -7,7 +7,7 @@ import fs from "fs";
 
 
 // Get product by ID
-export async function GET( req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET( req: NextRequest,  { params }: { params: Record<string, string> } ) {
   try {
     await dbConnect();
     const { id } = params;
