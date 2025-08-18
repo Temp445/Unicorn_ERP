@@ -7,17 +7,50 @@ import fs from "fs";
 
 
 // Get product by ID
-export async function GET( req: NextRequest,  { params }: { params: Record<string, string> } ) {
+// export async function GET( req: NextRequest,  { params }: { params: Record<string, string> } ) {
+//   try {
+//     await dbConnect();
+//     const { id } = params;
+
+//     const product = await Product.findById(id);
+//     if (!product) {
+//       return NextResponse.json(
+//         { success: false, message: "Product not found" },
+//         { status: 404 }
+//       );
+//     }
+
+//     return NextResponse.json(product, { status: 200 });
+//   } catch (err: any) {
+//     console.error("Fetch error:", err);
+//     return NextResponse.json(
+//       { success: false, message: err.message || "Failed to fetch product" },
+//       { status: 500 }
+//     );
+//   }
+// }
+
+import { NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/lib/mongoose";
+import Product from "@/models/Product";
+
+export async function GET(req: NextRequest) {
   try {
     await dbConnect();
-    const { id } = params;
+
+    const url = new URL(req.url);
+    const pathname = url.pathname; 
+    const parts = pathname.split('/');
+    const id = parts[parts.length - 1];
+
+    if (!id) {
+      return NextResponse.json({ success: false, message: "Product ID required" }, { status: 400 });
+    }
 
     const product = await Product.findById(id);
+
     if (!product) {
-      return NextResponse.json(
-        { success: false, message: "Product not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ success: false, message: "Product not found" }, { status: 404 });
     }
 
     return NextResponse.json(product, { status: 200 });
@@ -29,6 +62,7 @@ export async function GET( req: NextRequest,  { params }: { params: Record<strin
     );
   }
 }
+
 
 //update
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
