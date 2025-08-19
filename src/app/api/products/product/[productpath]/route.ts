@@ -2,16 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
 import Product from "@/models/Product";
 
-export async function GET(
-  _req: NextRequest,
-  { params }: { params: Record<string, string> }
-) {
+export async function GET( req: NextRequest) {
   try {
     await dbConnect();
 
-    const productpath = params.productpath;
+    const url = new URL(req.url);
+    const pathname = url.pathname; 
+    const parts = pathname.split('/');
+    const productpath = parts[parts.length - 1];
 
-    if (!productpath) {
+    // const { productpath } = params;
+
+    if (!productpath || typeof productpath !== "string") {
       return NextResponse.json(
         { success: false, message: "Invalid product path" },
         { status: 400 }
