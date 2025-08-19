@@ -5,29 +5,16 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Edit, Trash2, Eye } from "lucide-react";
 import AdminProtectedRoute from '@/components/ProductedRoute';
-interface Benefit {
-  title: string;
-  description: string;
-}
+import Link from "next/link";
 
-interface Testimonial {
-  clientName: string;
-  companyName: string;
-  description: string;
-}
 
 interface Product {
   _id: string;
   productName: string;
-  productLink?: string;
-  calendlyUrl?: string;
   productPath: string;
   description?: string;
   category?: string;
   mainImage: string[];
-  productImage: string[];
-  benefits: Benefit[];
-  customerTestimonials: Testimonial[];
 }
 
 export default function ProductList() {
@@ -67,27 +54,47 @@ export default function ProductList() {
   };
 
   if (loading) {
-    return  
-    <div className="flex justify-center items-center h-screen">
+    return  <div className="flex justify-center items-center h-screen">
       <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
-    </div>;
+    </div>
   }
 
   if (products.length === 0) {
-    return <p className="text-center py-10">No products found.</p>;
+    return <p className="text-center py-10">No products found.</p>
   }
 
   return (
     <AdminProtectedRoute>
-            <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8 text-center">Our Products</h1>
+            <div className="max-w-7xl mx-auto p-6 h-auto pb-20">
+  <div className="pb-10  text-black">
+  <h1 className="text-3xl font-extrabold mb-10 text-center tracking-wide">
+    ADMIN PANEL
+  </h1>
+
+  <div className="flex  gap-6 max-w-xl ">
+    <Link
+      href="/admin/users"
+      className="py-2 px-4 rounded bg-orange-800 text-white shadow-lg hover:scale-105 transition-transform text-center font-semibold"
+    >
+      Users List
+    </Link>
+
+    <Link
+      href="/admin/productupload"
+      className="p-2 rounded border shadow-lg hover:scale-105 transition-transform text-center font-semibold"
+    >
+      Upload New Product
+    </Link>
+  </div>
+</div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
           <div
             key={product._id}
             className="bg-white rounded-xl shadow-md overflow-hidden border flex flex-col"
           >
-            {/* Product Image */}
+  
             {product.mainImage?.length > 0 && (
               <img
                 src={product.mainImage[0]}
@@ -103,14 +110,14 @@ export default function ProductList() {
 
               <div className="flex justify-between items-center mt-4 gap-2">
                 <button
-                  onClick={() => router.push(`/products/${product._id}`)}
+                  onClick={() => router.push(`/products/${product.productPath}`)}
                   className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
                 >
                  View
                 </button>
 
                 <button
-                  onClick={() => router.push(`/admin/updateproduct/${product._id}`)}
+                  onClick={() => router.push(`/admin/productupdate/${product._id}`)}
                   className="flex items-center gap-1 bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600"
                 >
                   <Edit className="w-4 h-4" /> Update

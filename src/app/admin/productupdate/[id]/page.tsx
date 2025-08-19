@@ -34,7 +34,6 @@ const ProductUpdate = () => {
   const mainInputRef = useRef<HTMLInputElement | null>(null);
   const productInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Fetch product by ID
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -68,13 +67,11 @@ const ProductUpdate = () => {
     fetchProduct();
   }, [id]);
 
-  // Input change handler
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // File input handler
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: "main" | "product") => {
     if (!e.target.files) return;
     if (type === "main") {
@@ -88,7 +85,6 @@ const ProductUpdate = () => {
     }
   };
 
-  // Benefits
   const handleBenefitChange = (i: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const updated = [...benefits];
     updated[i][e.target.name as keyof typeof updated[0]] = e.target.value;
@@ -97,7 +93,6 @@ const ProductUpdate = () => {
   const addBenefit = () => setBenefits([...benefits, { title: "", description: "" }]);
   const removeBenefit = (i: number) => setBenefits(benefits.filter((_, idx) => idx !== i));
 
-  // Testimonials
   const handleTestimonialChange = (i: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const updated = [...testimonials];
     updated[i][e.target.name as keyof typeof updated[0]] = e.target.value;
@@ -107,7 +102,6 @@ const ProductUpdate = () => {
     setTestimonials([...testimonials, { clientName: "", companyName: "", description: "" }]);
   const removeTestimonial = (i: number) => setTestimonials(testimonials.filter((_, idx) => idx !== i));
 
-  // Submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -126,22 +120,23 @@ const ProductUpdate = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      alert("✅ Product updated successfully!");
+      alert("Product updated successfully!");
       router.push("/products");
     } catch (err) {
       console.error(err);
-      alert("❌ Update failed");
+      alert("Update failed");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-md">
-      <h1 className="text-3xl font-bold mb-6">Update Product</h1>
+     <div className="py-20">
+          <div className="max-w-5xl mx-auto p-6 border border-gray-300 bg-white rounded-xl shadow-md">
+      <h1 className="text-2xl font-bold mb-6">Update Product</h1>
 
       <form onSubmit={handleSubmit} className="space-y-8">
-        {/* Basic Fields */}
+     
         <div className="grid grid-cols-2 gap-4">
           {["productName", "productPath", "productLink", "calendlyUrl", "category"].map((field) => (
             <div key={field}>
@@ -163,7 +158,6 @@ const ProductUpdate = () => {
           ))}
         </div>
 
-        {/* Textareas */}
         {["description", "why_choose_des", "who_need_des"].map((field) => (
           <div key={field}>
             <label className="block font-semibold capitalize mb-1">
@@ -178,7 +172,6 @@ const ProductUpdate = () => {
           </div>
         ))}
 
-        {/* Images */}
         <div>
           <label className="block font-semibold mb-2">Main Image</label>
     
@@ -220,7 +213,6 @@ const ProductUpdate = () => {
           />
         </div>
 
-        {/* Benefits */}
         <div>
           <h2 className="text-xl font-bold mb-2">Benefits</h2>
           {benefits.map((b, i) => (
@@ -250,7 +242,6 @@ const ProductUpdate = () => {
           </button>
         </div>
 
-        {/* Testimonials */}
         <div>
           <h2 className="text-xl font-bold mb-2">Customer Testimonials</h2>
           {testimonials.map((t, i) => (
@@ -298,6 +289,7 @@ const ProductUpdate = () => {
         </button>
       </form>
     </div>
+     </div>
   );
 }
 
