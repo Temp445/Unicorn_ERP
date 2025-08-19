@@ -11,8 +11,6 @@ export async function GET( req: NextRequest) {
     const parts = pathname.split('/');
     const productpath = parts[parts.length - 1];
 
-    // const { productpath } = params;
-
     if (!productpath || typeof productpath !== "string") {
       return NextResponse.json(
         { success: false, message: "Invalid product path" },

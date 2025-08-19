@@ -62,7 +62,7 @@ export async function GET(req: NextRequest) {
 
 
 //update
-export async function PUT(req: Request) {
+export async function PUT(req: NextRequest) {
   try {
     await dbConnect();
     const formData = await req.formData();
