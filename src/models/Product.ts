@@ -1,11 +1,26 @@
 import mongoose, { models, model } from 'mongoose';
 
 
+
+const WhatisSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String },
+});
+
 const benefitSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
 });
 
+const FAQSchema = new mongoose.Schema({
+  question: { type: String, required: true },
+  answer: { type: String },
+});
+
+const ResultSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String },
+});
 
 const customerTestimonialSchema = new mongoose.Schema({
   clientName: { type: String, required: true },
@@ -48,7 +63,10 @@ const productSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  whatis: [WhatisSchema],
   benefits: [benefitSchema],
+  FAQ: [FAQSchema],
+  Result: [ResultSchema],
   customerTestimonials: [customerTestimonialSchema],
 });
 

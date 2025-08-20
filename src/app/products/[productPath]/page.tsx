@@ -4,7 +4,16 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CheckCircle, Quote, Star, Play, Shield, Zap, Target, ChevronLeft, ChevronRight, FileText,ArrowBigRightDash } from "lucide-react";
+import FAQSection from "@/components/ProductDetailPage/FAQSection";
+import ProductImages from "@/components/ProductDetailPage/ProductImages";
+import CustomerTestimonial from "@/components/ProductDetailPage/CustomerTestimonial";
+import Hero from "@/components/ProductDetailPage/Hero";
+import WhoNeedThis from "@/components/ProductDetailPage/WhoNeedThis";
+import WhyChoose from "@/components/ProductDetailPage/WhyChoose";
+import Features from "@/components/ProductDetailPage/Features";
+import Whatis from "@/components/ProductDetailPage/Whatis";
+import ResultsSection from "@/components/ProductDetailPage/ResultsSection";
+import DemoCard from "@/components/ProductDetailPage/DemoCard";
 
 interface Product {
   _id: string;
@@ -18,7 +27,10 @@ interface Product {
   who_need_des?: string;
   mainImage: string[];
   productImage: string[];
+  whatis?: { title: string; description?: string }[];
   benefits?: { title: string; description?: string }[];
+  FAQ?: { question: string; answer?: string }[];
+  Result?: { title: string; description?: string }[];
   customerTestimonials?: {
     clientName: string;
     companyName?: string;
@@ -30,8 +42,7 @@ const ProductPage = () => {
   const { productPath } = useParams<{ productPath: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -50,17 +61,6 @@ const ProductPage = () => {
   }, [productPath]);
 
 
-//   const nextTestimonial = () => {
-//     if (product?.customerTestimonials) {
-//       setCurrentTestimonialIndex((prev) => (prev + 1) % product.customerTestimonials.length);
-//     }
-//   };
-
-//   const prevTestimonial = () => {
-//     if (product?.customerTestimonials) {
-//       setCurrentTestimonialIndex((prev) => (prev - 1 + product.customerTestimonials.length) % product.customerTestimonials.length);
-//     }
-//   };
 
   if (loading) {
     return (
@@ -73,75 +73,45 @@ const ProductPage = () => {
   if (!product) {
     return (
       <div className="flex flex-col justify-center items-center h-screen bg-slate-900 text-white">
-        <div className="text-8xl mb-6">404</div>
         <h2 className="text-3xl font-bold mb-4">Product Not Found</h2>
-        <p className="text-slate-400 text-lg">This product doesn't exist in our catalog.</p>
       </div>
     );
   }
-
-  const allImages = [...(product.mainImage || []), ...(product.productImage || [])];
-  const currentImage = allImages[currentImageIndex];
 
   return (
     <>
       <Navbar />
       
-      <div className="min-h-screen bg-slate-50 container mx-auto">
-        
- <section className="relative h-fit flex items-center overflow-hidden">
+  <div className="min-h-screen bg-slate-50 container mx-auto">
 
-  <div className="absolute inset-0 bg-orange-50"></div>
+<Hero
+  product={{
+    productName: product.productName,
+    description: product.description || "",
+    productLink: product.productLink,
+    calendlyUrl: product.calendlyUrl,
+    mainImage: product.mainImage,
+  }}
+/>
+<Whatis product = {{
+ whatis: product.whatis,
+ calendlyUrl: product.calendlyUrl,
+ }}/>
 
-  <div className="relative z-10 w-full lg:w-1/2 p-12 lg:p-20">
-    <div className="max-w-xl space-y-8">
+<WhyChoose product = {{
+    productName: product.productName,
+    why_choose_des: product.why_choose_des || ""
+}}/>
+<WhoNeedThis WhoNeed= {product.who_need_des ?? ""} />
 
-      <h1 className="text-4xl  2xl:text-5xl font-extrabold mb-6 leading-tight text-gray-900">
-        {product.productName}
-      </h1>
-
-      <p className="text-lg 2xl:text-xl mb-8 text-gray-800">
-        {product.description}
-      </p>
-
-      <div className="flex flex-wrap gap-4 pt-4 animate-fadeInUp delay-300">
-        {product.productLink && (
-          <a
-            href={product.productLink}
-          className="px-6 py-3 flex gap-2 bg-white border rounded-xl font-bold shadow-lg transition-all duration-300 transform hover:scale-105"
-          >
-            <Play className="w-6 h-6" />
-            <span>Watch Demo</span>
-          </a>
-        )}
-        {product.calendlyUrl && (
-          <a
-            href={product.calendlyUrl}
-          className="px-6 py-3 text-white bg-gradient-to-r from-red-500 to-orange-500 rounded-xl font-bold shadow-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Schedule Demo
-          </a>
-        )}
-      </div>
-
-    </div>
-  </div>
-  
-  {product.mainImage?.[0] && (
-  <div className="relative w-full lg:w-1/2 h-[500px] 2xl:h-[600px] [clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)] shadow-2xl shadow-amber-500">
-      <img
-        src={product.mainImage[0]}
-        alt={product.productName}
-        className="absolute inset-0 w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-[2500ms] ease-out"
-      />
-   
-
-    </div>
-  )}
-</section>
+<Features product={{
+    benefits: product.benefits,
+    mainImage: product.mainImage,
+    productName: product.productName,
+}}/>
 
 
-        {product.why_choose_des && (
+        {/* {product.why_choose_des && (
           <section className="pt-24 relative">
             <div className="container mx-auto px-6">
               <div className="grid lg:grid-cols-2 gap-12 -mt-32 relative z-10">
@@ -152,7 +122,7 @@ const ProductPage = () => {
                         <Shield className="w-10 h-10 text-orange-500" />
                       </div>
                       <div>
-                        <h2 className="text-3xl font-black text-slate-900">Why Choose Us</h2>
+                        <h2 className="text-3xl font-black text-slate-900">What is</h2>
                         <div className="w-16 h-1 bg-orange-500 mt-2 rounded-full"></div>
                       </div>
                     </div>
@@ -166,7 +136,7 @@ const ProductPage = () => {
             </div>
 
 
-            {/* card */}
+    card
   <div className="flex justify-end items-end px-6 pt-16">
   <div className="absolute max-w-lg w-full top-5">
  
@@ -195,31 +165,64 @@ const ProductPage = () => {
     </div>
   </div>
 </div>
-          </section>
-        )}
+  </section>
+        )} */}
 
-
-         <div className="p-5">
-                {product.who_need_des && (
-                  <div className="bg-white p-12 rounded shadow-2xl border border-slate-200 hover:shadow-3xl transition-all duration-500">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="p-4 bg-orange-100 rounded-2xl">
-                        <Target className="w-10 h-10 text-orange-600" />
-                      </div>
-                      <div>
-                        <h2 className="text-3xl font-black text-slate-900">Perfect For</h2>
-                        <div className="w-16 h-1 bg-orange-500 mt-2 rounded-full"></div>
-                      </div>
-                    </div>
-                  <div className="text-slate-600 leading-loose text-lg">
+        {/* <div className="p-5">
+         {product.who_need_des && (
+           <div className="bg-white p-12 rounded shadow-2xl border border-slate-200 hover:shadow-3xl transition-all duration-500">
+             <div className="flex items-center gap-4 mb-8">
+               <div className="p-4 bg-orange-100 rounded-2xl">
+                 <Target className="w-10 h-10 text-orange-600" />
+               </div>
+               <div>
+                 <h2 className="text-3xl font-black text-slate-900">Why Choose Us</h2>
+                 <div className="w-24 h-1 bg-orange-500 mt-2 rounded-full"></div>
+               </div>
+             </div>
+           <div className="text-slate-600 leading-loose text-lg">
   {product.who_need_des?.split('.').map((point, index) => 
     point.trim() ? <p key={index} className="mb-2 flex gap-2"><ArrowBigRightDash className="mt-1.5 text-orange-500" /> {point.trim()}</p> : null
   )}
 </div>
 </div>
 )}
+</div> */}
+
+
+{/* 
+  <section className="py-24 bg-gray-50">
+    <div className="container mx-auto px-6">
+      <div className="text-center mb-20">
+        <h2 className="text-4xl font-extrabold text-slate-900 mb-4">
+          Best Suited For
+        </h2>
+        <p className="text-xl text-slate-500 max-w-3xl mx-auto">
+          Everything you need to succeed, crafted with care to make your experience seamless.
+        </p>
+      </div>
+
+      <div className="grid  gap-6 text-slate-700 text-lg">
+  {product.who_need_des?.split('.').map((point, index) =>
+    point.trim() ? (
+      <div
+        key={index}
+        className="flex items-start gap-3 p-4 rounded-2xl bg-orange-50 shadow-sm hover:shadow-md transition"
+      >
+        <div className="w-1 h-1/2 bg-orange-500 rounded-full mt-2"></div>
+        <p>{point.trim()}</p>
+      </div>
+    ) : null
+  )}
 </div>
 
+
+
+    </div>
+  </section> */}
+
+
+{/* 
 <section className="py-24 bg-white">
   <div className="container mx-auto px-6 relative">
     <div className="grid lg:grid-cols-5 gap-16">
@@ -271,250 +274,84 @@ const ProductPage = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 
-        {/* Benefits - Bento Grid Layout */}
-        {product.benefits && product.benefits.length > 0 && (
-          <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-20">
-                <h2 className="text-4xl font-black text-slate-900 mb-6">
-                  Powerful Features
-                </h2>
-                <p className="text-2xl text-slate-500 max-w-3xl mx-auto">
-                  Everything you need to succeed, designed with your goals in mind
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {product.benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className={`group p-10 rounded-3xl border-2 border-slate-200 hover:border-blue-300 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
-                      index % 3 === 0 ? 'bg-blue-50' : 
-                      index % 3 === 1 ? 'bg-orange-50' : 'bg-slate-50'
-                    }`}
-                  >
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`p-4 rounded-2xl ${
-                        index % 3 === 0 ? 'bg-blue-500' : 
-                        index % 3 === 1 ? 'bg-orange-500' : 'bg-slate-700'
-                      }`}>
-                        <Zap className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                        {benefit.title}
-                      </h3>
-                    </div>
-                    <p className="text-slate-600 leading-relaxed text-lg">
-                      {benefit.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+
+<ProductImages productImage={product.productImage}/>
+
+<ResultsSection product={{ 
+Result: product.Result,
+productName: product.productName}}/>
+
+<DemoCard calendlyUrl={product.calendlyUrl || ""}/>
+
+<CustomerTestimonial customerTestimonials={product.customerTestimonials} />
+
+
+{/* <section className="py-24 bg-white">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-extrabold text-slate-900 mb-4">
+        The Results You Can Expect
+      </h2>
+      <p className="text-xl text-slate-500 max-w-3xl mx-auto">
+        Real value, proven impact — discover how our ERP transforms businesses.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="p-8 rounded-2xl bg-orange-50 shadow hover:shadow-md transition">
+        <h3 className="text-5xl font-bold text-orange-600 mb-2">40%</h3>
+        <p className="text-slate-700">Faster Production Cycles</p>
+      </div>
+      <div className="p-8 rounded-2xl bg-orange-50 shadow hover:shadow-md transition">
+        <h3 className="text-5xl font-bold text-orange-600 mb-2">30%</h3>
+        <p className="text-slate-700">Reduced Operational Costs</p>
+      </div>
+      <div className="p-8 rounded-2xl bg-orange-50 shadow hover:shadow-md transition">
+        <h3 className="text-5xl font-bold text-orange-600 mb-2">2X</h3>
+        <p className="text-slate-700">Improved Inventory Accuracy</p>
+      </div>
+      <div className="p-8 rounded-2xl bg-orange-50 shadow hover:shadow-md transition">
+        <h3 className="text-5xl font-bold text-orange-600 mb-2">500+</h3>
+        <p className="text-slate-700">Businesses Trust Us</p>
+      </div>
+    </div>
+  </div>
+</section> */}
+
+    {/* <section className="relative py-32 bg-white text-center overflow-hidden">
+  <div className="container relative mx-auto px-6">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-5xl md:text-6xl font-extrabold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
+        Ready to Begin?
+      </h2>
+      <p className="text-xl md:text-2xl text-slate-600 mb-16 leading-relaxed">
+        Take the next step towards transforming your business. 
+        Our team is ready to help you succeed.
+      </p>
+
+      <div className="flex gap-6 justify-center flex-wrap">
+    
+        {product.calendlyUrl && (
+          <a
+            href={product.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-5 border-2 border-orange-500 text-orange-600 rounded-2xl font-bold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300"
+          >
+            💬 Talk to Expert
+          </a>
         )}
+      </div>
+    </div>
+  </div>
+</section> */}
 
-        {/* Testimonials - Carousel Style */}
-        {product.customerTestimonials && product.customerTestimonials.length > 0 && (
-          <section className="py-24 bg-slate-100">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-20">
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  Success Stories
-                </h2>
-                <p className="text-2xl text-slate-500 max-w-3xl mx-auto">
-                  Real results from real customers who transformed their business
-                </p>
-              </div>
-              
-              <div className="relative max-w-4xl mx-auto">
-                <div className="bg-white p-16 rounded-3xl shadow-2xl border border-slate-200">
-                  <div className="text-center">
-                    <Quote className="w-16 h-16 text-blue-500 mx-auto mb-8" />
-                    
-                    <p className="text-3xl text-slate-700 italic leading-relaxed mb-12 font-light">
-                      "{product.customerTestimonials[currentTestimonialIndex].description}"
-                    </p>
-                    
-                    <div className="flex items-center justify-center gap-6">
-                      <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-2xl">
-                        {product.customerTestimonials[currentTestimonialIndex].clientName.charAt(0)}
-                      </div>
-                      <div className="text-left">
-                        <p className="text-2xl font-bold text-slate-900">
-                          {product.customerTestimonials[currentTestimonialIndex].clientName}
-                        </p>
-                        {product.customerTestimonials[currentTestimonialIndex].companyName && (
-                          <p className="text-lg text-slate-500">
-                            {product.customerTestimonials[currentTestimonialIndex].companyName}
-                          </p>
-                        )}
-                        <div className="flex gap-1 mt-2">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {product.customerTestimonials.length > 1 && (
-                  <>
-                    <button
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    >
-                      <ChevronLeft className="w-6 h-6 text-slate-600" />
-                    </button>
-                    <button
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    >
-                      <ChevronRight className="w-6 h-6 text-slate-600" />
-                    </button>
-                    
-                    <div className="flex justify-center gap-3 mt-8">
-                      {product.customerTestimonials.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentTestimonialIndex(index)}
-                          className={`w-4 h-4 rounded-full transition-all ${
-                            currentTestimonialIndex === index ? 'bg-blue-500' : 'bg-slate-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
 
-        {/* Product Showcase - Side by Side */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-5 gap-16 items-center">
-              
-              {/* Product Details */}
-              <div className="lg:col-span-3 space-y-12">
-                <div>
-                  <h2 className="text-5xl font-black text-slate-900 mb-8">
-                    Experience Excellence
-                  </h2>
-                  <p className="text-xl text-slate-600 leading-relaxed">
-                    Our product is crafted with precision and designed for performance. 
-                    Every detail has been carefully considered to deliver the best possible experience.
-                  </p>
-                </div>
+<FAQSection FAQ = {product.FAQ ?? []}/>
 
-                {/* Feature Highlights */}
-                <div className="grid gap-6">
-                  {product.benefits?.slice(0, 3).map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-                      <div className="flex-shrink-0 p-3 bg-blue-500 rounded-xl">
-                        <CheckCircle className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-slate-600">
-                          {benefit.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Image Showcase */}
-              <div className="lg:col-span-2">
-                {currentImage && (
-                  <div className="relative">
-                    <div className="absolute -inset-4 bg-blue-200 rounded-3xl transform rotate-3"></div>
-                    <div className="absolute -inset-2 bg-orange-200 rounded-3xl transform -rotate-2"></div>
-                    <img
-                      src={currentImage}
-                      alt={product.productName}
-                      className="relative rounded-3xl shadow-2xl w-full object-cover h-96 transform hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* All Benefits - Cards Layout */}
-        {product.benefits && product.benefits.length > 3 && (
-          <section className="py-24 bg-slate-100">
-            <div className="container mx-auto px-6">
-              <h2 className="text-5xl font-black text-center text-slate-900 mb-20">
-                Complete Feature Set
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {product.benefits.slice(3).map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center border border-slate-200"
-                  >
-                    <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Zap className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Final CTA - Full Width */}
-        <section className="py-32 bg-slate-900 text-white text-center">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-6xl font-black mb-8">
-                Ready to Begin?
-              </h2>
-              <p className="text-2xl text-slate-300 mb-16 leading-relaxed">
-                Take the next step towards transforming your business. 
-                Our team is ready to help you succeed.
-              </p>
-              
-              <div className="flex gap-8 justify-center flex-wrap">
-                {product.productLink && (
-                  <a
-                    href={product.productLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-16 py-6 bg-blue-600 text-white rounded-2xl font-bold text-xl hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-2xl"
-                  >
-                    Get Started Today
-                  </a>
-                )}
-                {product.calendlyUrl && (
-                  <a
-                    href={product.calendlyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-16 py-6 border-2 border-white text-white rounded-2xl font-bold text-xl hover:bg-white hover:text-slate-900 transition-all duration-300"
-                  >
-                    Talk to Expert
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
       
       <Footer />

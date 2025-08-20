@@ -63,11 +63,22 @@ export async function POST(req: Request) {
         productImage.push(`/uploads/${fileName}`);
       }
     }
-
+    let whatis = [];
     let benefits = [];
+    let FAQ = [];
+    let Result = [];
     let customerTestimonials = [];
+     try {
+      whatis = JSON.parse((formData.get("whatis") as string) || "[]");
+    } catch {}
     try {
       benefits = JSON.parse((formData.get("benefits") as string) || "[]");
+    } catch {}
+    try {
+      FAQ = JSON.parse((formData.get("FAQ") as string) || "[]");
+    } catch {}
+    try {
+      Result = JSON.parse((formData.get("Result") as string) || "[]");
     } catch {}
     try {
       customerTestimonials = JSON.parse(
@@ -86,7 +97,10 @@ export async function POST(req: Request) {
       category: (formData.get("category") as string) || "",
       mainImage,
       productImage,
+      whatis,
       benefits,
+      FAQ,
+      Result,
       customerTestimonials,
     });
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation"; // ✅ import router
+import { useRouter } from "next/navigation"; 
 
 const UploadProduct = () => {
   const [formData, setFormData] = useState({
@@ -19,13 +19,16 @@ const UploadProduct = () => {
   const [mainImages, setMainImages] = useState<File[]>([]);
   const [productImages, setProductImages] = useState<File[]>([]);
   const [benefits, setBenefits] = useState([{ title: "", description: "" }]);
+  const [FAQ, setFAQ] = useState([{ question: "", answer: "" }]);
+  const [Result, setResult] = useState([{ title: "", description: "" }]);
+  const [whatis, setWhatis] = useState([{ title: "", description: "" }]);
   const [testimonials, setTestimonials] = useState([
     { clientName: "", companyName: "", description: "" },
   ]);
 
   const [loading, setLoading] = useState(false);
 
-  const router = useRouter(); // ✅ create router instance
+  const router = useRouter(); 
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,6 +47,17 @@ const UploadProduct = () => {
     else setProductImages(files);
   };
 
+  // whatis
+  const handleWhatisChange = (
+    i: number,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const updated = [...whatis];
+    updated[i][e.target.name as keyof typeof updated[0]] = e.target.value;
+    setWhatis(updated);
+  };
+
+
   // benefits
   const handleBenefitChange = (
     i: number,
@@ -57,6 +71,34 @@ const UploadProduct = () => {
     setBenefits([...benefits, { title: "", description: "" }]);
   const removeBenefit = (i: number) =>
     setBenefits(benefits.filter((_, idx) => idx !== i));
+
+    // FAQ
+  const handleFAQChange = (
+    i: number,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const updated = [...FAQ];
+    updated[i][e.target.name as keyof typeof updated[0]] = e.target.value;
+    setFAQ(updated);
+  };
+  const addFAQ = () =>
+    setFAQ([...FAQ, { question: "", answer: "" }]);
+  const removeFAQ = (i: number) =>
+    setFAQ(FAQ.filter((_, idx) => idx !== i));
+
+  const handleResultChange = (
+    i: number,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const updated = [...Result];
+    updated[i][e.target.name as keyof typeof updated[0]] = e.target.value;
+    setResult(updated);
+  };
+  const addResult = () =>
+    setResult([...Result, { title: "", description: "" }]);
+  const removeResult = (i: number) =>
+    setResult(Result.filter((_, idx) => idx !== i));
+
 
   // testimonials
   const handleTestimonialChange = (
@@ -87,7 +129,10 @@ const UploadProduct = () => {
       mainImages.forEach((file) => data.append("mainImage", file));
       productImages.forEach((file) => data.append("productImage", file));
 
+      data.append("whatis", JSON.stringify(whatis));
       data.append("benefits", JSON.stringify(benefits));
+      data.append("FAQ", JSON.stringify(FAQ));
+      data.append("Result", JSON.stringify(Result));
       data.append("customerTestimonials", JSON.stringify(testimonials));
 
       const res = await axios.post("/api/products", data, {
@@ -97,7 +142,6 @@ const UploadProduct = () => {
       alert("Product uploaded successfully!");
       console.log(res.data);
 
-      // ✅ redirect to admin page after success
       router.push("/admin");
 
     } catch (err) {
@@ -155,6 +199,33 @@ const UploadProduct = () => {
             </div>
           ))}
 
+            <div>
+            <h2 className="text-xl font-bold mb-2">What is </h2>
+            {whatis.map((b, i) => (
+              <div
+                key={i}
+                className="border p-3 mb-3 rounded-lg space-y-2 bg-gray-50"
+              >
+                <input
+                  type="text"
+                  name="title"
+                  value={b.title}
+                  placeholder="Title"
+                  onChange={(e) => handleWhatisChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+                <textarea
+                  name="description"
+                  value={b.description}
+                  placeholder="Description"
+                  onChange={(e) => handleWhatisChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+              </div>
+            ))}
+          
+          </div>
+
           <div>
             <label className="block font-semibold mb-1">Main Images</label>
             <input
@@ -195,6 +266,7 @@ const UploadProduct = () => {
             </div>
           </div>
 
+
           <div>
             <h2 className="text-xl font-bold mb-2">Benefits</h2>
             {benefits.map((b, i) => (
@@ -232,6 +304,86 @@ const UploadProduct = () => {
               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
               Add Benefit
+            </button>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-2">Results</h2>
+            {Result.map((b, i) => (
+              <div
+                key={i}
+                className="border p-3 mb-3 rounded-lg space-y-2 bg-gray-50"
+              >
+                <input
+                  type="text"
+                  name="title"
+                  value={b.title}
+                  placeholder="Title"
+                  onChange={(e) => handleResultChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+                <textarea
+                  name="description"
+                  value={b.description}
+                  placeholder="Description"
+                  onChange={(e) => handleResultChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+                <button
+                  type="button"
+                  onClick={() => removeResult(i)}
+                  className="text-red-600 text-sm"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={addResult}
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              Add Result
+            </button>
+          </div>
+
+              <div>
+            <h2 className="text-xl font-bold mb-2">FAQ</h2>
+            {FAQ.map((b, i) => (
+              <div
+                key={i}
+                className="border p-3 mb-3 rounded-lg space-y-2 bg-gray-50"
+              >
+                <input
+                  type="text"
+                  name="question"
+                  value={b.question}
+                  placeholder="question"
+                  onChange={(e) => handleFAQChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+                <textarea
+                  name="answer"
+                  value={b.answer}
+                  placeholder="answer"
+                  onChange={(e) => handleFAQChange(i, e)}
+                  className="w-full border p-2 rounded"
+                />
+                <button
+                  type="button"
+                  onClick={() => removeFAQ(i)}
+                  className="text-red-600 text-sm"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={addFAQ}
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              Add FAQ
             </button>
           </div>
 

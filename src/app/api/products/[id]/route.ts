@@ -141,10 +141,26 @@ export async function PUT(req: NextRequest) {
       product.productImage = newProductImages;
     }
 
+      try {
+      product.whatis = JSON.parse((formData.get("whatis") as string) || "[]");
+    } catch {
+      product.whatis = product.whatis || [];
+    }
+
     try {
       product.benefits = JSON.parse((formData.get("benefits") as string) || "[]");
     } catch {
       product.benefits = product.benefits || [];
+    }
+    try {
+      product.FAQ = JSON.parse((formData.get("FAQ") as string) || "[]");
+    } catch {
+      product.FAQ = product.FAQ || [];
+    }
+    try {
+      product.Result = JSON.parse((formData.get("Result") as string) || "[]");
+    } catch {
+      product.Result = product.Result || [];
     }
 
     try {
