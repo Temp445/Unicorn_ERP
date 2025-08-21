@@ -1,0 +1,322 @@
+
+'use client'
+
+import React, { useRef, useState, useEffect, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+import { sendWhatsappMessage } from "@/services/whatsapp/whatsappService";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import 'react-phone-number-input/style.css';
+import { Facebook, Linkedin, Youtube , Instagram } from "lucide-react";
+import Image from "next/image";
+import contact from "@/assets/contact.svg"
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+const service_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const template_ID = process.env.NEXT_PUBLIC_EMAILJS_ENQ_TEMPLATE_ID || "";
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
+const endpoint = '/api/proxy-validate-email';
+
+const ContactPage = () => {
+
+  const countryCode = 'IN';
+
+  const form = useRef<HTMLFormElement>(null);
+  const [email, setEmail] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>("");
+  const [phone, setPhone] = useState<string | undefined>(undefined);
+  const [phoneError, setPhoneError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const emailInputRef = useRef<HTMLInputElement | null>(null);
+  // const [checkboxError, setCheckboxError] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const validateEmail = async (email: string): Promise<string> => {
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.status !== 200) return "Invalid Email";
+
+      const data = await response.json();
+      if (data.success) {
+        return data.isValid ? '' : "Invalid Email Address";
+      } else {
+        return (` Failed: ${data.error}`);
+      }
+    } catch (err) {
+      console.error('Email validation error:', err);
+      return "Validation unavailable";
+    }
+  };
+
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const formCurrent = form.current;
+    if (!formCurrent) return;
+
+    const emailValidationMessage = await validateEmail(email);
+    if (emailValidationMessage) {
+      setEmailError(emailValidationMessage);
+
+      emailInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      emailInputRef.current?.focus();
+      return;
+    } else {
+      setEmailError('');
+    }
+
+    if (!phone || !isValidPhoneNumber(phone)) {
+      setPhoneError("Please enter a valid phone number");
+      return;
+    } else {
+      setPhoneError('');
+    }
+
+    // const checkedProducts = Array.from(formCurrent.querySelectorAll<HTMLInputElement>('input[name="product"]:checked'));
+    // if (checkedProducts.length === 0) {
+    //   setCheckboxError(true);
+    //   return;
+    // } else {
+    //   setCheckboxError(false);
+    // }
+
+    const phoneWithoutPlus = phone.replace(/[\s+]/g, '');
+
+    const formData = {
+      Full_Name: (formCurrent['Name'] as HTMLInputElement)?.value || '',
+      Company_Name: formCurrent['company']?.value || '',
+      Business_Email: email,
+      Mobile_Number: phoneWithoutPlus,
+      Location: formCurrent['location']?.value || '',
+      Message: formCurrent['queries']?.value || '',
+      Product_Interested: formCurrent['product']?.value || '',
+      Originate_From: 'Unicorn ERP Contact Page',
+    };
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(service_ID, template_ID, formData, publicKey);
+      alert("Your enquiry has been sent successfully!");
+      formCurrent.reset();
+      setEmail('');
+      setPhone('');
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      alert("Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+
+    try {
+      await sendWhatsappMessage(
+        'enquiry_form',
+        {
+          originateFrom: formData.Originate_From,
+          fullName: formData.Full_Name,
+          companyName: formData.Company_Name,
+          businessEmail: formData.Business_Email,
+          mobileNumber: formData.Mobile_Number,
+          location: formData.Location,
+          productInterest: formData.Product_Interested,
+          message: formData.Message,
+        },
+      );
+
+      await sendWhatsappMessage(
+        'customer_greetings',
+        {
+          fullName: formData.Full_Name,
+          product: formData.Product_Interested,
+          siteUrl: 'https://acesoft.in',
+          imageUrl:
+            'https://res.cloudinary.com/dohyevc59/image/upload/v1749124753/Enquiry_Greetings_royzcm.jpg',
+        },
+        phoneWithoutPlus,
+      );
+    } catch (error) {
+      console.error('WhatsApp sending error:', error);
+    }
+  };
+
+  return (
+    <>
+    <Navbar/>
+    <div className="min-h-screen bg-orange-50">
+      <div className="bg-gradient-to-r from-orange-200 to-orange-200 text-white py-20 text-center relative">
+        <p className="text-3xl md:text-5xl font-extrabold text-orange-600">Contact <span className="text-orange-600"> Us</span></p>
+        <h1 className="mt-4 md:text-2xl text-orange-700">Schedule Your Free Demo with Unicorn ERP</h1>
+        <div className="absolute w-32 h-40 rounded-b-full bg-orange-500/30 top-0 left-0  z-0"></div>
+         <div className="absolute w-32 h-32 rounded-t-full bg-orange-500/30 bottom-0 right-0  z-0"></div>
+      </div>
+
+      <div className="container mx-auto px-2 md:px-6 py-16 flex justify-center relative">
+        <div className="w-full lg:w-1/2 mx-auto bg-white shadow-lg shadow-orange-200 rounded-lg p-4 md:p-8 border border-dashed">
+          <h2 className="text-2xl md:text-3xl font-bold  text-center">Product Enquiry</h2>
+          <div className="w-44 h-1 bg-orange-500 rounded mx-auto mb-6"></div>
+          <form ref={form} onSubmit={handleSubmit}  className="space-y-4">
+            <div>
+              <label className="block mb-1 font-medium">Name</label>
+              <input
+                type="text"
+                name="Name"
+                placeholder="Enter your name *"
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+              />
+            </div>
+
+              <div>
+              <label className="block mb-1 font-medium">Company Name</label>
+              <input
+                type="text"
+                name="company"
+                placeholder="Enter your company name *"
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+              />
+            </div>
+
+            
+            <div>
+              <label className="block mb-1 font-medium">Business Email</label>
+              <input
+                ref={emailInputRef}
+                type="email"
+                name="email"
+                placeholder="Enter your email *"
+                onChange={(e) => setEmail(e.target.value.trim())}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-orange-400 focus:outline-none"
+              />
+                {emailError && (
+                    <p id="email-error" className="text-red-500 text-sm mt-1">
+                      {emailError}
+                    </p>
+                  )}
+            </div>
+
+            
+                <div>
+                  <label className=" font-medium">
+                    Mobile Number
+                  </label>
+                  <PhoneInput
+                    international
+                    defaultCountry={countryCode}
+                    value={phone}
+                    onChange={setPhone}
+                    className="!shadow-none rounded !bg-transparent border border-gray-300 mt-1 p-2 [&>input]:border-none [&>input]:outline-none [&>input]:bg-transparent"
+                  />
+                  {phoneError && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {phoneError}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+              <label className="block mb-1 font-medium">Your Location</label>
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter Your location *"
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+              />
+            </div>
+
+                <div>
+              <label className="block mb-1 font-medium">Product Interested</label>
+              <input
+                type="text"
+                name="product"
+                placeholder="Enter the product your interested"
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-1 font-medium">Queries</label>
+              <textarea
+                name="queries"
+                placeholder="Enter your queries"
+                rows={5}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-green-600 transition-colors"
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+        </div>
+        
+        <div className="w-1/2 hidden lg:block">
+          <Image src={contact} alt="contact" className="sticky top-10 w-full" />
+        </div>
+
+      </div>
+
+ <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
+  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+    <h3 className="font-semibold text-lg mb-2">Email</h3>
+    <p>info@example.com</p>
+  </div>
+
+  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+    <h3 className="font-semibold text-lg mb-2">Phone</h3>
+    <p>+91 98765 43210</p>
+  </div>
+
+  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+    <h3 className="font-semibold text-lg mb-2">Location</h3>
+    <p>123 Main Street, City, Country</p>
+  </div>
+</div>
+
+
+
+      <div className="container mx-auto px-6 py-16 max-w-fit hidden md:block">
+        <div className="gap-10">
+
+          <div className="bg-gray-900 shadow-lg rounded-full py-3 px-5 gap-10 flex items-center justify-around">
+            <a href="#" className="text-white transition-all duration-500 hover:text-blue-600 p-1 hover:bg-white rounded">
+              <Facebook size={32} />
+            </a>
+              <a href="#" className="mt-1 p-1 rounded text-white hover:text-orange-600 hover:bg-white">
+              <Instagram  size={28} />
+            </a>
+            <a href="#" className="text-white p-1 transition-all duration-500 hover:bg-blue-500 rounded">
+              <Linkedin size={32} />
+            </a>
+           
+            <a href="#" className="text-white transition-all duration-500 hover:text-red-800 hover:bg-white p-1 rounded">
+              <Youtube size={32} />
+            </a>
+           
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </div>
+    </>
+  );
+};
+
+export default ContactPage;

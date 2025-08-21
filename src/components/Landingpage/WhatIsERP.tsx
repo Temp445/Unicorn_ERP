@@ -33,7 +33,7 @@ const WhatIsERP = () => {
 
   return (
         <section className="min-h-screen  relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 py-14">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10 py-14">
         <motion.div
           className="text-center mb-24 mx-auto"
           variants={containerVariants}

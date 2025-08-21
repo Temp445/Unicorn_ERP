@@ -6,6 +6,7 @@ import Image from "next/image";
 import productbg from "@/assets/productbg.jpg";
 import { MoveRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 interface Product {
   _id: string;
   productName: string;
@@ -60,7 +61,7 @@ const ProductList = () => {
       <Navbar />
       <div className="min-h-screen bg-orange-50 text-white relative overflow-hidden">
         <div className="relative z-10">
-          <div className="text-center py-24 px-6 bg-black relative">
+          <div className="text-center py-24 px-2 md:px-6 bg-black relative">
             <Image
               src={productbg}
               alt="ERP background"
@@ -68,7 +69,7 @@ const ProductList = () => {
               className="object-cover object-center opacity-20 z-0"
             />
             <div className="mb-6">
-              <h1 className="text-6xl md:text-4xl font-black text-white mb-4 z-20">
+              <h1 className="text-2xl md:text-4xl font-black text-white mb-4 z-20">
                 Explore Our{" "}
                 <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
                   ERP Solutions
@@ -76,7 +77,7 @@ const ProductList = () => {
               </h1>
               <div className="w-52 h-1 bg-white mx-auto rounded-full"></div>
             </div>
-            <p className="text-slate-300 mt-8 max-w-4xl mx-auto text-xl md:text-2xl font-light leading-relaxed">
+            <p className="text-slate-300 mt-8 max-w-4xl mx-auto  md:text-2xl font-light leading-relaxed">
               Discover ERP solutions crafted to streamline your business and
               drive growth.
             </p>
@@ -115,10 +116,7 @@ const ProductList = () => {
           <div className="container mx-auto px-6 pb-20">
             {filteredProducts.length === 0 ? (
               <div className="text-center py-32">
-                <div className="w-24 h-24 mx-auto mb-8 bg-gray-600 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/20 rounded-full"></div>
-                </div>
-                <p className="text-slate-400 text-2xl font-light">
+                <p className="text-slate-600 text-2xl font-light">
                   No products found
                 </p>
               </div>
@@ -132,6 +130,7 @@ const ProductList = () => {
                       animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                     }}
                   >
+                  <Link href={`/products/${product.productPath}`}>
                     <div className="relative overflow-hidden h-64">
                       {product.mainImage?.[0] && (
                         <img
@@ -141,6 +140,7 @@ const ProductList = () => {
                         />
                       )}
                     </div>
+                    </Link>
 
                     <div className="relative p-8 space-y-4 ">
                       <h2 className="text-2xl text-black font-bold transition-all duration-300">
@@ -150,20 +150,18 @@ const ProductList = () => {
                         {product.description}
                       </p>
                     </div>
-                    <div className="bg-orange-400 py-1 flex relative">
+                    
+                    <Link href={`/products/${product.productPath}`} className="bg-orange-400 py-1 flex relative ">
                       <div className="flex items-center justify-center gap-6">
-                          <a
-                            href={`/products/${product.productPath}`}
-                            className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105"
-                          >
+                          <div className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105">
                             View Details{" "}
                             <span>
                               <MoveRight />
                             </span>
-                          </a>
+                          </div>
                       
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>

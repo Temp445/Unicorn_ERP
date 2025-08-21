@@ -53,7 +53,7 @@ export default function Navbar() {
 
   const navigation: NavigationItem[] = useMemo(() => {
     const items: NavigationItem[] = [
-      { name: 'Home', href: '/' },
+      // { name: 'Home', href: '/' },
       { name: 'About', href: '/about' },
       { name: 'Products', href: '/products' },
       { name: 'Contact Us', href: '/contact' },
@@ -78,10 +78,10 @@ export default function Navbar() {
         <>
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center space-x-2">
                 <img src="/vercel.svg" alt="Company Logo" className="h-8 w-auto" />
                 <span className="text-gray-900 font-bold text-lg tracking-wide">Unicorn ERP</span>
-              </div>
+              </Link>
 
               <div className="hidden sm:flex space-x-6">
                 {navigation.map((item) => {

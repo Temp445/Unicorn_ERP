@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <>
       <section className="relative py-14 md:py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-14 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-14 relative z-10">
           <motion.div
             className="flex-1 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
@@ -23,7 +23,7 @@ export default function HeroSection() {
             <span className=" w-fit gap-3 px-5 py-1.5 text-sm font-semibold text-orange-700 bg-orange-100 rounded-full mb-5 shadow-sm flex">
           All-in-One ERP Solution
             </span>
-            <h1 className="text-2xl lg:text-5xl font-extrabold leading-tight text-gray-900">
+            <h1 className="text-2xl lg:text-5xl text-left font-extrabold leading-tight text-gray-900">
             Empowering Businesses with Next-Gen ERP  <br />
             <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Solutions for Growth</span>
             </h1>

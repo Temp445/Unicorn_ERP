@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 const CardSection = () => {
   return (
@@ -13,18 +14,18 @@ const CardSection = () => {
                 We build, design, and optimize ERP solutions with precision. Join us if you share our passion for efficiency.
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
-                <a
-                  href="#careers"
+                <Link
+                  href="/products"
                   className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-orange-500 text-white font-semibold shadow-lg shadow-orange-500/20 hover:bg-orange-400 transition"
                 >
                   Explore Products <ArrowRight className="size-5" />
-                </a>
-                <a
-                  href="#contact"
+                </Link>
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 rounded-xl px-5 py-3 border  hover:border-orange-600 text-gray-800 hover:text-gray-900 transition"
                 >
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
 

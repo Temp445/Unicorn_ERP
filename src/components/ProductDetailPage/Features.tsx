@@ -32,10 +32,10 @@ const Features = ({product}: ProductProps ) => {
           </p>
         </div>
 
-        <div className="grid md:gap-6">
+        <div className="grid gap-4 md:gap-6">
           {product.benefits?.slice(0, 7).map((benefit, index) => (
             <div key={index} className="flex items-start gap-6 py-4 md:py-0 lg:p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-              <div className="flex-shrink-0 p-3 bg-green-500 rounded-xl">
+              <div className="flex-shrink-0 p-3 bg-blue-500 rounded-xl">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
               <div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const AboutHero = () => {
 
@@ -24,40 +25,20 @@ const AboutHero = () => {
           At <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>Unicorn ERP </span>, we believe every business can grow faster and operate more efficiently when equipped with the right tools and support. Our <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>ERP software</span> provides a simple, all-in-one system to manage finance, sales, inventory, HR, and operations, helping businesses stay connected, organized, and prepared for the future.          </p>
 
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              href="#"
-              className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300"
+            <Link
+              href="/contact"
+              className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition-all duration-500 hover:scale-105"
             >
               Contact Us
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              href="#"
+            </Link>
+            <Link
+              href="/products"
               className="px-8 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-50 transition-all duration-300"
             >
               Our Products
-            </motion.a>
+            </Link>
           </div>
         </motion.div>
-
-        {/* Optional Hero Image */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="mt-14"
-        >
-          <Image
-            src="/images/about-hero.png"
-            alt="About Hero"
-            width={850}
-            height={550}
-            className="rounded-2xl shadow-2xl"
-          />
-        </motion.div> */}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, FileText } from "lucide-react";
+import { Shield, FileText , BookOpen } from "lucide-react";
 import Link from "next/link";
 
 interface WhatIsItem {
@@ -29,7 +29,7 @@ const Whatis = ({ product }: ProductProps) => {
               >
                 <div className="flex items-center gap-4 mb-8">
                   <div className="p-4 bg-blue-100 rounded-xl">
-                    <Shield className="w-10 h-10 text-orange-500" />
+                    <BookOpen  className="w-10 h-10 text-orange-500" />
                   </div>
                   <div>
                     <h2 className=" text-2xl md:text-3xl font-black text-slate-900">

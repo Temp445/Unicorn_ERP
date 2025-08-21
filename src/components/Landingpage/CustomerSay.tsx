@@ -27,7 +27,7 @@ const testimonials = [
 const CustomerSay = () => {
   return (
       <section className="py-20 bg-gradient-to-b from-orange-50 via-white to-orange-50">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
        
         <motion.div
           className="text-center mb-14"
@@ -36,7 +36,7 @@ const CustomerSay = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-extrabold text-gray-800">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800">
             What Our Customers Say
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
