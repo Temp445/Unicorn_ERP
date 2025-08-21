@@ -401,14 +401,14 @@ const ProductUpdate = () => {
                 type="text"
                 name="title"
                 value={b.title}
-                placeholder="question"
+                placeholder="title"
                 onChange={(e) => handleResultChange(i, e)}
                 className="w-full border p-2 rounded"
               />
               <textarea
                 name="description"
                 value={b.description}
-                placeholder="answer"
+                placeholder="description"
                 onChange={(e) => handleResultChange(i, e)}
                 className="w-full border p-2 rounded"
               />

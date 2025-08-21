@@ -3,6 +3,7 @@ import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import dbConnect from "@/lib/mongoose";
 import Product from "@/models/Product";
+import cloudinary from "@/lib/cloudinary";
 
 // GET all products
 export async function GET() {
@@ -36,55 +37,52 @@ export async function POST(req: Request) {
       );
     }
 
-    const uploadDir = path.join(process.cwd(), "public/uploads");
-    await mkdir(uploadDir, { recursive: true });
-
-  
+    // ✅ Upload main images to Cloudinary
     const mainImage: string[] = [];
     for (const file of formData.getAll("mainImage")) {
       if (file instanceof File) {
-        const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-${file.name}`;
-        const filePath = path.join(uploadDir, fileName);
-        await writeFile(filePath, buffer);
-        mainImage.push(`/uploads/${fileName}`);
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const upload = await new Promise<any>((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { folder: "products/main" },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          );
+          stream.end(buffer);
+        });
+        mainImage.push(upload.secure_url);
       }
     }
 
+    // ✅ Upload product images to Cloudinary
     const productImage: string[] = [];
     for (const file of formData.getAll("productImage")) {
       if (file instanceof File) {
-        const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-${file.name}`;
-        const filePath = path.join(uploadDir, fileName);
-        await writeFile(filePath, buffer);
-        productImage.push(`/uploads/${fileName}`);
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const upload = await new Promise<any>((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { folder: "products/gallery" },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          );
+          stream.end(buffer);
+        });
+        productImage.push(upload.secure_url);
       }
     }
-    let whatis = [];
-    let benefits = [];
-    let FAQ = [];
-    let Result = [];
-    let customerTestimonials = [];
-     try {
-      whatis = JSON.parse((formData.get("whatis") as string) || "[]");
-    } catch {}
-    try {
-      benefits = JSON.parse((formData.get("benefits") as string) || "[]");
-    } catch {}
-    try {
-      FAQ = JSON.parse((formData.get("FAQ") as string) || "[]");
-    } catch {}
-    try {
-      Result = JSON.parse((formData.get("Result") as string) || "[]");
-    } catch {}
-    try {
-      customerTestimonials = JSON.parse(
-        (formData.get("customerTestimonials") as string) || "[]"
-      );
-    } catch {}
+
+    // ✅ Parse JSON fields safely
+    const parseJSON = (field: string) => {
+      try {
+        return JSON.parse((formData.get(field) as string) || "[]");
+      } catch {
+        return [];
+      }
+    };
 
     const product = new Product({
       productName,
@@ -97,11 +95,11 @@ export async function POST(req: Request) {
       category: (formData.get("category") as string) || "",
       mainImage,
       productImage,
-      whatis,
-      benefits,
-      FAQ,
-      Result,
-      customerTestimonials,
+      whatis: parseJSON("whatis"),
+      benefits: parseJSON("benefits"),
+      FAQ: parseJSON("FAQ"),
+      Result: parseJSON("Result"),
+      customerTestimonials: parseJSON("customerTestimonials"),
     });
 
     await product.save();
@@ -115,3 +113,4 @@ export async function POST(req: Request) {
     );
   }
 }
+
