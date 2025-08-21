@@ -86,6 +86,7 @@ const UploadProduct = () => {
   const removeFAQ = (i: number) =>
     setFAQ(FAQ.filter((_, idx) => idx !== i));
 
+  //result
   const handleResultChange = (
     i: number,
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -158,73 +159,133 @@ const UploadProduct = () => {
         <h1 className="text-2xl font-bold mb-6">Upload New Product</h1>
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "productName",
-              "productPath",
-              "productLink",
-              "calendlyUrl",
-              "category",
-            ].map((field) => (
-              <div key={field}>
-                <label className="block font-semibold capitalize mb-1">
-                  {field}
-                  {(field === "productName" || field === "productPath") && (
-                    <span className="text-red-500">*</span>
-                  )}
-                </label>
-                <input
-                  type="text"
-                  name={field}
-                  value={formData[field as keyof typeof formData]}
-                  onChange={handleChange}
-                  className="w-full border p-2 rounded"
-                  required={field === "productName" || field === "productPath"}
-                />
-              </div>
-            ))}
-          </div>
+    <div className="grid grid-cols-2 gap-4">
 
-          {["description", "why_choose_des", "who_need_des"].map((field) => (
-            <div key={field}>
-              <label className="block font-semibold capitalize mb-1">
-                {field.replace(/_/g, " ")}
-              </label>
-              <textarea
-                name={field}
-                value={formData[field as keyof typeof formData]}
-                onChange={handleChange}
-                className="w-full border p-2 rounded"
-              />
-            </div>
-          ))}
+  <div>
+    <label className="block font-semibold mb-1">
+      Product Name <span className="text-red-500">*</span>
+    </label>
+    <input
+      type="text"
+      name="productName"
+      value={formData.productName}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+      required
+    />
+  </div>
 
-            <div>
-            <h2 className="text-xl font-bold mb-2">What is </h2>
-            {whatis.map((b, i) => (
-              <div
-                key={i}
-                className="border p-3 mb-3 rounded-lg space-y-2 bg-gray-50"
-              >
-                <input
-                  type="text"
-                  name="title"
-                  value={b.title}
-                  placeholder="Title"
-                  onChange={(e) => handleWhatisChange(i, e)}
-                  className="w-full border p-2 rounded"
-                />
-                <textarea
-                  name="description"
-                  value={b.description}
-                  placeholder="Description"
-                  onChange={(e) => handleWhatisChange(i, e)}
-                  className="w-full border p-2 rounded"
-                />
-              </div>
-            ))}
-          
-          </div>
+  <div>
+    <label className="block font-semibold mb-1">
+      Product Path <span className="text-red-500">*</span>
+    </label>
+    <input
+      type="text"
+      name="productPath"
+      value={formData.productPath}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+      required
+    />
+  </div>
+
+  <div>
+    <label className="block font-semibold mb-1">Demo Video Link</label>
+    <input
+      type="text"
+      name="productLink"
+      value={formData.productLink}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+    />
+  </div>
+
+  <div>
+    <label className="block font-semibold mb-1">Calendly URL</label>
+    <input
+      type="text"
+      name="calendlyUrl"
+      value={formData.calendlyUrl}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+    />
+  </div>
+
+  <div className="col-span-2">
+    <label className="block font-semibold mb-1">Category</label>
+    <input
+      type="text"
+      name="category"
+      value={formData.category}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+    />
+  </div>
+</div>
+
+
+  <div className="grid grid-cols-1 gap-4">
+
+  <div>
+    <label className="block font-semibold mb-1">Description</label>
+    <textarea
+      name="description"
+      value={formData.description}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+      rows={4}
+    />
+  </div>
+
+  <div>
+    <label className="block font-semibold mb-1">Why Choose Description</label>
+    <textarea
+      name="why_choose_des"
+      value={formData.why_choose_des}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+      rows={4}
+    />
+  </div>
+
+  <div>
+    <label className="block font-semibold mb-1">Who Need Description</label>
+    <textarea
+      name="who_need_des"
+      value={formData.who_need_des}
+      onChange={handleChange}
+      className="w-full border p-2 rounded"
+      rows={4}
+    />
+  </div>
+</div>
+
+    <div>
+    <h2 className="text-xl font-bold mb-2">What is </h2>
+    {whatis.map((b, i) => (
+      <div
+        key={i}
+        className="border p-3 mb-3 rounded-lg space-y-2 bg-gray-50"
+      >
+        <input
+          type="text"
+          name="title"
+          value={b.title}
+          placeholder="Title"
+          onChange={(e) => handleWhatisChange(i, e)}
+          className="w-full border p-2 rounded"
+        />
+        <textarea
+          name="description"
+          value={b.description}
+          placeholder="Description"
+          onChange={(e) => handleWhatisChange(i, e)}
+          className="w-full border p-2 rounded"
+        />
+      </div>
+    ))}
+  
+    </div>
 
           <div>
             <label className="block font-semibold mb-1">Main Images</label>

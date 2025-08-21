@@ -29,7 +29,7 @@ const CoreValueSection = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute rounded left-1/2 top-0 h-full w-1 mt-7  bg-gradient-to-b from-orange-400 to-red-500 transform -translate-x-1/2"></div>
+          <div className="absolute hidden lg:block rounded left-1/2 top-0 h-full w-1 mt-7  bg-gradient-to-b from-orange-400 to-red-500 transform -translate-x-1/2"></div>
 
           <div className="space-y-10 md:space-y-24">
             {/* Vision */}
@@ -43,7 +43,7 @@ const CoreValueSection = () => {
             >
               <div className="hidden lg:block"></div>
               <div className="relative bg-gradient-to-br from-orange-50 to-sky-100 backdrop-blur-sm border border-gray-400 rounded-xl p-8 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-100">
-                <div className="absolute -left-8 top-6 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
+                <div className="absolute hidden -left-8 top-6 transform -translate-x-1/2 lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our <span className='text-blue-500'>Vision</span></h3>
@@ -64,7 +64,7 @@ const CoreValueSection = () => {
               className="grid lg:grid-cols-2 gap-14 items-center lg:flex-row-reverse"
             >
               <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 backdrop-blur-sm border border-gray-400 rounded-xl p-8 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-100">
-                <div className="absolute -right-[80px] top-6 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
+                <div className="absolute hidden -right-[80px] top-6 transform -translate-x-1/2 lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our <span className='text-teal-700'>Mission</span></h3>
@@ -86,7 +86,7 @@ const CoreValueSection = () => {
             >
               <div className="hidden lg:block"></div>
               <div className="relative bg-gradient-to-br from-orange-50 to-red-50 backdrop-blur-sm border border-gray-400 rounded-xl p-8 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-100">
-                <div className="absolute -left-8 top-6 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
+                <div className="absolute hidden -left-8 top-6 transform -translate-x-1/2 lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
                   <Flag className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our <span className='text-orange-700'>Goals</span></h3>
@@ -107,7 +107,7 @@ const CoreValueSection = () => {
               className="grid lg:grid-cols-2 gap-14 items-center lg:flex-row-reverse"
             >
               <div className="relative bg-gradient-to-br from-pink-50 to-rose-50 backdrop-blur-sm border border-gray-400 rounded-xl p-8 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-100">
-                <div className="absolute -right-[80px] top-6 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
+                <div className="absolute hidden -right-[80px] top-6 transform -translate-x-1/2 lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-lg z-10">
                   <UserStar className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our <span className='text-cyan-700'>Values</span></h3>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, FileText , BookOpen } from "lucide-react";
+import { FileText , BookOpen } from "lucide-react";
 import Link from "next/link";
 
 interface WhatIsItem {
@@ -10,7 +10,8 @@ interface WhatIsItem {
 interface ProductProps {
   product: {
     whatis?: WhatIsItem[];
-    calendlyUrl?: string;
+    productPath?: string;
+    productName?: string;
   };
 }
 
@@ -44,21 +45,24 @@ const Whatis = ({ product }: ProductProps) => {
               </div>
             ))
           ) : (
-            <div className="bg-white p-12 rounded-xl shadow-2xl border border-slate-200">
+            <div className="bg-white p-4 md:p-12 rounded-xl shadow-2xl border border-slate-200">
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-4 bg-blue-100 rounded-xl">
-                  <Shield className="w-10 h-10 text-orange-500" />
+                  <BookOpen className="w-10 h-10 text-orange-500" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-slate-900">
-                    What is Our ERP?
+                  <h2 className="text-2xl font-black text-slate-900">
+                    What is {product.productName}?
                   </h2>
                   <div className="w-16 h-1 bg-orange-500 mt-2 rounded-full"></div>
                 </div>
               </div>
-              <p className="text-slate-600 leading-loose text-lg">
-                Our ERP solution is designed to streamline business operations,
-                improve productivity, and provide actionable insights for growth.
+              <p className="text-slate-600 leading-loose md:text-lg">
+               {product.productName} is designed to streamline business operations, enhance productivity, and provide actionable insights that drive growth. 
+               It centralizes key processes into a single platform, helping teams reduce manual work, improve collaboration, and make data-driven decisions with confidence. 
+               By automating routine tasks and offering real-time visibility into performance, {product.productName} empowers businesses to achieve higher efficiency, 
+               optimize resources, and stay competitive in a fast-changing market.
+
               </p>
             </div>
           )}
@@ -66,7 +70,7 @@ const Whatis = ({ product }: ProductProps) => {
       </div>
 
       <div className="lg:flex justify-end items-end xl:px-6 pt-16 hidden">
-        <div className="absolute max-w-lg w-full top-5">
+        <div className="absolute max-w-lg w-full top-5 z-10">
           <div
             className="relative bg-[#2A629A] p-10 rounded shadow-3xl hover:shadow-4xl transition-all duration-500
                       [clip-path:polygon(0_0,95%_0,100%_10%,100%_100%,5%_100%,0_90%)]"
@@ -81,23 +85,15 @@ const Whatis = ({ product }: ProductProps) => {
               </div>
             </div>
 
-            <p className="text-white/90 leading-relaxed text-lg relative z-10">
-              Experience the full power of our ERP solution. Get a personalized demo to see how it fits your business.
+            <p className="text-white/90 leading-relaxed text-lg relative z-10 mb-10">
+              Experience the full power of our solution. Get a personalized demo to see how it fits your business.
             </p>
 
-  {product.calendlyUrl ? (
-            <div className="mt-6 relative z-10">
-              <Link href={product.calendlyUrl} className="px-5 py-2 bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
+              <Link href={`/demo/${product.productPath}` || "/contact"} className="px-5 py-2 relative bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
                 Book Demo
               </Link>
-            </div>
-  ):(
-    <div className="mt-6 relative z-10">
-              <Link href="/contact" className="px-5 py-2 bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                Book Demo
-              </Link>
-            </div>
-          )}
+     
+
           </div>
         </div>
       </div>

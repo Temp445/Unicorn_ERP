@@ -43,7 +43,6 @@ const ProductPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -60,13 +59,11 @@ const ProductPage = () => {
     if (productPath) fetchProduct();
   }, [productPath]);
 
-
-
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-      <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
-    </div>
+        <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
+      </div>
     );
   }
 
@@ -81,49 +78,59 @@ const ProductPage = () => {
   return (
     <>
       <Navbar />
-      
-  <div className="min-h-screen bg-slate-50 container mx-auto">
 
-<Hero
-  product={{
-    productName: product.productName,
-    description: product.description || "",
-    productLink: product.productLink,
-    calendlyUrl: product.calendlyUrl,
-    mainImage: product.mainImage,
-  }}
-/>
-<Whatis product = {{
- whatis: product.whatis,
- calendlyUrl: product.calendlyUrl,
- }}/>
+      <div className="min-h-screen bg-slate-50 container mx-auto">
+        <Hero
+          product={{
+            productName: product.productName,
+            description: product.description || "",
+            productLink: product.productLink,
+            productPath: product.productPath,
+            mainImage: product.mainImage,
+          }}
+        />
+        <Whatis
+          product={{
+            whatis: product.whatis,
+            productPath: product.productPath,
+            productName: product.productName,
+          }}
+        />
 
-<WhyChoose product = {{
-    productName: product.productName,
-    why_choose_des: product.why_choose_des || ""
-}}/>
-<WhoNeedThis WhoNeed= {product.who_need_des ?? ""} />
+        <WhyChoose
+          product={{
+            productName: product.productName,
+            why_choose_des: product.why_choose_des || "",
+          }}
+        />
+        <WhoNeedThis WhoNeed={product.who_need_des ?? ""} />
 
-<Features product={{
-    benefits: product.benefits,
-    mainImage: product.mainImage,
-    productName: product.productName,
-}}/>
+        <Features
+          product={{
+            benefits: product.benefits,
+            mainImage: product.mainImage,
+            productName: product.productName,
+          }}
+        />
 
-<ProductImages productImage={product.productImage}/>
+        <ProductImages productImage={product.productImage} />
 
-<ResultsSection product={{ 
-Result: product.Result,
-productName: product.productName}}/>
+        <ResultsSection
+          product={{
+            Result: product.Result,
+            productName: product.productName,
+          }}
+        />
 
-<DemoCard calendlyUrl={product.calendlyUrl || ""}/>
+        <DemoCard productPath={product.productPath || ""} />
 
-<CustomerTestimonial customerTestimonials={product.customerTestimonials} />
+        <CustomerTestimonial
+          customerTestimonials={product.customerTestimonials}
+        />
 
-<FAQSection FAQ = {product.FAQ ?? []}/>
-
+        <FAQSection FAQ={product.FAQ ?? []} />
       </div>
-      
+
       <Footer />
     </>
   );

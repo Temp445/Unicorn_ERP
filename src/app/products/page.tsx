@@ -113,7 +113,7 @@ const ProductList = () => {
             </div>
           )}
 
-          <div className="container mx-auto px-6 pb-20">
+          <div className="container mx-auto px-6 pb-20 h-screen">
             {filteredProducts.length === 0 ? (
               <div className="text-center py-32">
                 <p className="text-slate-600 text-2xl font-light">
@@ -142,7 +142,7 @@ const ProductList = () => {
                     </div>
                     </Link>
 
-                    <div className="relative p-8 space-y-4 ">
+                    <div className="relative p-6 space-y-4 ">
                       <h2 className="text-2xl text-black font-bold transition-all duration-300">
                         {product.productName}
                       </h2>

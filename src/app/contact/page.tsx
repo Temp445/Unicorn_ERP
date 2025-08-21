@@ -11,6 +11,7 @@ import Image from "next/image";
 import contact from "@/assets/contact.svg"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const service_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
 const template_ID = process.env.NEXT_PUBLIC_EMAILJS_ENQ_TEMPLATE_ID || "";
@@ -153,11 +154,10 @@ const ContactPage = () => {
     <>
     <Navbar/>
     <div className="min-h-screen bg-orange-50">
-      <div className="bg-gradient-to-r from-orange-200 to-orange-200 text-white py-20 text-center relative">
-        <p className="text-3xl md:text-5xl font-extrabold text-orange-600">Contact <span className="text-orange-600"> Us</span></p>
-        <h1 className="mt-4 md:text-2xl text-orange-700">Schedule Your Free Demo with Unicorn ERP</h1>
-        <div className="absolute w-32 h-40 rounded-b-full bg-orange-500/30 top-0 left-0  z-0"></div>
-         <div className="absolute w-32 h-32 rounded-t-full bg-orange-500/30 bottom-0 right-0  z-0"></div>
+      <div className="bg-gray-900 text-white py-20 text-center relative">
+        <p className="text-3xl md:text-5xl font-extrabold">Contact <span className="text-orange-600"> Us</span></p>
+        <h1 className="mt-4 text-base md:text-2xl">Schedule Your Free Demo with Unicorn ERP</h1>
+ 
       </div>
 
       <div className="container mx-auto px-2 md:px-6 py-16 flex justify-center relative">
@@ -273,22 +273,22 @@ const ContactPage = () => {
 
       </div>
 
- <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
-  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
-    <h3 className="font-semibold text-lg mb-2">Email</h3>
-    <p>info@example.com</p>
-  </div>
-
-  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
-    <h3 className="font-semibold text-lg mb-2">Phone</h3>
-    <p>+91 98765 43210</p>
-  </div>
-
-  <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
-    <h3 className="font-semibold text-lg mb-2">Location</h3>
-    <p>123 Main Street, City, Country</p>
-  </div>
-</div>
+     <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+        <h3 className="font-semibold text-lg mb-2">Email</h3>
+        <p>info@example.com</p>
+      </div>
+    
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+        <h3 className="font-semibold text-lg mb-2">Phone</h3>
+        <p>+91 98765 43210</p>
+      </div>
+    
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+        <h3 className="font-semibold text-lg mb-2">Location</h3>
+        <p>#306, 2nd Floor, NSIC-Software Technology Business Park, B-24, Guindy Industrial Estate, Ekkatuthangal, Chennai-600032, India</p>
+      </div>
+    </div>
 
 
 
@@ -296,19 +296,19 @@ const ContactPage = () => {
         <div className="gap-10">
 
           <div className="bg-gray-900 shadow-lg rounded-full py-3 px-5 gap-10 flex items-center justify-around">
-            <a href="#" className="text-white transition-all duration-500 hover:text-blue-600 p-1 hover:bg-white rounded">
+            <Link href="#" className="text-white transition-all duration-500 hover:text-blue-600 p-1 hover:bg-white rounded">
               <Facebook size={32} />
-            </a>
-              <a href="#" className="mt-1 p-1 rounded text-white hover:text-orange-600 hover:bg-white">
+            </Link>
+              <Link href="#" className="mt-1 p-1 rounded text-white hover:text-orange-600 hover:bg-white">
               <Instagram  size={28} />
-            </a>
-            <a href="#" className="text-white p-1 transition-all duration-500 hover:bg-blue-500 rounded">
+            </Link>
+            <Link href="#" className="text-white p-1 transition-all duration-500 hover:bg-blue-500 rounded">
               <Linkedin size={32} />
-            </a>
+            </Link>
            
-            <a href="#" className="text-white transition-all duration-500 hover:text-red-800 hover:bg-white p-1 rounded">
+            <Link href="#" className="text-white transition-all duration-500 hover:text-red-800 hover:bg-white p-1 rounded">
               <Youtube size={32} />
-            </a>
+            </Link>
            
           </div>
         </div>

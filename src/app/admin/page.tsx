@@ -116,21 +116,23 @@ export default function ProductList() {
                  View
                 </button>
 
-                <button
+             <div className="flex  rounded">
+                 <button
                   onClick={() => router.push(`/admin/productupdate/${product._id}`)}
-                  className="flex items-center gap-1 bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600"
+                  className="flex items-center gap-1 bg-orange-500 text-white px-3 py-1  text-sm hover:bg-orange-600 rounded-l"
                 >
-                  <Edit className="w-4 h-4" /> Update
+                  <Edit className="w-4 h-4"/> Update
                 </button>
 
                 <button
                   onClick={() => handleDelete(product._id)}
                   disabled={deleting === product._id}
-                  className="flex items-center gap-1 bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 disabled:opacity-50"
+                  className="flex items-center gap-1 bg-red-600 text-white px-3 py-1  text-sm hover:bg-red-700  rounded-e"
                 >
                   <Trash2 className="w-4 h-4" />
                   {deleting === product._id ? "Deleting..." : "Delete"}
                 </button>
+           </div>
               </div>
             </div>
           </div>

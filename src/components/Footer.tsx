@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram , Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -7,25 +7,10 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:pr-10 py-12 flex  md:flex-row gap-20 flex-wrap md:justify-evenly">
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">Unicorn ERP</h2>
-          <p className="text-sm leading-relaxed max-w-sm">
-            Empowering businesses with a complete suite of ERP solutions to
-            streamline operations, enhance productivity, and drive growth.
+          <p className="text-sm leading-relaxed max-w-sm flex gap-2">
+          <MapPin className="w-14 h-10 text-orange-500 -mt-2" />  #306, 2nd Floor, NSIC-Software Technology Business Park, B-24, Guindy Industrial Estate, Ekkatuthangal, Chennai-600032, India
           </p>
 
-          <div className="flex gap-4 mt-4">
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Facebook className="w-5 h-5" />
-            </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Twitter className="w-5 h-5" />
-            </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Youtube className="w-5 h-5" />
-            </Link>
-          </div>
         </div>
 
         <div className='hidden md:block'>
@@ -56,11 +41,8 @@ const Footer = () => {
 
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
-          <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-orange-500 mt-1" />
-              <span>Chennai, India</span>
-            </li>
+          <ul className="space-y-3 mb-4 max-w-sm">
+            
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-orange-500" />
               <span>+91 98765 43210</span>
@@ -70,6 +52,21 @@ const Footer = () => {
               <span>info@unicornerp.com</span>
             </li>
           </ul>
+          
+          <div className="flex gap-4 mt-4">
+            <Link href="#" className="hover:text-orange-500 transition-colors">
+              <Facebook className="w-5 h-5" />
+            </Link>
+            <Link href="#" className="hover:text-orange-500 transition-colors">
+              <Instagram  className="w-5 h-5" />
+            </Link>
+            <Link href="#" className="hover:text-orange-500 transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </Link>
+            <Link href="#" className="hover:text-orange-500 transition-colors">
+              <Youtube className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
 
           <div className=" w-full md:w-72 h-46 rounded-lg overflow-hidden border border-gray-700 lg:hidden xl:block">
