@@ -155,7 +155,7 @@ const ProductUpdate = () => {
       });
 
       alert("Product updated successfully!");
-      router.push("/products");
+      router.push("/admin");
     } catch (err) {
       console.error(err);
       alert("Update failed");

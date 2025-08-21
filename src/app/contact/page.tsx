@@ -241,7 +241,7 @@ const ContactPage = () => {
               <input
                 type="text"
                 name="product"
-                placeholder="Enter the product your interested"
+                placeholder="Enter the product"
                 required
                 className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
               />
