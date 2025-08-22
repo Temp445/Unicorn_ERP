@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+       <link rel="icon" href="/AceLogo.png" />
+       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -33,6 +36,7 @@ export default function RootLayout({
         {children}
         <BackToTop/>
         </AuthProvider>
+    
       </body>
     </html>
   );

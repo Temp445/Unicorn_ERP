@@ -1,12 +1,17 @@
 import Link from 'next/link';
 import { Facebook, Instagram , Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import logo from "@/assets/AceLogo.png"
+import Image from 'next/image'
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-6 lg:pr-10 py-12 flex  md:flex-row gap-20 flex-wrap md:justify-evenly">
         <div>
+          <div className='flex gap-2'>
+            <Image src={logo} alt="Company Logo" className="h-9 md:h-10 -mt-1  w-auto" />
           <h2 className="text-2xl font-bold text-white mb-4">Unicorn ERP</h2>
+          </div>
           <p className="text-sm leading-relaxed max-w-sm flex gap-2">
           <MapPin className="w-14 h-10 text-orange-500 -mt-2" />  #306, 2nd Floor, NSIC-Software Technology Business Park, B-24, Guindy Industrial Estate, Ekkatuthangal, Chennai-600032, India
           </p>

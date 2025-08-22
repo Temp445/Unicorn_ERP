@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
 import dbConnect from "@/lib/mongoose";
 import Product from "@/models/Product";
 import cloudinary from "@/lib/cloudinary";
@@ -37,7 +35,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // ✅ Upload main images to Cloudinary
+    // Upload main images
     const mainImage: string[] = [];
     for (const file of formData.getAll("mainImage")) {
       if (file instanceof File) {
@@ -56,7 +54,7 @@ export async function POST(req: Request) {
       }
     }
 
-    // ✅ Upload product images to Cloudinary
+    //Upload product images 
     const productImage: string[] = [];
     for (const file of formData.getAll("productImage")) {
       if (file instanceof File) {
@@ -75,7 +73,6 @@ export async function POST(req: Request) {
       }
     }
 
-    // ✅ Parse JSON fields safely
     const parseJSON = (field: string) => {
       try {
         return JSON.parse((formData.get(field) as string) || "[]");

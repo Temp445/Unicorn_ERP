@@ -9,10 +9,11 @@ import Link from 'next/link';
 
 const benefits = [
   'Unified Data',
-  'Real-time Insights', 
   'Cost Reduction',
-  'Scalable Growth',
-  'Enhanced Security'
+  'Scalable',
+  'Enhanced Security',
+  'Real-time Insights'
+
 ];
 
 const WhatIsERP = () => {
@@ -33,7 +34,7 @@ const WhatIsERP = () => {
 
   return (
         <section className="min-h-screen  relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10 py-14">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10 pt-10 md:pt-14 md:py-10">
         <motion.div
           className="text-center mb-24 mx-auto"
           variants={containerVariants}

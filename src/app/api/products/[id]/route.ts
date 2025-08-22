@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
-import { writeFile, mkdir, unlink } from "fs/promises";
 import dbConnect from "@/lib/mongoose";
 import Product from "@/models/Product";
 import fs from "fs";
+import cloudinary from "@/lib/cloudinary";
 
 
 // Get product by ID
@@ -62,12 +62,136 @@ export async function GET(req: NextRequest) {
 
 
 //update
+// export async function PUT(req: NextRequest) {
+//   try {
+//     await dbConnect();
+//     const formData = await req.formData();
+//     const url = new URL(req.url);
+//     const parts = url.pathname.split('/');
+//     const id = parts[parts.length - 1];
+
+//     const product = await Product.findById(id);
+//     if (!product) {
+//       return NextResponse.json(
+//         { success: false, message: "Product not found" },
+//         { status: 404 }
+//       );
+//     }
+
+//     product.productName = (formData.get("productName") as string) || product.productName;
+//     product.productPath = (formData.get("productPath") as string) || product.productPath;
+//     product.productLink = (formData.get("productLink") as string) || product.productLink;
+//     product.calendlyUrl = (formData.get("calendlyUrl") as string) || product.calendlyUrl;
+//     product.description = (formData.get("description") as string) || product.description;
+//     product.why_choose_des =
+//       (formData.get("why_choose_des") as string) || product.why_choose_des;
+//     product.who_need_des =
+//       (formData.get("who_need_des") as string) || product.who_need_des;
+//     product.category = (formData.get("category") as string) || product.category;
+
+//     const uploadDir = path.join(process.cwd(), "public/uploads");
+//     await mkdir(uploadDir, { recursive: true });
+
+//     const newMainImages: string[] = [];
+//     for (const file of formData.getAll("mainImage")) {
+//       if (file instanceof File) {
+//         const bytes = await file.arrayBuffer();
+//         const buffer = Buffer.from(bytes);
+//         const fileName = `${Date.now()}-${file.name}`;
+//         const filePath = path.join(uploadDir, fileName);
+//         await writeFile(filePath, buffer);
+//         newMainImages.push(`/uploads/${fileName}`);
+//       }
+//     }
+//     if (newMainImages.length > 0) {
+//       if (product.mainImage && Array.isArray(product.mainImage)) {
+//         for (const oldPath of product.mainImage) {
+//           const localPath = path.join(process.cwd(), "public", oldPath);
+//           try {
+//             await unlink(localPath);
+//           } catch (err) {
+//             console.warn(err);
+//           }
+//         }
+//       }
+//       product.mainImage = newMainImages;
+//     }
+//     const newProductImages: string[] = [];
+//     for (const file of formData.getAll("productImage")) {
+//       if (file instanceof File) {
+//         const bytes = await file.arrayBuffer();
+//         const buffer = Buffer.from(bytes);
+//         const fileName = `${Date.now()}-${file.name}`;
+//         const filePath = path.join(uploadDir, fileName);
+//         await writeFile(filePath, buffer);
+//         newProductImages.push(`/uploads/${fileName}`);
+//       }
+//     }
+//     if (newProductImages.length > 0) {
+//       if (product.productImage && Array.isArray(product.productImage)) {
+//         for (const oldPath of product.productImage) {
+//           const localPath = path.join(process.cwd(), "public", oldPath);
+//           try {
+//             await unlink(localPath);
+//           } catch (err) {
+//             console.warn(err);
+//           }
+//         }
+//       }
+//       product.productImage = newProductImages;
+//     }
+
+//       try {
+//       product.whatis = JSON.parse((formData.get("whatis") as string) || "[]");
+//     } catch {
+//       product.whatis = product.whatis || [];
+//     }
+
+//     try {
+//       product.benefits = JSON.parse((formData.get("benefits") as string) || "[]");
+//     } catch {
+//       product.benefits = product.benefits || [];
+//     }
+//     try {
+//       product.FAQ = JSON.parse((formData.get("FAQ") as string) || "[]");
+//     } catch {
+//       product.FAQ = product.FAQ || [];
+//     }
+//     try {
+//       product.Result = JSON.parse((formData.get("Result") as string) || "[]");
+//     } catch {
+//       product.Result = product.Result || [];
+//     }
+
+//     try {
+//       product.customerTestimonials = JSON.parse(
+//         (formData.get("customerTestimonials") as string) || "[]"
+//       );
+//     } catch {
+//       product.customerTestimonials = product.customerTestimonials || [];
+//     }
+
+//     await product.save();
+
+//     return NextResponse.json({ success: true, data: product }, { status: 200 });
+//   } catch (err: any) {
+//     console.error("Update error:", err);
+//     return NextResponse.json(
+//       { success: false, message: err.message || "Failed to update product" },
+//       { status: 500 }
+//     );
+//   }
+// }
+
+
+
 export async function PUT(req: NextRequest) {
   try {
     await dbConnect();
+
     const formData = await req.formData();
     const url = new URL(req.url);
-    const parts = url.pathname.split('/');
+    const parts = url.pathname.split("/");
     const id = parts[parts.length - 1];
 
     const product = await Product.findById(id);
@@ -83,93 +207,75 @@ export async function PUT(req: NextRequest) {
     product.productLink = (formData.get("productLink") as string) || product.productLink;
     product.calendlyUrl = (formData.get("calendlyUrl") as string) || product.calendlyUrl;
     product.description = (formData.get("description") as string) || product.description;
-    product.why_choose_des =
-      (formData.get("why_choose_des") as string) || product.why_choose_des;
-    product.who_need_des =
-      (formData.get("who_need_des") as string) || product.who_need_des;
+    product.why_choose_des = (formData.get("why_choose_des") as string) || product.why_choose_des;
+    product.who_need_des = (formData.get("who_need_des") as string) || product.who_need_des;
     product.category = (formData.get("category") as string) || product.category;
 
-    const uploadDir = path.join(process.cwd(), "public/uploads");
-    await mkdir(uploadDir, { recursive: true });
-
+    // Upload mainImage
     const newMainImages: string[] = [];
     for (const file of formData.getAll("mainImage")) {
       if (file instanceof File) {
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-${file.name}`;
-        const filePath = path.join(uploadDir, fileName);
-        await writeFile(filePath, buffer);
-        newMainImages.push(`/uploads/${fileName}`);
+
+        const uploaded = await new Promise<any>((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream({ folder: "products/main" }, (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            })
+            .end(buffer);
+        });
+
+        newMainImages.push(uploaded.secure_url);
       }
     }
+
     if (newMainImages.length > 0) {
-      if (product.mainImage && Array.isArray(product.mainImage)) {
-        for (const oldPath of product.mainImage) {
-          const localPath = path.join(process.cwd(), "public", oldPath);
-          try {
-            await unlink(localPath);
-          } catch (err) {
-            console.warn(err);
-          }
-        }
-      }
       product.mainImage = newMainImages;
     }
+
+    // Upload productImage
     const newProductImages: string[] = [];
     for (const file of formData.getAll("productImage")) {
       if (file instanceof File) {
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}-${file.name}`;
-        const filePath = path.join(uploadDir, fileName);
-        await writeFile(filePath, buffer);
-        newProductImages.push(`/uploads/${fileName}`);
+
+        const uploaded = await new Promise<any>((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream({ folder: "products/extra" }, (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            })
+            .end(buffer);
+        });
+
+        newProductImages.push(uploaded.secure_url);
       }
     }
+
     if (newProductImages.length > 0) {
-      if (product.productImage && Array.isArray(product.productImage)) {
-        for (const oldPath of product.productImage) {
-          const localPath = path.join(process.cwd(), "public", oldPath);
-          try {
-            await unlink(localPath);
-          } catch (err) {
-            console.warn(err);
-          }
-        }
-      }
       product.productImage = newProductImages;
     }
 
-      try {
+    try {
       product.whatis = JSON.parse((formData.get("whatis") as string) || "[]");
-    } catch {
-      product.whatis = product.whatis || [];
-    }
-
+    } catch {}
     try {
       product.benefits = JSON.parse((formData.get("benefits") as string) || "[]");
-    } catch {
-      product.benefits = product.benefits || [];
-    }
+    } catch {}
     try {
       product.FAQ = JSON.parse((formData.get("FAQ") as string) || "[]");
-    } catch {
-      product.FAQ = product.FAQ || [];
-    }
+    } catch {}
     try {
       product.Result = JSON.parse((formData.get("Result") as string) || "[]");
-    } catch {
-      product.Result = product.Result || [];
-    }
-
+    } catch {}
     try {
       product.customerTestimonials = JSON.parse(
         (formData.get("customerTestimonials") as string) || "[]"
       );
-    } catch {
-      product.customerTestimonials = product.customerTestimonials || [];
-    }
+    } catch {}
 
     await product.save();
 
@@ -184,13 +290,12 @@ export async function PUT(req: NextRequest) {
 }
 
 
-export async function DELETE( req: NextRequest) {
+export async function DELETE(req: NextRequest) {
   try {
     await dbConnect();
-      const url = new URL(req.url);
-    const parts = url.pathname.split('/');
+    const url = new URL(req.url);
+    const parts = url.pathname.split("/");
     const id = parts[parts.length - 1];
-
 
     if (!id) {
       return NextResponse.json(
@@ -208,32 +313,39 @@ export async function DELETE( req: NextRequest) {
       );
     }
 
-    const deleteFile = (filePath: string) => {
-      if (!filePath) return;
+    const deleteCloudinaryFile = async (fileUrl: string) => {
+      if (!fileUrl) return;
 
-      const fullPath = path.join(process.cwd(), "public", filePath);
+      try {
+        const parts = fileUrl.split("/");
+        const filename = parts[parts.length - 1];
+        const publicId = filename.split(".")[0]; 
 
-      fs.unlink(fullPath, (err) => {
-        if (err && err.code !== "ENOENT") {
-          console.error(`Failed to delete file ${filePath}:`, err);
-        }
-      });
+        await cloudinary.uploader.destroy(publicId);
+      } catch (err) {
+        console.error("image delete error:", err);
+      }
     };
+
     if (Array.isArray(product.mainImage)) {
-      product.mainImage.forEach(deleteFile);
+      for (const img of product.mainImage) {
+        await deleteCloudinaryFile(img);
+      }
     } else {
-      deleteFile(product.mainImage);
+      await deleteCloudinaryFile(product.mainImage);
     }
 
     if (Array.isArray(product.productImage)) {
-      product.productImage.forEach(deleteFile);
+      for (const img of product.productImage) {
+        await deleteCloudinaryFile(img);
+      }
     } else {
-      deleteFile(product.productImage);
+      await deleteCloudinaryFile(product.productImage);
     }
 
     return NextResponse.json({
       success: true,
-      message: "Product deleted successfully",
+      message: "Product images deleted successfully",
     });
   } catch (error: any) {
     console.error("Delete error:", error);

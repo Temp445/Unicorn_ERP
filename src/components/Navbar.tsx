@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect, useMemo } from 'react'
 import { jwtDecode } from 'jwt-decode'
+import logo from "@/assets/AceLogo.png"
+import Image from 'next/image'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -53,7 +55,6 @@ export default function Navbar() {
 
   const navigation: NavigationItem[] = useMemo(() => {
     const items: NavigationItem[] = [
-      // { name: 'Home', href: '/' },
       { name: 'About', href: '/about' },
       { name: 'Products', href: '/products' },
       { name: 'Contact Us', href: '/contact' },
@@ -79,7 +80,7 @@ export default function Navbar() {
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <Link href="/" className="flex items-center space-x-2">
-                <img src="/vercel.svg" alt="Company Logo" className="h-8 w-auto" />
+                <Image src={logo} alt="Company Logo" className="h-9 md:h-auto w-auto" />
                 <span className="text-gray-900 font-bold text-lg tracking-wide">Unicorn ERP</span>
               </Link>
 
