@@ -80,8 +80,8 @@ export default function Navbar() {
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <Link href="/" className="flex items-center space-x-2">
-                <Image src={logo} alt="Company Logo" className="h-9 md:h-auto w-auto" />
-                <span className="text-gray-900 font-bold text-lg tracking-wide">Unicorn ERP</span>
+                <Image src={logo} alt="Company Logo" className="h-9 md:h-9 w-9" />
+                <span className="text-gray-900 font-bold text-base mt-1 tracking-wide">	Unicorn (Bangalore) Pvt. Ltd</span>
               </Link>
 
               <div className="hidden sm:flex space-x-6">
@@ -93,7 +93,7 @@ export default function Navbar() {
                       onClick={item.onClick}
                       className={classNames(
                         'relative px-3 py-2 text-sm font-medium transition-all duration-300',
-                        'text-gray-600 hover:text-orange-600 hover:scale-105'
+                        'text-gray-800 text-base hover:text-orange-600 hover:scale-105'
                       )}
                     >
                       {item.name}
@@ -106,7 +106,7 @@ export default function Navbar() {
                         'relative px-3 py-2 text-sm font-medium transition-all duration-300',
                         isActive
                           ? 'text-orange-600 font-semibold after:block after:mt-1 after:h-[2px] after:bg-orange-600 after:rounded-full'
-                          : 'text-gray-600 hover:text-orange-600 hover:scale-105'
+                          : 'text-gray-800  hover:text-orange-600 hover:scale-105'
                       )}
                     >
                       {item.name}

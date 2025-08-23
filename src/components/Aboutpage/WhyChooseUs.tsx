@@ -6,33 +6,33 @@ import { CheckCircle, TrendingUp, Layers, Users, ShieldCheck, Zap } from 'lucide
 const points = [
   {
     icon: Layers,
-    title: 'Comprehensive ERP Modules',
-    text: 'From finance to manufacturing, we cover all core business processes in one integrated platform.',
+    title: 'Comprehensive Manufacturing Expertise',
+    text: 'From precision auto-turned parts to complex components, we cover all critical aspects of manufacturing with unmatched expertise.',
   },
   {
     icon: Zap,
-    title: 'Customisable & Scalable',
-    text: 'Easily tailor workflows to your needs today, with room to grow as your business evolves.',
+    title: 'Customisable & Scalable Production',
+    text: 'Our production lines and processes are adaptable to your unique requirements, ensuring scalability as your business grows.',
   },
   {
     icon: Users,
-    title: 'Trusted by Industry Leaders',
-    text: 'Trusted by industry leaders in manufacturing, retail, and services to run their core operations.',
+    title: 'Trusted by Automotive Leaders',
+    text: 'We partner with leading automotive companies, delivering components that meet stringent industry standards.',
   },
   {
     icon: ShieldCheck,
-    title: 'Built for uptime.',
-    text: 'Continuous service, supported by robust systems and constant oversight.',
+    title: 'Built for Reliability',
+    text: 'Our manufacturing processes ensure consistent quality, durability, and performance for every component.',
   },
   {
     icon: TrendingUp,
-    title: 'Proven Performance',
-    text: 'Turning process optimisation into rapid results.',
+    title: 'Proven Results',
+    text: 'Our precision parts enhance performance, efficiency, and operational reliability for automotive businesses.',
   },
   {
     icon: CheckCircle,
-    title: 'Expert Support Team',
-    text: 'ERP specialists who understand your industry and speak your language.',
+    title: 'Expert Engineering Team',
+    text: 'Our engineers bring deep knowledge in precision manufacturing, ensuring your components meet exact specifications.',
   },
 ];
 
@@ -57,11 +57,10 @@ const WhyChooseUs = () => {
             Why Choose Us
           </span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-            ERP built for your growth
+            Excellence in Precision Auto-Turned Components
           </h2>
           <p className="mt-3 text-gray-600">
-            We combine deep industry expertise with cutting-edge technology to deliver ERP solutions
-            that scale with your ambitions.
+            We combine engineering excellence with advanced manufacturing technology to deliver precision auto-turned parts that meet the highest industry standards.
           </p>
         </motion.div>
 
@@ -86,4 +85,4 @@ const WhyChooseUs = () => {
   );
 }
 
-export default WhyChooseUs
+export default WhyChooseUs;

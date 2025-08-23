@@ -1,0 +1,97 @@
+import Image from "next/image";
+import React from "react";
+import Rajasekaran from "@/assets/Rajasekaran.png";
+import Rajagopalan from "@/assets/Rajagopalan.png";
+
+const Founder = () => {
+  return (
+    <section className="relative bg-gradient-to-br from-slate-50 to-slate-100 py-20">
+      <div className="container mx-auto px-4">
+    
+        <div className="text-center mb-16">
+          <span className="inline-block text-sm font-medium text-orange-700 uppercase tracking-wider bg-orange-50 px-4 py-2 rounded-full mb-4">
+            Leadership
+          </span>
+    
+          <p className="text-lg text-slate-600  mx-auto">
+            Visionary leaders with decades of industry expertise driving innovation and excellence
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+          <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2">
+            <div className="mb-8 flex justify-center">
+              <div className="relative rounded-full">
+                <Image
+                  src={Rajagopalan}
+                  alt="R. Rajagopalan"
+                  width={200}
+                  height={200}
+                  className="relative rounded-full w-52 h-52 border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                R. Rajagopalan
+              </h3>
+              <div className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Managing Director
+              </div>
+
+              <p className="text-slate-600 leading-relaxed mb-6">
+                With over <span className="font-bold text-slate-800">40 years of expertise</span>{" "}
+                in the automobile industry, he brings unmatched experience in Industrial
+                Engineering, Production Planning, Shop Floor Systems, and Materials
+                Management. His strategic vision drives growth.
+              </p>
+              
+            </div>
+          </div>
+
+   
+          <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2">
+          <div className="mb-8 flex justify-center">
+  <div className="relative group">
+    
+    <Image
+      src={Rajasekaran}
+      alt="S. Rajasekaran"
+      width={200}
+      height={200}
+      className="relative rounded-full h-52 w-52 border-4 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
+    />
+  </div>
+</div>
+
+
+     
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                S. Rajasekaran
+              </h3>
+              <div className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Director
+              </div>
+
+              <p className="text-slate-600 leading-relaxed mb-6">
+                MBA Graduate from University
+                of Madras and Ph.D. Research Scholar
+                in TQM at Saveetha University. With over{" "}
+                <span className="font-bold text-slate-800">30 years of experience</span> in
+                Materials Management, System Design, and Finance, he serves as the
+                strategic backbone of our organization.
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Founder;

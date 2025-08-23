@@ -6,21 +6,21 @@ import { Quote } from 'lucide-react';
 const testimonials = [
   {
     name: 'Rajesh Kumar',
-    role: 'Operations Manager',
+    role: 'Production Manager',
     feedback:
-      'Unicorn ERP streamlined our entire manufacturing workflow. Inventory tracking is now effortless and accurate.',
+      'These parts are built to exact specifications, boosting our production efficiency like never before.',
   },
   {
-    name: 'Priya',
-    role: 'Finance Head',
+    name: 'Priya Singh',
+    role: 'Quality Head',
     feedback:
-      'The accounting module has saved us countless hours every month. Reports are accurate and quick.',
+      'Every batch meets the highest standards. The consistency in the manufacturing process gives us complete confidence.',
   },
   {
-    name: 'Mohan',
-    role: 'HR Director',
+    name: 'Mohan Das',
+    role: 'Supply Chain Director',
     feedback:
-      'ERP integration was smooth and the team support was excellent. We can now make decisions faster.',
+      'Timely delivery and accurate specifications make working with this manufacturer seamless. Parts arrive ready to use every time.',
   },
 ];
 
@@ -41,7 +41,7 @@ const CustomerSay = () => {
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Real stories from businesses who transformed their operations with Unicorn ERP.
+            See how our high-quality parts make a difference in modern manufacturing.
           </p>
         </motion.div>
 
@@ -76,4 +76,4 @@ const CustomerSay = () => {
   )
 }
 
-export default CustomerSay
+export default CustomerSay;

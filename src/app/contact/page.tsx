@@ -156,7 +156,7 @@ const ContactPage = () => {
     <div className="min-h-screen bg-orange-50">
       <div className="bg-gray-900 text-white py-20 text-center relative">
         <p className="text-3xl md:text-5xl font-extrabold">Contact <span className="text-orange-600"> Us</span></p>
-        <h1 className="mt-4 text-base md:text-2xl">Schedule Your Free Demo with Unicorn ERP</h1>
+        <h1 className="mt-4 text-base md:text-2xl">Reach Out for Details on Our Manufacturing Solutions</h1>
  
       </div>
 
@@ -187,7 +187,6 @@ const ContactPage = () => {
               />
             </div>
 
-            
             <div>
               <label className="block mb-1 font-medium">Business Email</label>
               <input
@@ -206,7 +205,6 @@ const ContactPage = () => {
                   )}
             </div>
 
-            
                 <div>
                   <label className=" font-medium">
                     Mobile Number
@@ -276,7 +274,7 @@ const ContactPage = () => {
      <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
         <h3 className="font-semibold text-lg mb-2">Email</h3>
-        <p>info@example.com</p>
+        <p>info@infantengineers.co.in</p>
       </div>
     
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
@@ -286,7 +284,7 @@ const ContactPage = () => {
     
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
         <h3 className="font-semibold text-lg mb-2">Location</h3>
-        <p>#306, 2nd Floor, NSIC-Software Technology Business Park, B-24, Guindy Industrial Estate, Ekkatuthangal, Chennai-600032, India</p>
+        <p className="text-sm">FLATB,GROUNDFLOOR,BRINDAVANAPARTMENTS19/9,TAMILARSTREET, <br/> CHOOLAIMEDU , CHENNAI, Tamil Nadu, India - 600094</p>
       </div>
     </div>
 

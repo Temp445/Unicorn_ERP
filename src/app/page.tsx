@@ -1,10 +1,12 @@
 import Footer from "@/components/Footer";
-import BusinessSector from "@/components/Landingpage/BusinessSector";
+import ManufacturingSector from "@/components/Landingpage/ManufacturingSector";
 import CustomerSay from "@/components/Landingpage/CustomerSay";
 import Hero from "@/components/Landingpage/Hero";
-import WhatIsERP from "@/components/Landingpage/WhatIsERP";
+import WhyWeStandOut from "@/components/Landingpage/WhyWeStandOut";
 import WhoWe from "@/components/Landingpage/WhoWeSection";
 import Navbar from "@/components/Navbar";
+import Clients from "@/components/Clients";
+import Products from "@/components/Landingpage/Products"
 
 
 export default function Home() {
@@ -12,9 +14,11 @@ export default function Home() {
   <>
   <Navbar/>
   <Hero/>
-  <WhatIsERP />
-  <BusinessSector />
+  <WhyWeStandOut/>
+  <Products/>
+  <ManufacturingSector />
   <WhoWe />
+  <Clients/>
   <CustomerSay />
   <Footer/>
   </>

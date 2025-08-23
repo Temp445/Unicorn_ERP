@@ -22,7 +22,8 @@ const AboutHero = () => {
             Turning Business Challenges into <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Growth</span> Opportunities 
           </h1>
           <p className="mt-6 text-sm text-justify md:text-lg text-gray-600 leading-relaxed px-5">
-          At <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>Unicorn ERP </span>, we believe every business can grow faster and operate more efficiently when equipped with the right tools and support. Our <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>ERP software</span> provides a simple, all-in-one system to manage finance, sales, inventory, HR, and operations, helping businesses stay connected, organized, and prepared for the future.          </p>
+          At <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>UNICORN (BANGALORE) PRIVATE LIMITED</span>, we specialize in high-quality <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>auto-turned parts</span> and <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>precision auto-turned products</span>. Our advanced manufacturing processes ensure every component meets strict quality and precision standards, helping automotive businesses maintain reliability, performance, and efficiency.
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link

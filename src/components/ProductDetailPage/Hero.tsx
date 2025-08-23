@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { Play, X } from "lucide-react";
 import Link from "next/link";
