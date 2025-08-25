@@ -189,7 +189,7 @@ const UploadProduct = () => {
     />
   </div>
 
-  <div>
+  {/* <div>
     <label className="block font-semibold mb-1">Demo Video Link</label>
     <input
       type="text"
@@ -209,7 +209,7 @@ const UploadProduct = () => {
       onChange={handleChange}
       className="w-full border p-2 rounded"
     />
-  </div>
+  </div> */}
 
   <div className="col-span-2">
     <label className="block font-semibold mb-1">Category</label>
