@@ -300,7 +300,7 @@ const ProductUpdate = () => {
             <img
               src={existingMainImage}
               alt="main"
-              className="w-32 h-32 object-cover rounded border cursor-pointer"
+              className="w-32 h-32 rounded border cursor-pointer"
               onClick={() => mainInputRef.current?.click()}
             />
         
@@ -321,7 +321,7 @@ const ProductUpdate = () => {
                 key={i}
                 src={img}
                 alt={`product-${i}`}
-                className="w-32 h-32 object-cover rounded border cursor-pointer"
+                className="w-32 h-32 rounded border cursor-pointer"
               />
             ))}
           </div>

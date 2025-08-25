@@ -80,17 +80,16 @@ const Whatis = ({ product }: ProductProps) => {
                 <FileText className="w-8 h-8 text-gray-900" />
               </div>
               <div>
-                <h2 className="text-2xl font-black text-white">Book A Free Demo</h2>
-                <div className="w-12 h-1 bg-white/70 mt-1 rounded"></div>
+                <h2 className="text-2xl font-black text-white">Looking for Precision Parts</h2>
+                <div className="w-32 h-1 bg-white/70 mt-1 rounded"></div>
               </div>
             </div>
 
             <p className="text-white/90 leading-relaxed text-lg relative z-10 mb-10">
-              Experience the full power of our solution. Get a personalized demo to see how it fits your business.
-            </p>
+          Enhance your production with precision components built for efficiency and long-term reliability.       </p>
 
-              <Link href={`/demo/${product.productPath}` || "/contact"} className="px-5 py-2 relative bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                Book Demo
+              <Link href={"/contact"} className="px-5 py-2 relative bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
+              Contact Us
               </Link>
      
 

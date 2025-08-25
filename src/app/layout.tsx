@@ -18,20 +18,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   
-  title: 'Unicorn ERP',
-  description: "Unicorn ERP",
-   keywords: "Unicorn ERP , ERP",
+  title: 'Unicorn (Bangalore) Pvt. Ltd',
+  description: "Unicorn (Bangalore) Pvt. Ltd",
+   keywords: "Unicorn (Bangalore) Pvt. Ltd ",
    openGraph: { 
-    title: 'Unicorn ERP',
-    description: 'Unicorn ERP',
+    title: 'Unicorn (Bangalore) Pvt. Ltd',
+    description: 'Unicorn (Bangalore) Pvt. Ltd',
     url: `${domainUrl}`,
-    siteName: 'Unicorn ERP',
+    siteName: 'Unicorn (Bangalore) Pvt. Ltd',
     images: [
       {
         url: `${domainUrl}/og-images/AceLogo.png`,
         width: 1200,
         height: 630,
-        alt: 'Unicorn ERP',
+        alt: 'Unicorn (Bangalore) Pvt. Ltd',
       },
     ],
     type: 'website',

@@ -60,7 +60,7 @@ const Features = ({product}: ProductProps ) => {
               <img
                 src={product.mainImage[0]}
                 alt={product.productName}
-                className="relative rounded-3xl shadow-2xl w-full object-cover h-96 transform hover:scale-105 transition-transform duration-700"
+                className="relative rounded-3xl shadow-2xl w-full  h-96 transform hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>

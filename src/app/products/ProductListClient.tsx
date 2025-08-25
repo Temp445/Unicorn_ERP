@@ -112,7 +112,7 @@ const ProductList = () => {
             </div>
           )}
 
-          <div className="container mx-auto px-6 pb-20 h-screen">
+          <div className="container mx-auto px-6 pb-20 h-auto">
             {filteredProducts.length === 0 ? (
               <div className="text-center py-32">
                 <p className="text-slate-600 text-2xl font-light">
@@ -120,7 +120,7 @@ const ProductList = () => {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {filteredProducts.map((product, index) => (
                   <div
                     key={product._id}
@@ -135,14 +135,14 @@ const ProductList = () => {
                         <img
                           src={product.mainImage[0]}
                           alt={product.productName}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+                          className="w-full h-full  transition-transform duration-700 group-hover:scale-125"
                         />
                       )}
                     </div>
                     </Link>
 
                     <div className="relative p-6 space-y-4 ">
-                      <h2 className="text-2xl text-black font-bold transition-all duration-300">
+                      <h2 className="text-xl text-black font-bold transition-all duration-300">
                         {product.productName}
                       </h2>
                       <p className="text-black text-base leading-relaxed line-clamp-3">

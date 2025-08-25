@@ -99,7 +99,7 @@ export default function ProductList() {
               <img
                 src={product.mainImage[0]}
                 alt={product.productName}
-                className="w-full h-56 object-cover"
+                className="w-full h-56"
               />
             )}
 

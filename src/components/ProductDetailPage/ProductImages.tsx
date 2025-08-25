@@ -27,7 +27,7 @@ const ProductImages = ({ productImage }: ProductImagesProps) => {
               src={img}
               alt={`product-${i}`}
               onClick={() => setSelectedImage(img)}
-              className={`w-24 h-24 object-cover rounded-lg border cursor-pointer transition-transform duration-300 
+              className={`w-24 h-24  rounded-lg border cursor-pointer transition-transform duration-300 
                 hover:scale-105 ${
                   selectedImage === img ? "ring-2 ring-orange-500" : ""
                 }`}
@@ -39,7 +39,7 @@ const ProductImages = ({ productImage }: ProductImagesProps) => {
           <img
             src={selectedImage}
             alt="Selected Product"
-            className="w-full max-w-4xl md:h-[500px] object-cover rounded-lg border shadow-lg"
+            className="w-full max-w-3xl md:h-[500px]  rounded-lg border shadow-lg"
           />
         </div>
       </div>

@@ -301,7 +301,7 @@ const UploadProduct = () => {
                   key={i}
                   src={URL.createObjectURL(file)}
                   alt="preview"
-                  className="w-24 h-24 object-cover rounded"
+                  className="w-24 h-24 rounded"
                 />
               ))}
             </div>

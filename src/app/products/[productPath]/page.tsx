@@ -87,6 +87,7 @@ const ProductPage = () => {
             productLink: product.productLink,
             productPath: product.productPath,
             mainImage: product.mainImage,
+            Result: product.Result
           }}
         />
         <Whatis
