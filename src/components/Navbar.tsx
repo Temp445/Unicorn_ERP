@@ -55,6 +55,7 @@ export default function Navbar() {
 
   const navigation: NavigationItem[] = useMemo(() => {
     const items: NavigationItem[] = [
+      {name: 'Home', href:'/'},
       { name: 'About', href: '/about' },
       { name: 'Products', href: '/products' },
       { name: 'Contact Us', href: '/contact' },

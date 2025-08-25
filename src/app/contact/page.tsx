@@ -274,17 +274,17 @@ const ContactPage = () => {
      <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
         <h3 className="font-semibold text-lg mb-2">Email</h3>
-        <p>info@infantengineers.co.in</p>
+        <p>unicornpdy@gmail.com</p>
       </div>
     
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
         <h3 className="font-semibold text-lg mb-2">Phone</h3>
-        <p>+91 98765 43210</p>
+        <p>+91 9710946801</p>
       </div>
     
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
         <h3 className="font-semibold text-lg mb-2">Location</h3>
-        <p className="text-sm">FLATB,GROUNDFLOOR,BRINDAVANAPARTMENTS19/9,TAMILARSTREET, <br/> CHOOLAIMEDU , CHENNAI, Tamil Nadu, India - 600094</p>
+        <p className="text-sm">Flat B, Ground Floor, Brindavan Apartments 19/9, Tamilar Street, Choolaimedu , Chennai, Tamil Nadu, India - 600094</p>
       </div>
     </div>
 

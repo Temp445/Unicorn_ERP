@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram , Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram , Linkedin, Youtube, Mail, Phone } from 'lucide-react';
 import logo from "@/assets/logo.svg"
 import Image from 'next/image'
 import { BsTwitterX } from "react-icons/bs";
@@ -13,8 +13,8 @@ const Footer = () => {
             <Image src={logo} alt="Company Logo" className="h-9 md:h-8 w-8 -mt-1" />
           <h2 className="text-base lg:text-lg font-bold text-white mb-4">Unicorn (Bangalore) Pvt. Ltd</h2>
           </div>
-          <p className="text-sm mt-3 leading-relaxed max-w-sm flex gap-2">
-           FLATB,GROUNDFLOOR,BRINDAVANAPARTMENTS19/9,<br/> TAMILARSTREET,CHOOLAIMEDU , CHENNAI, Tamil Nadu, India - 600094
+          <p className="text-sm md:text-base mt-3 leading-relaxed max-w-sm flex gap-2">
+           Flat B, Ground Floor, Brindavan Apartments 19/9, Tamilar Street, Choolaimedu , Chennai, Tamil Nadu, India - 600094
           </p>
 
         </div>
@@ -51,19 +51,19 @@ const Footer = () => {
             
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-orange-500" />
-              <span>+91 98765 43210</span>
+              <span>+91 9710946801</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-orange-500" />
-              <span>info@infantengineers.co.in</span>
+              <span>unicornpdy@gmail.com</span>
             </li>
           </ul>
           
           <div className="flex gap-4 mt-4">
-            <Link href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.zaubacorp.com%2fUNICORN-BANGALORE-PRIVATE-LIMITED-U93090TN1993PTC026058" className="hover:text-orange-500 transition-colors">
+            <Link href="#" className="hover:text-orange-500 transition-colors">
               <Facebook className="w-5 h-5" />
             </Link>
-            <Link href="https://x.com/intent/tweet?url=https%3a%2f%2fwww.zaubacorp.com%2fUNICORN-BANGALORE-PRIVATE-LIMITED-U93090TN1993PTC026058&text=Details%20of%20UNICORN-BANGALORE-PRIVATE-LIMITED&via=https://x.com/wearezauba" className="hover:text-orange-500 transition-colors">
+            <Link href="#" className="hover:text-orange-500 transition-colors mt-1">
               <BsTwitterX  className="text-sm" />
             </Link>
             <Link href="#" className="hover:text-orange-500 transition-colors">
@@ -89,7 +89,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-400">
-        © 2025 Unicorn ERP. All rights reserved.
+        © 2025 Unicorn (Bangalore) Pvt. Ltd. All rights reserved.
       </div>
     </footer>
   );

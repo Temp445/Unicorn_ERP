@@ -31,12 +31,12 @@ const CardSection = () => {
 
           <div className="lg:grid grid-cols-2 gap-4 hidden">
             <div className="rounded-lg border border-gray-300 bg-gray-50 p-6 text-center">
-              <p className="xl:text-xl font-bold text-gray-900">+91 987654321</p>
+              <p className="xl:text-xl font-bold text-gray-900">+91 9710946801</p>
               <p className="text-sm text-gray-500">Phone</p>
             </div>
 
             <div className="rounded-lg border border-gray-300 bg-gray-50 p-6 w-60 xl:w-auto text-center">
-              <p className="xl:text-xl font-bold text-gray-900">info@infantengineers.co.in</p>
+              <p className="xl:text-xl font-bold text-gray-900">unicornpdy@gmail.com</p>
               <p className="text-sm text-gray-500">Email Id</p>
             </div>
 
