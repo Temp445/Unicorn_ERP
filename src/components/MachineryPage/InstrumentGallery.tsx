@@ -21,14 +21,15 @@ interface Instrument {
 
 const instruments: Instrument[] = [
   { src: image1, alt: "PROFILE PROJECTOR ​", brand: "MITIYO  INSTRUMENTS"},
-  { src: image4, alt: "TACHO METER​", brand: "HDM-560​" },
-  { src: image3, alt: "PLATING THICKNESS METER​", brand: "MESTECH​" },
-  { src: image2, alt: "ROCKWELL HARDNESS TESTER​", brand: "TRS INSTRUMENTS" },
-  { src: image5, alt: "LUX METER​", brand: "HTC​" },
-  { src: image6, alt: "MICROMETER", brand: "INSIZE​" },
-  { src: image7, alt: "SNAP GAUGE​", brand: "AMS" },
   { src: image8, alt: "DIGITAL VERNIER​", brand: "INSIZE​" },
   { src: image9, alt: "PLUG GAUGE​", brand: "AMS" },
+  { src: image2, alt: "ROCKWELL HARDNESS TESTER​", brand: "TRS INSTRUMENTS" },
+  { src: image6, alt: "MICROMETER", brand: "INSIZE​" },
+  { src: image3, alt: "PLATING THICKNESS METER​", brand: "MESTECH​" },
+  { src: image5, alt: "LUX METER​", brand: "HTC​" },
+  { src: image4, alt: "TACHO METER​", brand: "HDM-560​" },
+  { src: image7, alt: "SNAP GAUGE​", brand: "AMS" },
+
 ];
 
 const InstrumentGallery = () => {
@@ -37,23 +38,23 @@ const InstrumentGallery = () => {
       <div className="container mx-auto px-0  lg:px-5">
         
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-400 bg-clip-text text-transparent">
-            Our Measuring & Inspection Instruments
+          <h2 className="text-2xl md:text-3xl lg:text-4xl  font-extrabold mb-6">
+            Our <span className="text-[#205057]">Measuring & Inspection Instruments</span>
           </h2>
         
         </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-4 auto-rows-[300px] md:auto-rows-[200px] grid-flow-dense">
+      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-2 auto-rows-[300px] md:auto-rows-[200px] grid-flow-dense">
   {instruments.map((inst, idx) => {
     
     const isLarge = idx === 0 || idx === 3; 
     return (
       <div
         key={idx}
-        className={`relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-orange-400 transition-all duration-500 hover:scale-105 hover:shadow-xl
+        className={`relative bg-white border border-gray-800 rounded overflow-hidden  transition-all duration-500 hover:shadow-xl
           ${isLarge ? "md:col-span-4 md:row-span-2" : "md:col-span-2 md:row-span-1"}`}
       >
-        <div className="absolute top-4 left-4 z-20 bg-orange-600 text-white text-xs px-3 py-1 rounded-full">
+        <div className="absolute top-4 left-4 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full">
           {inst.brand}
         </div>
 
@@ -61,7 +62,7 @@ const InstrumentGallery = () => {
           <Image
             src={inst.src}
             alt={inst.alt}
-            className="w-full h-full  transition-transform duration-700 hover:scale-105"
+            className="w-full h-full"
             priority
           />
         </div>

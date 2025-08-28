@@ -6,12 +6,13 @@ import emailjs from "@emailjs/browser";
 import { sendWhatsappMessage } from "@/services/whatsapp/whatsappService";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
-import { Facebook, Linkedin, Youtube , Instagram } from "lucide-react";
+import { Facebook, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import contact from "@/assets/contact.svg"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { BsTwitterX } from "react-icons/bs";
 
 const service_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
 const template_ID = process.env.NEXT_PUBLIC_EMAILJS_ENQ_TEMPLATE_ID || "";
@@ -153,17 +154,17 @@ const ContactPage = () => {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-orange-50">
-      <div className="bg-gray-900 text-white py-20 text-center relative">
-        <p className="text-3xl md:text-5xl font-extrabold">Contact <span className="text-orange-600"> Us</span></p>
-        <h1 className="mt-4 text-base md:text-2xl">Reach Out for Details on Our Manufacturing Solutions</h1>
+    <div className="min-h-screen">
+      <div className="bg-[#205057] text-white py-20 text-center relative">
+        <p className="text-3xl md:text-4xl font-extrabold">Contact Us</p>
+        <h1 className="mt-4 text-base md:text-xl lg:text-2xl">Reach Out for Details on Our Manufacturing Solutions</h1>
  
       </div>
 
       <div className="container mx-auto px-2 md:px-6 py-16 flex justify-center relative">
-        <div className="w-full lg:w-1/2 mx-auto bg-white shadow-lg shadow-orange-200 rounded-lg p-4 md:p-8 border border-dashed">
+        <div className="w-full lg:w-1/2 mx-auto bg-white rounded-lg p-4 md:p-8 border border-dashed">
           <h2 className="text-2xl md:text-3xl font-bold  text-center">Product Enquiry</h2>
-          <div className="w-44 h-1 bg-orange-500 rounded mx-auto mb-6"></div>
+          <div className="w-44 h-1 bg-[#205057] rounded mx-auto mb-6"></div>
           <form ref={form} onSubmit={handleSubmit}  className="space-y-4">
             <div>
               <label className="block mb-1 font-medium">Name</label>
@@ -172,7 +173,7 @@ const ContactPage = () => {
                 name="Name"
                 placeholder="Enter your name *"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-gray-700 focus:outline-none"
               />
             </div>
 
@@ -183,7 +184,7 @@ const ContactPage = () => {
                 name="company"
                 placeholder="Enter your company name *"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-gray-700 focus:outline-none"
               />
             </div>
 
@@ -196,7 +197,7 @@ const ContactPage = () => {
                 placeholder="Enter your email *"
                 onChange={(e) => setEmail(e.target.value.trim())}
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-gray-700 focus:outline-none"
               />
                 {emailError && (
                     <p id="email-error" className="text-red-500 text-sm mt-1">
@@ -230,7 +231,7 @@ const ContactPage = () => {
                 name="location"
                 placeholder="Enter Your location *"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-gray-700 focus:outline-none"
               />
             </div>
 
@@ -241,7 +242,7 @@ const ContactPage = () => {
                 name="product"
                 placeholder="Enter the product"
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-gray-700 focus:outline-none"
               />
             </div>
 
@@ -252,13 +253,13 @@ const ContactPage = () => {
                 placeholder="Enter your queries"
                 rows={5}
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                className="w-full border border-gray-300 rounded-md p-3 focus:ring-1 focus:ring-gray-700 focus:outline-none"
               ></textarea>
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-green-600 transition-colors"
+              className="w-full bg-[#071520] text-white py-3 rounded-md hover:bg-[#205057] transition-colors"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
@@ -272,17 +273,17 @@ const ContactPage = () => {
       </div>
 
      <div className="flex flex-col md:flex-row gap-6 px-7 pb-10 md:pb-0">
-      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center border border-[#205057]">
         <h3 className="font-semibold text-lg mb-2">Email</h3>
         <p>unicornpdy@gmail.com</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center border border-[#205057]">
         <h3 className="font-semibold text-lg mb-2">Phone</h3>
         <p>+91 9710946801</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 text-center border border-[#205057]">
         <h3 className="font-semibold text-lg mb-2">Location</h3>
         <p className="text-sm">Flat B, Ground Floor, Brindavan Apartments 19/9, Tamilar Street, Choolaimedu , Chennai, Tamil Nadu, India - 600094</p>
       </div>
@@ -293,12 +294,12 @@ const ContactPage = () => {
       <div className="container mx-auto px-6 py-16 max-w-fit hidden md:block">
         <div className="gap-10">
 
-          <div className="bg-gray-900 shadow-lg rounded-full py-3 px-5 gap-10 flex items-center justify-around">
+          <div className="bg-[#205057] shadow-lg rounded-full py-3 px-5 gap-10 flex items-center justify-around">
             <Link href="#" className="text-white transition-all duration-500 hover:text-blue-600 p-1 hover:bg-white rounded">
               <Facebook size={32} />
             </Link>
-              <Link href="#" className="mt-1 p-1 rounded text-white hover:text-orange-600 hover:bg-white">
-              <Instagram  size={28} />
+              <Link href="#" className="mt-1 p-1 rounded text-white hover:text-black hover:bg-white">
+              <BsTwitterX  size={28} />
             </Link>
             <Link href="#" className="text-white p-1 transition-all duration-500 hover:bg-blue-500 rounded">
               <Linkedin size={32} />

@@ -36,10 +36,10 @@ const CustomerSay = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-[#071520]">
             What Our Customers Say
           </h2>
-          <div className="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-1 bg-[#205057] mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             See how our high-quality parts make a difference in modern manufacturing.
           </p>
@@ -57,7 +57,7 @@ const CustomerSay = () => {
               viewport={{ once: true }}
             >
              
-              <div className="absolute -top-5 left-6 bg-orange-500 p-3 rounded-full shadow-md">
+              <div className="absolute -top-5 left-6 bg-[#447c73] p-3 rounded-full shadow-md">
                 <Quote className="w-5 h-5 text-white" />
               </div>
 

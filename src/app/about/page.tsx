@@ -41,8 +41,8 @@ export default function AboutPage() {
   <CountSection/>
   <VisionSection/>
   <MilestoneSection/>
-  <WhyChooseUs/>
   <Founder/>
+  <WhyChooseUs/>
   <CardSection/>
   <Footer/>
   </>

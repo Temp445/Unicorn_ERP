@@ -21,7 +21,7 @@ const MilestoneSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-10 xl:py-28 bg-gradient-to-br from-gray-50 to-white"
+      className="relative overflow-hidden py-10 xl:pb-20 bg-gradient-to-br from-gray-50 to-white"
     >
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -31,21 +31,21 @@ const MilestoneSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900">
-            Our Key <span className="text-orange-600">Achievements</span>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-[#071520]">
+            Our Key <span className="text-[#205057]">Achievements</span>
           </h2>
-          <div className="w-52 h-1 bg-orange-500 mx-auto rounded-full mt-2"></div>
+          <div className="w-52 h-1 bg-[#205057] mx-auto rounded-full mt-2"></div>
         </motion.div>
 
         <div className="relative">
           <motion.div
             style={{ scaleY: smoothProgress }}
-            className="absolute hidden lg:block left-1/2 top-0 w-1 h-full mt-7 bg-gradient-to-b from-orange-400 to-red-500 origin-top rounded"
+            className="absolute hidden lg:block left-1/2 top-0 w-1 h-full mt-7 bg-[#447c73] origin-top rounded"
           />
 
           <motion.div
             style={{ y: endIconY }}
-            className="absolute hidden lg:flex left-1/2 ml-1 -translate-x-1/2 w-12 h-12 bg-gradient-to-bl from-orange-400 to-red-500 rounded-full items-center justify-center text-white shadow-lg"
+            className="absolute hidden lg:flex left-1/2 ml-1 -translate-x-1/2 w-12 h-12 bg-[#447c73] rounded-full items-center justify-center text-white shadow-lg"
           >
             <Goal className="w-9 h-9" />
           </motion.div>

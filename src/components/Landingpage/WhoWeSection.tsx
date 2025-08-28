@@ -19,22 +19,22 @@ const WhoWeSection = () => {
           className=" mx-auto grid lg:grid-cols-2 gap-10 items-center">
 
           <div className="order-2">
-            <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-6">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-[#071520] mb-6">
               Who{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="text-[#205057]">
                 We Are
               </span>
             </h2>
-            <p className="md:text-lg text-gray-600 leading-relaxed text-justify md:text-left">
-           <span className='text-orange-600'>Unicorn (Bangalore) Private Limited</span> is part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership.           
+            <p className="md:text-lg text-gray-700 leading-relaxed text-justify md:text-left">
+           <span className='text-[#205057] font-bold'>Unicorn (Bangalore) Private Limited</span> is part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership.           
             </p>
-            <p className="md:text-lg text-gray-600 leading-relaxed text-justify md:text-left">
-           The company was started in <span className='text-orange-600'>1957</span> , and in 2001 it was acquired by Ace Group of Companies. Presently, it is an associated company of “Infant Engineers Private Limited” and has a turnover of <span className='text-orange-600'>INR 30 million</span>.      
+            <p className="md:text-lg text-gray-700 leading-relaxed text-justify md:text-left">
+           The company was started in <span className='text-[#205057] font-bold'>1957</span> , and in 2001 it was acquired by Ace Group of Companies. Presently, it is an associated company of “Infant Engineers Private Limited” and has a turnover of <span className='text-[#205057]'>INR 30 million</span>.      
             </p>
-            <div className="my-8">
+            <div className="mt-12">
               <Link
                 href="/about"
-                className="text-gray-800 px-5 py-2.5 rounded-lg font-semibold border hover:text-orange-600 "
+                className="text-[#205057] px-5 py-2.5 rounded-lg font-semibold border"
               >
                 Learn More
               </Link>
@@ -89,14 +89,14 @@ const WhoWeSection = () => {
           </motion.div>
 
           <motion.div
-            className="rounded-xl md:rounded-full md:mt-20 w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-violet-700 border md:border-0 md:border-x"
+            className="rounded-xl md:rounded-full md:mt-20 w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-indigo-700 border md:border-0 md:border-x"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 gap-4 shadow-md md:-rotate-45 border border-violet-700 md:border-0">
-              <MdEngineering  className="w-12 h-12 text-violet-800" />
+            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 gap-4 shadow-md md:-rotate-45 border border-indigo-700 md:border-0">
+              <MdEngineering  className="w-12 h-12 text-indigo-800" />
               <h3 className="text-lg font-semibold text-gray-700 text-center">
               High-Quality Standards
               </h3>

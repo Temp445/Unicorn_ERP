@@ -19,12 +19,47 @@
   }
 } */
 
+
+
+:root {
+  --color-background: #205057;
+  --color-text: #ffffff;
+
+  /* Primary Button */
+  --color-primary-bg: #071520;
+  --color-primary-text: #e5e5e5;
+
+  /* Secondary Button */
+  --color-secondary-bg: #178ab5;
+  --color-secondary-text: #ffffff;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+
+:root {
+  --color-background: #205057;
+  --color-pattern: rgba(255, 255, 255, 0.05);
+}
+
+
+.pattern-diagonal {
+  background-color: var(--color-background);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-pattern),
+    var(--color-pattern) 1px,
+    /* transparent 1px, */
+    transparent 100px
+  );
+}
+
+
 
 .clip-top-left {
   clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%);

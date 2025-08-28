@@ -23,11 +23,11 @@ const StorySection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-              Our story began with a <span className="text-orange-500">passion for precision</span>
+              Our story began with a <span className="text-[#205057]">passion for precision</span>
             </h2>
 
             <p className="mt-6 text-gray-700 md:text-lg leading-relaxed text-justify">
-              <span className='text-orange-600 font-semibold'>Unicorn (Bangalore) Private Limited’s</span> factory and core R&D team are strategically located at PIPDIC Industrial Estate, Pondicherry, India, alongside major automobile manufacturers.
+              <span className='text-[#205057] font-bold'>Unicorn (Bangalore) Private Limited’s</span> factory and core R&D team are strategically located at PIPDIC Industrial Estate, Pondicherry, India, alongside major automobile manufacturers.
             </p>
 
             <p className="mt-4 text-gray-700 md:text-lg leading-relaxed text-justify">
@@ -37,7 +37,7 @@ const StorySection = () => {
             <ul className="mt-6 space-y-4 text-gray-700">
               {points.map((point) => (
                 <li key={point} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-orange-500 w-6 h-6 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="text-[#205057] w-6 h-6 flex-shrink-0 mt-1" />
                   <span className="font-medium">{point}</span>
                 </li>
               ))}
@@ -51,7 +51,7 @@ const StorySection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="relative"
           >
-            <div className="w-full max-w-2xl mx-auto aspect-[4/3] rounded-3xl border border-gray-200 bg-gradient-to-br from-orange-600/20 via-orange-500/50 to-transparent p-1 shadow-xl">
+            <div className="w-full max-w-2xl mx-auto aspect-[4/3] rounded-3xl border border-gray-200  to-transparent p-1 shadow-xl">
               <div className="h-full w-full rounded-[22px] bg-white flex items-center justify-center overflow-hidden">
                 <Image
                   src={about}

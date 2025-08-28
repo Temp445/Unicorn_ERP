@@ -20,18 +20,18 @@ const VisionSection = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section className=" py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           {sections.map((section) => (
             <div
               key={section.title}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#205057] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
             >
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
                 {section.title}
               </h2>
-              <p className="text-gray-700 md:text-lg leading-relaxed">{section.content}</p>
+              <p className="text-[#e5e5e5] md:text-lg leading-relaxed">{section.content}</p>
             </div>
           ))}
         </div>

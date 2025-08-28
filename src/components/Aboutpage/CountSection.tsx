@@ -65,22 +65,22 @@ const CountSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="group bg-white rounded-lg p-6 text-center mx-auto shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all border border-orange-400"
+                className="group bg-white rounded-lg p-6 text-center mx-auto shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all border border-[#205057]"
               >
                 <div className="flex items-center gap-4">
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    className="rounded-full p-3 bg-gradient-to-tr from-orange-200 to-orange-300 hidden md:block"
+                    className="rounded-full p-3 bg-[#447c73] hidden md:block"
                   >
-                    <Icon className="text-orange-600 w-8 h-8" />
+                    <Icon className="text-white w-8 h-8" />
                   </motion.div>
                   <div>
-                    <p className="text-xl md:text-2xl xl:text-3xl font-extrabold text-gray-900 group-hover:text-orange-600 transition-colors">
+                    <p className="text-xl md:text-2xl xl:text-3xl font-extrabold text-[#071520] group-hover:text-[#205057] transition-colors">
                       {prefix}
                       {counts[i]}
                       {suffix}
                     </p>
-                    <p className="text-sm  md:text-base font-medium text-gray-500">{stat.label}</p>
+                    <p className="text-sm  md:text-base font-medium text-gray-700">{stat.label}</p>
                   </div>
                 </div>
               </motion.div>

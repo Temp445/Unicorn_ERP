@@ -63,7 +63,7 @@ const ManufacturingSector = () => {
   }, [isPaused]);
 
   return (
-    <section className='container mx-auto px-4 md:px-6 lg:px-12 pb-10 mt-10'>
+    <section className='container mx-auto px-4 md:px-6 lg:px-12 pb-10 mt-10 lg:mt-16'>
       <motion.div
         className="mb-20 md:px-4 mx-auto text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -72,11 +72,11 @@ const ManufacturingSector = () => {
         transition={{ duration: 0.8 }}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6"
+          className="text-3xl md:text-4xl font-extrabold text-[#071520] mb-6"
           variants={itemVariants}
         >
           Driving Innovation in{' '}
-          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+          <span className="text-[#205057]">
             Manufacturing
           </span>
         </motion.h2>
@@ -101,7 +101,7 @@ const ManufacturingSector = () => {
                   key={index}
                   className={`relative p-10 rounded-xl border transition-all duration-500 cursor-pointer ${
                     isActive
-                      ? `bg-[#2C74B3] border-white/30 scale-105 shadow-lg`
+                      ? `bg-[#205057] border-white/30 scale-105 shadow-lg`
                       : 'bg-white border-gray-500 hover:bg-white/10'
                   } group`}
                   onMouseEnter={() => {
@@ -121,7 +121,7 @@ const ManufacturingSector = () => {
                 >
                   <div className="relative z-10 flex flex-col gap-4">
                     <div className="flex items-center gap-3">
-                      <Icon className={`w-7 h-7 ${isActive ? 'text-white' : 'text-orange-600'}`} />
+                      <Icon className={`w-7 h-7 ${isActive ? 'text-white' : 'text-[#205057]'}`} />
                       <h3
                         className={`text-xl font-semibold text-left ${
                           isActive ? 'text-white' : 'text-gray-800'
@@ -152,7 +152,7 @@ const ManufacturingSector = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="bg-gray-900 rounded md:rounded-3xl p-5 md:p-16 text-white relative overflow-hidden shadow-2xl">
+        <div className="bg-[#071520] rounded md:rounded-3xl p-5 md:p-16 text-white relative overflow-hidden shadow-2xl">
           <div className="relative z-10">
             <h3 className="text-xl lg:text-4xl font-black mb-6">
               Ready to Redefine Manufacturing Excellence?
@@ -164,7 +164,7 @@ const ManufacturingSector = () => {
             
             <div className="flex sm:flex-row gap-6 justify-center items-center">
               <Link href="/products"
-                className="bg-white text-gray-900 px-5 py-3 md:px-10 md:py-5 rounded-xl font-black text-sm md:text-base hover:bg-gray-100 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:scale-105"
+                className="text-white bg-[#205057]  px-5 py-3 md:px-10 md:py-5 rounded-xl font-black text-sm md:text-base  transition-all duration-500 shadow-2xl hover:shadow-3xl hover:scale-105"
               >
                 Explore Our Products
               </Link>

@@ -51,7 +51,7 @@ const ProductList = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-[#205057] border-t-transparent border-b-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -61,17 +61,11 @@ const ProductList = () => {
       <Navbar />
       <div className="min-h-screen bg-orange-50 text-white relative overflow-hidden">
         <div className="relative z-10">
-          <div className="text-center py-24 px-2 md:px-6 bg-black relative">
-            <Image
-              src={productbg}
-              alt="ERP background"
-              fill
-              className="object-cover object-center opacity-20 z-0"
-            />
+          <div className="text-center py-24 px-2 md:px-6 pattern-diagonal relative">
             <div className="mb-6">
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 z-20">
                Explore Our {" "}
-                <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
+                <span className="">
                 Products
                 </span>
               </h1>
@@ -80,8 +74,6 @@ const ProductList = () => {
             <p className="text-slate-300 mt-8 max-w-4xl mx-auto  md:text-2xl font-light leading-relaxed">
             Discover precision-engineered solutions designed to optimize production, enhance efficiency, and ensure consistent quality in your manufacturing operations.
             </p>
-            <div className="absolute w-40 h-40 rounded-full bg-orange-500/30 top-10 left-10 blur-2xl z-0"></div>
-            <div className="absolute w-32 h-32 rounded-full bg-orange-500/30 bottom-10 right-10 blur-2xl z-0"></div>
           </div>
 
           {categories.length > 0 && (
@@ -90,7 +82,7 @@ const ProductList = () => {
                 onClick={() => setSelectedCategory("all")}
                 className={`px-6 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-300 border ${
                   selectedCategory === "all"
-                    ? "bg-orange-600 text-white border-transparent shadow-md"
+                    ? "bg-[#205057] text-white border-transparent shadow-md"
                     : "bg-gray-700 text-gray-300 border-gray-500 hover:bg-gray-600 hover:text-white hover:shadow-sm"
                 }`}
               >
@@ -102,7 +94,7 @@ const ProductList = () => {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-6 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-300 border ${
                     selectedCategory === cat
-                      ? "bg-orange-600 text-white border-transparent shadow-md"
+                      ? "bg-[#447c73] text-white border-transparent shadow-md"
                       : " text-black border-gray-800 hover:shadow-sm"
                   }`}
                 >
@@ -150,7 +142,7 @@ const ProductList = () => {
                       </p>
                     </div>
                     
-                    <Link href={`/products/${product.productPath}`} className="bg-orange-400 py-1 flex absolute bottom-0 w-full ">
+                    <Link href={`/products/${product.productPath}`} className="bg-[#205057] pt-1 flex absolute bottom-0 w-full ">
                       <div className="flex items-center justify-center gap-6">
                           <div className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105">
                             View Details{" "}

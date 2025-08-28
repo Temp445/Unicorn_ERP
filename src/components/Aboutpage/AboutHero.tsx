@@ -6,7 +6,7 @@ import Link from 'next/link';
 const AboutHero = () => {
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-100">
+    <section className="relative overflow-hidden bg-[#205057]">
 
       <div className="container mx-auto px-2 md:px-6 h-fit py-10 lg:py-32 flex flex-col items-center justify-center text-center relative z-10">
         <motion.div
@@ -15,27 +15,27 @@ const AboutHero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl"
         >
-          <p className="uppercase tracking-widest text-orange-600 font-semibold text-sm">
+          <p className="uppercase tracking-widest text-white font-semibold text-sm">
             About Us
           </p>
-          <h1 className="mt-4 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-gray-900">
-            Turning Business Challenges into <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Growth</span> Opportunities 
+          <h1 className="mt-4 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
+            Turning Business Challenges into <span className="underline  ">Growth</span> Opportunities 
           </h1>
-          <p className="mt-6 text-sm text-justify lg:text-balance md:text-lg text-gray-600 leading-relaxed px-5">
-          <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>Unicorn (Bangalore) Private Limited</span> is paris part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership,
+          <p className="mt-6 text-sm text-justify lg:text-balance md:text-lg text-[#e5e5e5] leading-relaxed px-5">
+          <span className='font-bold'>Unicorn (Bangalore) Private Limited</span> is paris part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership,
            and is engaged in the manufacturing of precision-turned components for critical and safety applications, such as brakes and engines.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition-all duration-500 hover:scale-105"
+              className="px-8 py-3 bg-[#071520] text-white font-semibold rounded-full shadow-lg  transition-all duration-500 hover:scale-105"
             >
               Contact Us
             </Link>
             <Link
               href="/products"
-              className="px-8 py-3 border-2 border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-50 transition-all duration-300"
+              className="px-8 py-3 border text-white font-semibold rounded-full"
             >
               Our Products
             </Link>

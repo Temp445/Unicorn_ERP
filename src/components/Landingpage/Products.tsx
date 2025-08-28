@@ -20,22 +20,22 @@ const products = [
   { src: BaseShellFront, name: "Base Shell Front", link: "/products" },
   { src: BleedScrew, name: "Bleed Screw", link: "/products" },
   { src: BodyMachining, name: "Body Machining", link: "/products" },
-  { src: CenterPlate, name: "Center Plate", link: "/products" },
-  { src: ControlPlunger, name: "Control Plunger", link: "/products" },
-  { src: EndPlug, name: "End Plug", link: "/products" },
-  { src: Eye, name: "EYE", link: "/products" },
-  { src: image1, name: "EYE", link: "/products" },
+  // { src: CenterPlate, name: "Center Plate", link: "/products" },
+  // { src: ControlPlunger, name: "Control Plunger", link: "/products" },
+  // { src: EndPlug, name: "End Plug", link: "/products" },
+  // { src: Eye, name: "EYE", link: "/products" },
+  // { src: image1, name: "EYE", link: "/products" },
 ];
 
 const Products = () => {
   const router = useRouter();
 
   return (
-    <section className="relative py-10 bg-orange-50 overflow-hidden">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
-        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">Products</span>
+    <section className="relative py-10 bg-[#205057] overflow-hidden">
+      <h2 className="text-4xl font-extrabold text-center text-white mb-6">
+        Our Products
       </h2>
-      <p className="text-center text-gray-600 mb-10 max-w-xl mx-auto">
+      <p className="text-center text-[#e5e5e5] mb-10 max-w-2xl mx-auto md:text-lg">
         Designed with accuracy and strength in mind, these products deliver exceptional industrial quality.
       </p>
 
@@ -78,8 +78,8 @@ const Products = () => {
             <div className="w-32 h-32 relative mb-6">
               <Image src={product.src} alt={product.name} fill className="object-contain" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 group-hover:text-orange-600">{product.name}</h3>
-             <div className="w-10 h-1 mt-1 rounded bg-orange-500 group-hover:w-16 mx-auto transition-all duration-300"></div>
+            <h3 className="text-lg font-semibold text-[#071520] group-hover:text-[#205057]">{product.name}</h3>
+             <div className="w-10 h-1 mt-1 rounded bg-[#205057] group-hover:w-16 mx-auto transition-all duration-300"></div>
           </div>
         ))}
       </div>
@@ -87,7 +87,7 @@ const Products = () => {
       <div className="mt-12 text-center">
         <button
           onClick={() => router.push("/products")}
-          className="px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+          className="px-8 py-3 bg-[#e5e5e5] text-[#205057] rounded-full font-semibold"
         >
           View More
         </button>

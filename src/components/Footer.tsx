@@ -23,22 +23,22 @@ const Footer = () => {
           <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2">
             <li>
-              <Link href="/" className="hover:text-orange-500 transition-colors">
+              <Link href="/" className="hover:font-bold transition-colors">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-orange-500 transition-colors">
+              <Link href="/about" className="hover:font-bold transition-colors">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/products" className="hover:text-orange-500 transition-colors">
+              <Link href="/products" className="hover:font-bold transition-colors">
                 Products
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-orange-500 transition-colors">
+              <Link href="/contact" className="hover:font-bold transition-colors">
                 Contact Us
               </Link>
             </li>
@@ -50,27 +50,27 @@ const Footer = () => {
           <ul className="space-y-3 mb-4 max-w-sm">
             
             <li className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-orange-500" />
+              <span className='rounded-full bg-white p-1.5'><Phone className="w-5 h-5 text-[#205057]" /></span>
               <span>+91 9710946801</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-orange-500" />
+              <span className='rounded-full bg-white p-1.5'><Mail className="w-5 h-5 text-[#205057]" /></span>
               <span>unicornpdy@gmail.com</span>
             </li>
           </ul>
           
           <div className="flex gap-4 mt-4">
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Facebook className="w-5 h-5" />
+            <Link href="#">
+              <Facebook className="w-6 h-6" />
             </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors mt-1">
-              <BsTwitterX  className="text-sm" />
+            <Link href="#" className=" mt-1">
+              <BsTwitterX  className="text-lg" />
             </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Linkedin className="w-5 h-5" />
+            <Link href="#">
+              <Linkedin className="w-6 h-6" />
             </Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">
-              <Youtube className="w-5 h-5" />
+            <Link href="#">
+              <Youtube className="w-6 h-6" />
             </Link>
           </div>
         </div>

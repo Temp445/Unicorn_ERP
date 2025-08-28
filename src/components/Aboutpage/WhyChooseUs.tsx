@@ -40,11 +40,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="relative overflow-hidden ">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
-        <div className="absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl" />
-      </div>
-
+      
       <div className="container mx-auto px-6 py-20">
 
         <motion.div
@@ -53,10 +49,10 @@ const WhyChooseUs = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-700 ring-1 ring-orange-500/20">
+          <span className="inline-flex items-center rounded-full bg-[#205057] px-3 py-1 text-sm font-medium text-white">
             Why Choose Us
           </span>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#071520] sm:text-4xl">
             Excellence in Precision Auto-Turned Components
           </h2>
           <p className="mt-3 text-gray-600">
@@ -72,9 +68,9 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lg"
+              className="group rounded-2xl border border-[#205057] bg-white p-6 shadow-sm transition hover:shadow-lg"
             >
-              <point.icon className="h-8 w-8 text-orange-600" />
+              <point.icon className="h-8 w-8 text-[#205057]" />
               <h3 className="mt-4 text-lg font-semibold text-gray-900">{point.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{point.text}</p>
             </motion.div>
