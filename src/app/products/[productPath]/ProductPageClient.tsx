@@ -16,8 +16,9 @@ import ResultsSection from "@/components/ProductDetailPage/ResultsSection";
 import DemoCard from "@/components/ProductDetailPage/DemoCard";
 
 interface ProductPageClientProps {
-  productPath: string; 
+  productPath: string;
 }
+
 
 interface Product {
   _id: string;
@@ -42,7 +43,7 @@ interface Product {
   }[];
 }
 
-const ProductPage = ({ productPath }: ProductPageClientProps) => {
+const ProductPage = ({productPath}:ProductPageClientProps) => {
   // const { productPath } = useParams<{ productPath: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
@@ -83,7 +84,7 @@ const ProductPage = ({ productPath }: ProductPageClientProps) => {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50 container mx-auto">
+      <div className="min-h-screen bg-slate-50">
         <Hero
           product={{
             productName: product.productName,
@@ -91,6 +92,7 @@ const ProductPage = ({ productPath }: ProductPageClientProps) => {
             productLink: product.productLink,
             productPath: product.productPath,
             mainImage: product.mainImage,
+            Result: product.Result
           }}
         />
         <Whatis

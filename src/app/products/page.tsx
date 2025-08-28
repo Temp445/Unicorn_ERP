@@ -4,19 +4,19 @@ import ProductListClient from './ProductListClient';
 const domainUrl = process.env.NEXT_PUBLIC_API_FRONTEND_URL;
 
 export const metadata: Metadata = {
-  title: 'Products | Unicorn ERP',
-  description: 'Unicorn ERP',
+  title: 'Products | Unicorn (Bangalore) Pvt. Ltd',
+  description: 'Unicorn (Bangalore) Pvt. Ltd',
   openGraph: {
-    title: 'Products | Unicorn ERP',
-    description: 'Unicorn ERP',
+    title: 'Products | Unicorn (Bangalore) Pvt. Ltd',
+    description: 'Unicorn (Bangalore) Pvt. Ltd',
     url: `${domainUrl}/about`,
-    siteName: 'Products | Unicorn ERP',
+    siteName: 'Unicorn (Bangalore) Pvt. Ltd',
     images: [
       {
         url: `${domainUrl}/og-images/AceLogo.png`, 
         width: 1200,
         height: 630,
-        alt: 'Unicorn ERP',
+        alt: 'Unicorn (Bangalore) Pvt. Ltd',
       },
     ],
     type: 'website',

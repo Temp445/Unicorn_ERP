@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-:root {
-  /* --background: linear-gradient(to bottom left, #f8fafc, #e0f2fe, #cceafb); */
+/* :root {
+  --background: linear-gradient(to bottom left, #f8fafc, #e0f2fe, #cceafb);
   --foreground: #171717;
-}
+} */
 
 /* @theme inline {
   --color-background: var(--background);

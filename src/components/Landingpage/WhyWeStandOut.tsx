@@ -11,7 +11,6 @@ const benefits = [
   'Cost Efficiency',
   'Scalable Operations',
   'Enhanced Safety',
-  'Real-time Monitoring'
 ];
 
 const WhyWeStandOut = () => {
@@ -75,7 +74,7 @@ const WhyWeStandOut = () => {
           </motion.div>
         </motion.div>
 
-        <div className="p-8 lg:p-16 relative overflow-hidden shadow-2xl rounded-lg mb-20 bg-[url('/bg1.jpg')] bg-cover bg-center">
+        <div className="p-8  xl:p-16 relative overflow-hidden shadow-2xl rounded-lg mb-20 bg-[url('/bg1.jpg')] bg-cover bg-center">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <motion.div 
               className="w-full lg:w-1/2 flex-shrink-0 relative overflow-hidden rounded-xl shadow-lg"
@@ -99,7 +98,7 @@ const WhyWeStandOut = () => {
               transition={{ duration: 0.8 }}
             >
               <div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-gray-900">
+                <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-4xl font-bold mb-2 text-gray-900">
                   Experience Excellence in{' '}
                   <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                     Automotive Production
@@ -108,7 +107,7 @@ const WhyWeStandOut = () => {
                 <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"></div>
               </div>
 
-              <p className="md:text-lg leading-relaxed text-gray-700 font-medium bg-gray-50 text-justify">
+              <p className="md:text-lg lg:text-base xl:text-lg leading-relaxed text-gray-700 font-medium bg-gray-50 text-justify">
                 Our manufacturing plants leverage cutting-edge technology and automation to produce vehicles with unmatched precision, efficiency, and safety standards. Each process is designed for scalability and real-time operational insights.
               </p>
 

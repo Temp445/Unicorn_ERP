@@ -13,6 +13,7 @@ import CenterPlate from "@/assets/products/CenterPlate.png";
 import ControlPlunger from "@/assets/products/ControlPlunger.png";
 import EndPlug from "@/assets/products/EndPlug.png";
 import Eye from "@/assets/products/Eye.png";
+import image1 from "@/assets/products/UNICORN_PRODUCT_IMAGES-2.png"
 
 const products = [
   { src: Adapter, name: "Adapter", link: "/products" },
@@ -23,6 +24,7 @@ const products = [
   { src: ControlPlunger, name: "Control Plunger", link: "/products" },
   { src: EndPlug, name: "End Plug", link: "/products" },
   { src: Eye, name: "EYE", link: "/products" },
+  { src: image1, name: "EYE", link: "/products" },
 ];
 
 const Products = () => {

@@ -10,10 +10,10 @@ interface ProductProps {
 
 const WhyChoose = ({ product }: ProductProps) => {
   return (
-    <section className="pt-10 pb-20 ">
+    <section className="pt-10 pb-10 md:pb-20 container mx-auto">
       <div className="container mx-auto px-2 md:px-6">
         {product.why_choose_des && (
-          <div className="bg-white rounded-3xl shadow-xl border border-orange-200 overflow-hidden hover:shadow-2xl transition-all duration-500">
+          <div className="bg-white rounded md:rounded-3xl md:shadow-xl border border-orange-200 overflow-hidden hover:shadow-2xl transition-all duration-500">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6 p-8 md:py-5 bg-gradient-to-r from-orange-100 to-orange-50">
               <div className="p-4 bg-orange-200 rounded-full hidden lg:block">
                 <Target className="w-10 h-10 text-orange-600" />

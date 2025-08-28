@@ -120,7 +120,7 @@ const ProductList = () => {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
                 {filteredProducts.map((product, index) => (
                   <div
                     key={product._id}
@@ -141,7 +141,7 @@ const ProductList = () => {
                     </div>
                     </Link>
 
-                    <div className="relative p-6 space-y-4 ">
+                    <div className="relative p-6 space-y-4 pb-20">
                       <h2 className="text-xl text-black font-bold transition-all duration-300">
                         {product.productName}
                       </h2>
@@ -150,7 +150,7 @@ const ProductList = () => {
                       </p>
                     </div>
                     
-                    <Link href={`/products/${product.productPath}`} className="bg-orange-400 py-1 flex relative ">
+                    <Link href={`/products/${product.productPath}`} className="bg-orange-400 py-1 flex absolute bottom-0 w-full ">
                       <div className="flex items-center justify-center gap-6">
                           <div className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105">
                             View Details{" "}

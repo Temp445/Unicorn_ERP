@@ -38,14 +38,12 @@ const Founder = () => {
                 R. Rajagopalan
               </h3>
               <div className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Managing Director
+               Chairman 
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6">
-                With over <span className="font-bold text-slate-800">40 years of expertise</span>{" "}
-                in the automobile industry, he brings unmatched experience in Industrial
-                Engineering, Production Planning, Shop Floor Systems, and Materials
-                Management. His strategic vision drives growth.
+               Chairman of Unicorn (Bangalore) Private Limited is a Diploma Holder with over <span className="font-bold text-slate-800">35 years’ experience</span>{" "}
+               in Automobile Industry in Industrial Engineering, Production Planning, Shop Floor Systems and Materials Management  provides Strategic inputs for the organizational growth. 
               </p>
               
             </div>
@@ -73,16 +71,13 @@ const Founder = () => {
                 S. Rajasekaran
               </h3>
               <div className="inline-block bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Director
+                Managing Director
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6">
-                MBA Graduate from University
-                of Madras and Ph.D. Research Scholar
-                in TQM at Saveetha University. With over{" "}
-                <span className="font-bold text-slate-800">30 years of experience</span> in
-                Materials Management, System Design, and Finance, he serves as the
-                strategic backbone of our organization.
+                Managing Director of Unicorn (Bangalore) Private Limited is a  MBA Graduate with over
+                {" "}
+                <span className="font-bold text-slate-800"> 25 years’ experience</span> in Materials Management & System Design and Finance is also the Founder & CEO of ASSPL, who leads the day-to-day functions on a strategic level with his domain expertise.
               </p>
 
             </div>

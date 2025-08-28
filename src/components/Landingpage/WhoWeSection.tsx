@@ -26,13 +26,15 @@ const WhoWeSection = () => {
               </span>
             </h2>
             <p className="md:text-lg text-gray-600 leading-relaxed text-justify md:text-left">
-            We are a trusted manufacturing company focused on delivering precision, durability, and innovation. With advanced facilities and skilled teams, we design and produce high-quality components for industrial needs. Our commitment to excellence ensures every product meets the highest safety and performance standards.
+           <span className='text-orange-600'>Unicorn (Bangalore) Private Limited</span> is part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership.           
             </p>
-
+            <p className="md:text-lg text-gray-600 leading-relaxed text-justify md:text-left">
+           The company was started in <span className='text-orange-600'>1957</span> , and in 2001 it was acquired by Ace Group of Companies. Presently, it is an associated company of “Infant Engineers Private Limited” and has a turnover of <span className='text-orange-600'>INR 30 million</span>.      
+            </p>
             <div className="my-8">
               <Link
                 href="/about"
-                className="text-gray-800 px-5 py-2.5 rounded-lg font-semibold border"
+                className="text-gray-800 px-5 py-2.5 rounded-lg font-semibold border hover:text-orange-600 "
               >
                 Learn More
               </Link>

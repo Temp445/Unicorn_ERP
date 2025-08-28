@@ -59,6 +59,8 @@ export default function Navbar() {
       { name: 'About', href: '/about' },
       { name: 'Products', href: '/products' },
       { name: 'Contact Us', href: '/contact' },
+      { name: 'Our Machinery', href: '/machinery' },
+
     ]
 
     if (userRole === 'ADMIN') {
@@ -85,7 +87,7 @@ export default function Navbar() {
                 <span className="text-gray-900 font-bold text-base mt-1 tracking-wide">	Unicorn (Bangalore) Pvt. Ltd</span>
               </Link>
 
-              <div className="hidden sm:flex space-x-6">
+              <div className="hidden lg:flex space-x-6">
                 {navigation.map((item) => {
                   const isActive = pathname === item.href
                   return item.onClick ? (
@@ -93,7 +95,7 @@ export default function Navbar() {
                       key={item.name}
                       onClick={item.onClick}
                       className={classNames(
-                        'relative px-3 py-2 text-sm font-medium transition-all duration-300',
+                        'relative px-3 pb-2  text-sm font-medium transition-all duration-300',
                         'text-gray-800 text-base hover:text-orange-600 hover:scale-105'
                       )}
                     >
@@ -116,7 +118,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="flex items-center sm:hidden">
+              <div className="flex items-center lg:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-400">
                   <span className="sr-only">Main menu</span>
                   {open ? <XMarkIcon className="block h-6 w-6" aria-hidden="true" /> : <Bars3Icon className="block h-6 w-6" aria-hidden="true" />}
@@ -125,7 +127,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden bg-white shadow-md border-t border-gray-200 transition-all duration-300">
+          <Disclosure.Panel className="lg:hidden bg-white shadow-md border-t border-gray-200 transition-all duration-300">
             <div className="space-y-1 px-4 pt-2 pb-4">
               {navigation.map((item) => {
                 const isActive = pathname === item.href

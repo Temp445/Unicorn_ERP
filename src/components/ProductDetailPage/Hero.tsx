@@ -21,7 +21,7 @@ interface ProductProps {
 
 const Hero = ({ product }: ProductProps) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-10 pt-5">
+    <section className="relative min-h-fit flex items-center justify-center overflow-hidden pb-20 pt-10">
       <div className="absolute inset-0 bg-orange-50"></div>
 
          <div className="absolute inset-0 pointer-events-none">
@@ -46,7 +46,7 @@ const Hero = ({ product }: ProductProps) => {
               </div>
               
               <div className="overflow-hidden">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 animate-slide-up">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 animate-slide-up">
                   {product.productName}
                 </h1>
               </div>
@@ -61,7 +61,7 @@ const Hero = ({ product }: ProductProps) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up delay-400 w-fit md:w-auto">
               <Link
                 href="/contact"
-                className="group relative px-6 py-4 text-white bg-gradient-to-r from-red-500 to-orange-500 rounded-xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-3xl overflow-hidden"
+                className="group relative py-2 px-4 md:px-6 md:py-4 text-white bg-gradient-to-r from-red-500 to-orange-500 rounded md:rounded-xl font-bold shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-3xl overflow-hidden"
               >
                               
                 <span className="relative flex items-center">

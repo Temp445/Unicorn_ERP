@@ -6,7 +6,7 @@ interface ProductProps {
 
 const WhoNeedThis = ({ WhoNeed }: ProductProps) => {
   return (
-    <section className="py-24 bg-gradient-to-r from-orange-50 to-orange-100">
+    <section className="py-10 md:py-24 bg-gradient-to-r from-orange-50 to-orange-100 container mx-auto">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4">

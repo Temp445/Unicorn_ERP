@@ -21,8 +21,9 @@ const AboutHero = () => {
           <h1 className="mt-4 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-gray-900">
             Turning Business Challenges into <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Growth</span> Opportunities 
           </h1>
-          <p className="mt-6 text-sm text-justify md:text-lg text-gray-600 leading-relaxed px-5">
-          At <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>UNICORN (BANGALORE) PRIVATE LIMITED</span>, we specialize in high-quality <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>auto-turned parts</span> and <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>precision auto-turned products</span>. Our advanced manufacturing processes ensure every component meets strict quality and precision standards, helping automotive businesses maintain reliability, performance, and efficiency.
+          <p className="mt-6 text-sm text-justify lg:text-balance md:text-lg text-gray-600 leading-relaxed px-5">
+          <span className='bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent'>Unicorn (Bangalore) Private Limited</span> is paris part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership,
+           and is engaged in the manufacturing of precision-turned components for critical and safety applications, such as brakes and engines.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 justify-center">

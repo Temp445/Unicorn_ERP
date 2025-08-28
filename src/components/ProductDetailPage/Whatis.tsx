@@ -19,14 +19,14 @@ const Whatis = ({ product }: ProductProps) => {
   const hasWhatis = product.whatis && product.whatis.length > 0;
 
   return (
-    <section className="pt-2 lg:pt-24 relative">
+    <section className="pt-2 px-2 lg:pt-24 relative container mx-auto">
       <div className="container mx-auto lg:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:-mt-32 relative z-10">
           {hasWhatis ? (
             product.whatis!.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-4 md:p-12 lg:rounded-xl shadow-2xl border border-slate-200 hover:shadow-3xl transition-all duration-500"
+                className="bg-white p-4 md:p-12 lg:rounded-xl md:shadow-2xl border border-slate-200 hover:shadow-3xl transition-all duration-500"
               >
                 <div className="flex items-center gap-4 mb-8">
                   <div className="p-4 bg-blue-100 rounded-xl">

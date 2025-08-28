@@ -14,7 +14,7 @@ import image5 from '@/assets/hero5.jpg';
 export default function HeroSection() {
 
   return (
-    <section className="relative py-14 md:py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden">
+    <section className="relative pt-5 pb-14 lg:py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-14 relative z-10">
         
         <motion.div
