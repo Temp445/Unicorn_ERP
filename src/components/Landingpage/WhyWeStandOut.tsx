@@ -9,8 +9,8 @@ import Link from 'next/link';
 const benefits = [
   'High Precision Production',
   'Cost Efficiency',
-  'Scalable Operations',
   'Enhanced Safety',
+  'Scalable Operations',
 ];
 
 const WhyWeStandOut = () => {
@@ -33,14 +33,14 @@ const WhyWeStandOut = () => {
     <section className="max-h-fit relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10 pt-10 md:pt-14 md:py-10">
         <motion.div
-          className="text-center mb-24 mx-auto"
+          className="text-center md:mb-24 mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h2
-            className="text-2xl md:text-4xl font-black text-[#071520] mb-8 leading-tight"
+            className="text-2xl md:text-4xl font-black text-[#071520] mb-5 md:mb-8 leading-tight"
             variants={itemVariants}
           >
             Why We {' '}
@@ -62,7 +62,7 @@ const WhyWeStandOut = () => {
             {benefits.map((benefit, i) => (
               <motion.div 
                 key={benefit} 
-                className="rounded-full p-4 flex border gap-3 border-[#205057] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="rounded-full p-3 flex border gap-1 md:gap-3 border-[#205057] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 variants={itemVariants}
                 style={{ originX: 0.5 }}
                 transition={{ delay: i * 0.1 }}
@@ -73,7 +73,8 @@ const WhyWeStandOut = () => {
             ))}
           </motion.div>
         </motion.div>
-   <div className="p-8 xl:p-16 relative overflow-hidden  rounded-lg mb-20 lg:mb-0">
+
+   <div className="p-2 xl:p-16 relative overflow-hidden  rounded-lg mb-5 md:mb-20 lg:mb-0">
       
       <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
         
@@ -99,7 +100,7 @@ const WhyWeStandOut = () => {
           transition={{ duration: 0.8 }}
         >
           <div>
-            <h2 className="text-3xl md:text-4xl xl:text-4xl font-bold mb-3 text-[#071520]">
+            <h2 className="text-2xl md:text-4xl xl:text-4xl font-bold mb-3 text-[#071520]">
               Experience Excellence in{" "}
               <span className="text-[#205057]">
                 Automotive Production

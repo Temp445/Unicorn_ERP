@@ -17,7 +17,7 @@ We’re here to assist you with tailored solutions for your business needs, prov
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link
         href="/contact"
-        className="group relative inline-flex items-center gap-3 bg-[#071520] text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-orange-400/40 transition-all duration-300 hover:scale-105"
+        className="group relative inline-flex items-center gap-3 bg-[#071520] text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
       >
         Contact Us
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

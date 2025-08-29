@@ -72,7 +72,7 @@ const ManufacturingSector = () => {
         transition={{ duration: 0.8 }}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-[#071520] mb-6"
+          className="text-2xl md:text-4xl font-extrabold text-[#071520] mb-6"
           variants={itemVariants}
         >
           Driving Innovation in{' '}

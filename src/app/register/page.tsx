@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -39,7 +41,9 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div>
+      <Navbar/>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Create an Account
@@ -56,7 +60,7 @@ export default function RegisterPage() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-500"
             />
           </div>
 
@@ -68,7 +72,7 @@ export default function RegisterPage() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-500"
             />
           </div>
 
@@ -80,25 +84,27 @@ export default function RegisterPage() {
               value={form.password}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-500"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition disabled:opacity-50"
+            className="w-full bg-[#071520] text-white py-2 rounded-lg hover:bg-[#0c2c2c]"
           >
             {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
            <p className="text-center text-sm mt-4 text-gray-600">
           Already have an account?{' '}
-          <Link href="/login" className="text-orange-500 hover:underline">
+          <Link href="/login" className="text-[#0c2c2c] hover:underline">
             Login
           </Link>
         </p>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }

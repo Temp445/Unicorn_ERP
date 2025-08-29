@@ -59,14 +59,14 @@ const WhoWeSection = () => {
 
         <div className="mt-5 md:mt-16 flex flex-wrap justify-center gap-5 lg:gap-12">
           <motion.div
-            className="rounded-xl md:rounded-full md:mt-20 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 border-sky-700 border md:border-0 md:border-x"
+            className="rounded-xl md:rounded-full md:mt-20 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 border-[#205057] border md:border-0 md:border-x"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0, duration: 0.8 }}
             viewport={{ once: true }}
           >
             <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-4 gap-4 shadow-md md:-rotate-45">
-              <CalendarRange className="w-14 h-12 text-sky-800" />
+              <CalendarRange className="w-14 h-12 text-[#205057]" />
               <h3 className="md:text-lg font-semibold text-gray-700 text-center">
                 31+ Years in Business
               </h3>
@@ -74,14 +74,14 @@ const WhoWeSection = () => {
           </motion.div>
 
           <motion.div
-            className="rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-blue-700 border md:border-0 md:border-y"
+            className="rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-[#071520] border md:border-0 md:border-y"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 md:p-4 gap-4 shadow-md md:-rotate-45 border border-blue-700 md:border-0">
-              <Sparkles className="w-12 h-12 text-blue-400 -rotate-6" />
+            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 md:p-4 gap-4 shadow-md md:-rotate-45 border border-[#071520] md:border-0">
+              <Sparkles className="w-10 h-10 text-[#071520] -rotate-6" />
               <h3 className="text-base md:text-lg font-semibold text-gray-700 text-center">
                 99% Client Satisfaction
               </h3>
@@ -89,14 +89,14 @@ const WhoWeSection = () => {
           </motion.div>
 
           <motion.div
-            className="rounded-xl md:rounded-full md:mt-20 w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-indigo-700 border md:border-0 md:border-x"
+            className="rounded-xl md:rounded-full md:mt-20 w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-[#205057] border md:border-0 md:border-x"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 gap-4 shadow-md md:-rotate-45 border border-indigo-700 md:border-0">
-              <MdEngineering  className="w-12 h-12 text-indigo-800" />
+            <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 gap-4 shadow-md md:-rotate-45 border border-[#205057] md:border-0">
+              <MdEngineering  className="w-12 h-12 text-[#205057]" />
               <h3 className="text-lg font-semibold text-gray-700 text-center">
               High-Quality Standards
               </h3>
@@ -104,14 +104,14 @@ const WhoWeSection = () => {
           </motion.div>
 
           <motion.div
-            className="rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-orange-700 border md:border-0 md:border-y"
+            className="rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-60 xl:h-60 flex items-center justify-center bg-gradient-to-br from-slate-50 via-sky-100 to-teal-50 shadow-lg md:rotate-45 md:border-[#071520] border md:border-0 md:border-y"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-xl md:rounded-full w-36 md:h-40 md:w-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center gap-4 p-2 bg-white shadow-md md:-rotate-45 border border-orange-700 md:border-0">
-              <Factory className="w-12 h-12 text-orange-800" />
+            <div className="rounded-xl md:rounded-full w-36 md:h-40 md:w-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center gap-4 p-2 bg-white shadow-md md:-rotate-45 border border-[#071520] md:border-0">
+              <Factory className="w-12 h-12 text-[#071520]" />
               <h3 className="text-base md:text-lg font-semibold text-gray-700 text-center">
                 Serving Multiple Industries
               </h3>

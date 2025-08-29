@@ -51,10 +51,10 @@ const InstrumentGallery = () => {
     return (
       <div
         key={idx}
-        className={`relative bg-white border border-gray-800 rounded overflow-hidden  transition-all duration-500 hover:shadow-xl
+        className={`relative bg-white border border-gray-800 rounded overflow-hidden  transition-all duration-500 hover:shadow-xl group
           ${isLarge ? "md:col-span-4 md:row-span-2" : "md:col-span-2 md:row-span-1"}`}
       >
-        <div className="absolute top-4 left-4 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full">
+        <div className="absolute top-4 left-4 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full hidden group-hover:block">
           {inst.brand}
         </div>
 
@@ -68,7 +68,7 @@ const InstrumentGallery = () => {
         </div>
 
 
-        <div className="absolute bottom-0 w-full bg-black/80 p-2 ">
+        <div className="absolute bottom-0 w-full bg-black/80 p-2 hidden group-hover:block">
   <h3 className="text-white font-semibold text-base">{inst.alt}</h3>
 </div>
 
