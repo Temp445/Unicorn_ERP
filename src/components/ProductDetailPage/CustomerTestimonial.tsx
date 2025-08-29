@@ -42,7 +42,7 @@ const CustomerTestimonial = ({ customerTestimonials = [] }: ProductProps) => {
   const currentTestimonial = customerTestimonials[currentTestimonialIndex];
 
   return (
-    <section className="py-24 bg-gradient-to-r from-slate-900 via-orange-900 to-red-900 text-white relative mb-10">
+    <section className="py-24 bg-[#205057] text-white relative">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -70,7 +70,7 @@ const CustomerTestimonial = ({ customerTestimonials = [] }: ProductProps) => {
           </div>
 
           <div className="bg-white text-slate-800 rounded-2xl shadow-xl p-10 relative transition-all duration-500 ease-in-out">
-            <Quote className="w-12 h-12 text-orange-500 absolute -top-6 -left-6" />
+            <Quote className="w-12 h-12 text-white bg-[#447c73] rounded-full p-2 absolute -top-6 -left-6" />
             <p className="text-xl italic mb-8">
               "{currentTestimonial.description}"
             </p>

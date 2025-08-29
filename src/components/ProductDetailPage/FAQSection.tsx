@@ -50,9 +50,9 @@ const FAQSection = ({FAQ}:ProductProps) => {
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <ChevronUp className="w-6 h-6 text-orange-600" />
+                  <ChevronUp className="w-6 h-6 text-[#205057]" />
                 ) : (
-                  <ChevronDown className="w-6 h-6 text-orange-600" />
+                  <ChevronDown className="w-6 h-6 text-[#205057]" />
                 )}
               </button>
 

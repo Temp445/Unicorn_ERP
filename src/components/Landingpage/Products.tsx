@@ -98,7 +98,7 @@ const Products = () => {
             className="px-10 py-3 border border-white/40 text-[#e5e5e5] rounded-full font-semibold tracking-wide 
             hover:bg-white hover:text-[#205057] transition-colors duration-300 shadow-md"
           >
-                Explore All Products
+            Explore All Products
           </button>
         </div>
             <div className="w-16 h-1 right-10 absolute bg-white rounded-full hidden" />

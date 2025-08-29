@@ -23,8 +23,8 @@ const Features = ({product}: ProductProps ) => {
       
       <div className="lg:col-span-3 space-y-12 order-2 lg:order-1">
         <div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-8">
-            Powerful Features
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#071520] mb-8">
+            Powerful <span className='text-[#205057]'>Features</span>
           </h2>
           <p className=" text-base lg:text-xl text-slate-600 leading-relaxed">
             Our product is crafted with precision and designed for performance. 
@@ -35,7 +35,7 @@ const Features = ({product}: ProductProps ) => {
         <div className="grid gap-4 md:gap-6">
           {product.benefits?.slice(0, 7).map((benefit, index) => (
             <div key={index} className="flex items-start gap-6 py-4 md:py-0 lg:p-6 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors">
-              <div className="flex-shrink-0 p-3 bg-blue-500 rounded-xl">
+              <div className="flex-shrink-0 p-3 bg-[#447c73] rounded-xl">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
               <div>

@@ -6,13 +6,13 @@ interface ProductProps {
 
 const WhoNeedThis = ({ WhoNeed }: ProductProps) => {
   return (
-    <section className="py-10 md:py-24 bg-gradient-to-r from-orange-50 to-orange-100 container mx-auto">
+    <section className="py-10 md:py-24 bg-[#205057] container mx-auto">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4">
+          <h2 className="text-2xl md:text-5xl font-extrabold text-white mb-4">
             Who Needs This
           </h2>
-          <p className="text-base md:text-xl text-slate-700 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-[#e5e5e5] max-w-3xl mx-auto">
             Everything you need to succeed, crafted with care to make your experience seamless.
           </p>
         </div>
@@ -26,7 +26,7 @@ const WhoNeedThis = ({ WhoNeed }: ProductProps) => {
               >
            
                 <div className="flex-shrink-0">
-                  <div className="w-5 h-5 bg-orange-500 rounded-full mt-2 animate-pulse"></div>
+                  <div className="w-4 h-4 bg-[#447c73] rounded-full mt-1 animate-pulse"></div>
                 </div>
                 <p className="text-slate-800 font-medium">{point.trim()}</p>
               </div>

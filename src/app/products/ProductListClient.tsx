@@ -59,9 +59,9 @@ const ProductList = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-orange-50 text-white relative overflow-hidden">
+      <div className="h-auto md:mb-32  relative overflow-hidden">
         <div className="relative z-10">
-          <div className="text-center py-24 px-2 md:px-6 pattern-diagonal relative">
+          <div className="text-center py-24 px-2 md:px-6 bg-[#205057] relative">
             <div className="mb-6">
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 z-20">
                Explore Our {" "}

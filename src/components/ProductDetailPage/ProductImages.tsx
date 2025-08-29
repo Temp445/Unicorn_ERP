@@ -27,8 +27,8 @@ const ProductImages = ({ productImage }: ProductImagesProps) => {
   };
 
   return (
-    <div className="container mx-auto px-2 md:px-10 bg-white">
-      <h1 className="text-center text-orange-700 mb-10 text-2xl md:text-4xl font-extrabold">
+    <div className="container mx-auto px-2 md:px-10 bg-white mb-28">
+      <h1 className="text-center text-[#205057] mb-10 text-2xl md:text-4xl font-extrabold">
         Product Preview
       </h1>
 

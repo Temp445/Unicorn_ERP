@@ -29,14 +29,14 @@ const Whatis = ({ product }: ProductProps) => {
                 className="bg-white p-4 md:p-12 lg:rounded-xl md:shadow-2xl border border-slate-200 hover:shadow-3xl transition-all duration-500"
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="p-4 bg-blue-100 rounded-xl">
-                    <BookOpen  className="w-10 h-10 text-orange-500" />
+                  <div className="p-4 bg-[#205057] rounded-xl">
+                    <BookOpen  className="w-10 h-10 text-[#e5e5e5]" />
                   </div>
                   <div>
                     <h2 className=" text-2xl md:text-3xl font-black text-slate-900">
                       {item.title}
                     </h2>
-                    <div className="w-16 h-1 bg-orange-500 mt-2 rounded-full"></div>
+                    <div className="w-16 h-1 bg-[#205057] mt-2 rounded-full"></div>
                   </div>
                 </div>
                 <p className="text-slate-600 leading-loose md:text-lg">

@@ -62,7 +62,7 @@ const ProductPage = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-[#205057] border-t-transparent border-b-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -79,7 +79,7 @@ const ProductPage = () => {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen">
         <Hero
           product={{
             productName: product.productName,
@@ -104,6 +104,8 @@ const ProductPage = () => {
             why_choose_des: product.why_choose_des || "",
           }}
         />
+        <ProductImages productImage={product.productImage} />
+
         <WhoNeedThis WhoNeed={product.who_need_des ?? ""} />
 
         <Features
@@ -114,7 +116,6 @@ const ProductPage = () => {
           }}
         />
 
-        <ProductImages productImage={product.productImage} />
 
         <ResultsSection
           product={{
@@ -123,13 +124,14 @@ const ProductPage = () => {
           }}
         />
 
-        <DemoCard productPath={product.productPath || ""} />
+        <DemoCard/>
+        <FAQSection FAQ={product.FAQ ?? []} />
+
 
         <CustomerTestimonial
           customerTestimonials={product.customerTestimonials}
         />
 
-        <FAQSection FAQ={product.FAQ ?? []} />
       </div>
 
       <Footer />
