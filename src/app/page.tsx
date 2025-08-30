@@ -1,19 +1,19 @@
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/Landingpage/HeroSection";
 import ManufacturingSector from "@/components/Landingpage/ManufacturingSector";
 import CustomerSay from "@/components/Landingpage/CustomerSay";
-import Hero from "@/components/Landingpage/Hero";
 import WhyWeStandOut from "@/components/Landingpage/WhyWeStandOut";
 import WhoWe from "@/components/Landingpage/WhoWeSection";
-import Navbar from "@/components/Navbar";
-import Clients from "@/components/Clients";
+import Clients from "@/components/Landingpage/Clients";
 import Products from "@/components/Landingpage/Products"
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
   return (
   <>
   <Navbar/>
-  <Hero/>
+  <HeroSection/>
   <WhyWeStandOut/>
   <Products/>
   <ManufacturingSector />

@@ -1,4 +1,4 @@
-import AboutHero from '@/components/Aboutpage/AboutHero'
+import HeroSection from '@/components/Aboutpage/HeroSection'
 import CardSection from '@/components/Aboutpage/CardSection'
 import MilestoneSection from '@/components/Aboutpage/MilestoneSection'
 import CountSection from '@/components/Aboutpage/CountSection'
@@ -14,10 +14,10 @@ const domainUrl = process.env.NEXT_PUBLIC_API_FRONTEND_URL;
 
 export const metadata: Metadata = {
   title: 'About Unicorn (Bangalore) Pvt. Ltd',
-  description: 'Unicorn (Bangalore) Pvt. Ltd',
+  description: 'Learn about Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, with a legacy since 1957 in precision engineering, innovation, and manufacturing excellence.',
   openGraph: {
     title: 'About Unicorn (Bangalore) Pvt. Ltd',
-    description: 'Unicorn (Bangalore) Pvt. Ltd',
+    description: 'Learn about Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, with a legacy since 1957 in precision engineering, innovation, and manufacturing excellence.',
     url: `${domainUrl}/about`,
     siteName: 'Unicorn (Bangalore) Pvt. Ltd',
     images: [
@@ -36,7 +36,7 @@ export default function AboutPage() {
   return (
   <>
   <Navbar/>
-  <AboutHero/>
+  <HeroSection/>
   <StorySection/>
   <CountSection/>
   <VisionSection/>

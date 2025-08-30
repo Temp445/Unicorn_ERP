@@ -55,7 +55,7 @@ export default function ProductList() {
 
   if (loading) {
     return  <div className="flex justify-center items-center h-screen">
-      <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
+      <div className="w-16 h-16 border-4 border-[#205057] border-t-transparent border-b-transparent rounded-full animate-spin"></div>
     </div>
   }
 

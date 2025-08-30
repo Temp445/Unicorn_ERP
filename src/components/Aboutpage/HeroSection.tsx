@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const AboutHero = () => {
+const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#205057]">
       <div className="container mx-auto px-2 md:px-6 h-fit py-10 lg:py-32 flex flex-col items-center justify-center text-center relative z-10">
@@ -52,4 +52,4 @@ const AboutHero = () => {
   );
 };
 
-export default AboutHero;
+export default HeroSection;

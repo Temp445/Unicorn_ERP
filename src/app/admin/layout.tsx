@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import AdminProtectedRoute from '@/components/ProductedRoute'
 
-
 const admin = ({
   children,
 }: Readonly<{

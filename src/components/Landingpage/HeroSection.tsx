@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Zap, CheckCircle, Shield, Award } from 'lucide-react';
 
-import image1 from '@/assets/hero1.jpg';
-import image2 from '@/assets/hero2.jpg';
-import image3 from '@/assets/hero3.jpg';
-import image4 from '@/assets/hero4.jpg';
-import image5 from '@/assets/hero5.jpg';
+import image1 from '@/assets/LandingImage-1.jpg';
+import image2 from '@/assets/LandingImage-2.jpg';
+import image3 from '@/assets/LandingImage-3.jpg';
+import image4 from '@/assets/LandingImage-4.jpg';
+import image5 from '@/assets/LandingImage-5.jpg';
 
-const Hero = () => {
+const HeroSection = () => {
 
   return (
     <section className="relative pt-5 pb-14 lg:py-20 bg-[#205057] overflow-hidden">
@@ -122,5 +122,5 @@ const Hero = () => {
   );
 }
 
-export default Hero
+export default HeroSection
 

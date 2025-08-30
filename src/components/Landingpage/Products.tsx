@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
-import image1 from "@/assets/products/PRODUCT-IMAGES-1.jpg";
-import image2 from "@/assets/products/UNICORN_PRODUCT_IMAGES-2.png";
-import image3 from "@/assets/products/UNICORN_PRODUCT_IMAGES-3.png";
+import image1 from "@/assets/products/PRODUCT_IMAGES-1.jpg";
+import image2 from "@/assets/products/PRODUCT_IMAGES-2.png";
+import image3 from "@/assets/products/PRODUCT_IMAGES-3.png";
 
 const products = [
   { src: image1, link: "/products" },

@@ -3,17 +3,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import HeroSection from "@/components/ProductDetailPage/HeroSection";
 import FAQSection from "@/components/ProductDetailPage/FAQSection";
 import ProductImages from "@/components/ProductDetailPage/ProductImages";
 import CustomerTestimonial from "@/components/ProductDetailPage/CustomerTestimonial";
-import Hero from "@/components/ProductDetailPage/Hero";
 import WhoNeedThis from "@/components/ProductDetailPage/WhoNeedThis";
 import WhyChoose from "@/components/ProductDetailPage/WhyChoose";
 import Features from "@/components/ProductDetailPage/Features";
 import Whatis from "@/components/ProductDetailPage/Whatis";
 import ResultsSection from "@/components/ProductDetailPage/ResultsSection";
 import DemoCard from "@/components/ProductDetailPage/DemoCard";
+import Footer from "@/components/Footer";
 
 interface Product {
   _id: string;
@@ -80,7 +80,7 @@ const ProductPage = () => {
       <Navbar />
 
       <div className="min-h-screen">
-        <Hero
+        <HeroSection
           product={{
             productName: product.productName,
             description: product.description || "",

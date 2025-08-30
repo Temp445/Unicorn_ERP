@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   
   title: 'Unicorn (Bangalore) Pvt. Ltd',
-  description: "Unicorn (Bangalore) Pvt. Ltd",
+  description: "Since 1957, Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, manufactures precision turned components for brake & engine applications with quality & reliability.",
    keywords: "Unicorn (Bangalore) Pvt. Ltd ",
    openGraph: { 
     title: 'Unicorn (Bangalore) Pvt. Ltd',
-    description: 'Unicorn (Bangalore) Pvt. Ltd',
+    description: 'Since 1957, Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, manufactures precision turned components for brake & engine applications with quality & reliability.',
     url: `${domainUrl}`,
     siteName: 'Unicorn (Bangalore) Pvt. Ltd',
     images: [

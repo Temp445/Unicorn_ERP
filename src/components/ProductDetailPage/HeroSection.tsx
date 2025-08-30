@@ -19,7 +19,7 @@ interface ProductProps {
   };
 }
 
-const Hero = ({ product }: ProductProps) => {
+const HeroSection = ({ product }: ProductProps) => {
   return (
     <section className="relative min-h-fit flex items-center justify-center overflow-hidden pb-20 pt-10">
       <div className="absolute inset-0 bg-[#205057]"></div>
@@ -98,4 +98,4 @@ const Hero = ({ product }: ProductProps) => {
   );
 };
 
-export default Hero;
+export default HeroSection;

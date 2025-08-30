@@ -5,11 +5,11 @@ const domainUrl = process.env.NEXT_PUBLIC_API_FRONTEND_URL;
 
 export const metadata: Metadata = {
   title: 'Products | Unicorn (Bangalore) Pvt. Ltd',
-  description: 'Unicorn (Bangalore) Pvt. Ltd',
+  description: 'Discover Unicorn (Bangalore) Pvt. Ltd.’s precision turned components for critical brake & engine applications, trusted by leading automotive industries.',
   openGraph: {
     title: 'Products | Unicorn (Bangalore) Pvt. Ltd',
-    description: 'Unicorn (Bangalore) Pvt. Ltd',
-    url: `${domainUrl}/about`,
+    description: 'Discover Unicorn (Bangalore) Pvt. Ltd.’s precision turned components for critical brake & engine applications, trusted by leading automotive industries.',
+    url: `${domainUrl}/product`,
     siteName: 'Unicorn (Bangalore) Pvt. Ltd',
     images: [
       {

@@ -56,7 +56,7 @@ const Users = () => {
   if (isLoading)
     return (
        <div className="flex justify-center items-center h-screen">
-      <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent border-b-transparent rounded-full animate-spin"></div>
+      <div className="w-16 h-16 border-4 border-[#205057] border-t-transparent border-b-transparent rounded-full animate-spin"></div>
     </div>
     );
 
@@ -68,12 +68,12 @@ const Users = () => {
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Users List</h1>
 
         <table className="min-w-full border rounded-lg overflow-hidden shadow-md">
-          <thead className="bg-gradient-to-r from-red-200 to-orange-200">
+          <thead className="bg-[#205057]">
             <tr>
-              <th className="hidden md:flex px-6 py-3 text-left text-gray-800 font-medium uppercase text-sm">Name</th>
-              <th className="px-6 py-3 text-left text-gray-800 font-medium uppercase text-sm">Email</th>
-              <th className="px-6 py-3 text-left text-gray-800 font-medium uppercase text-sm">Role</th>
-              <th className="px-6 py-3 text-left text-gray-800 font-medium uppercase text-sm">Actions</th>
+              <th className="hidden md:flex px-6 py-3 text-left text-white font-medium uppercase text-sm">Name</th>
+              <th className="px-6 py-3 text-left text-white font-medium uppercase text-sm">Email</th>
+              <th className="px-6 py-3 text-left text-white font-medium uppercase text-sm">Role</th>
+              <th className="px-6 py-3 text-left text-white font-medium uppercase text-sm">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -89,8 +89,8 @@ const Users = () => {
                     <span
                       className={`px-3 py-1 text-sm font-semibold rounded ${
                         user.role === 'ADMIN'
-                          ? 'bg-orange-100 text-orange-600'
-                          : 'bg-gray-100 text-gray-800'
+                          ? ' border text-[#205057]'
+                          : ' border text-gray-800'
                       }`}
                     >
                       {user.role}
