@@ -1,8 +1,5 @@
-"use client";
 
-import React from "react";
 import Image, { StaticImageData } from "next/image";
-
 import image1 from "@/assets/Machine/image1.png";
 import image2 from "@/assets/Machine/image2.png";
 import image3 from "@/assets/Machine/image3.png";

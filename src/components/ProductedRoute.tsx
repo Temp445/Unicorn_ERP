@@ -8,7 +8,8 @@ interface AdminProtectedRouteProps {
   children: ReactNode
 }
 
-export default function AdminProtectedRoute({ children }: AdminProtectedRouteProps) {
+const ProductedRoute = ({ children }: AdminProtectedRouteProps) => {
+
   const { user, loading, isAdmin } = useAuth()
   const router = useRouter()
 
@@ -31,3 +32,5 @@ export default function AdminProtectedRoute({ children }: AdminProtectedRoutePro
   }
   return <>{children}</>
 }
+
+export default ProductedRoute

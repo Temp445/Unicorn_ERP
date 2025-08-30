@@ -87,7 +87,7 @@ const ProductPage = () => {
             productLink: product.productLink,
             productPath: product.productPath,
             mainImage: product.mainImage,
-            Result: product.Result
+            Result: product.Result,
           }}
         />
         <Whatis
@@ -116,7 +116,6 @@ const ProductPage = () => {
           }}
         />
 
-
         <ResultsSection
           product={{
             Result: product.Result,
@@ -124,14 +123,12 @@ const ProductPage = () => {
           }}
         />
 
-        <DemoCard/>
+        <DemoCard />
         <FAQSection FAQ={product.FAQ ?? []} />
-
 
         <CustomerTestimonial
           customerTestimonials={product.customerTestimonials}
         />
-
       </div>
 
       <Footer />

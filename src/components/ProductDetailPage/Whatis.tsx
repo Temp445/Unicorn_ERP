@@ -86,7 +86,7 @@ const Whatis = ({ product }: ProductProps) => {
             </div>
 
             <p className="text-white/90 leading-relaxed text-lg relative z-10 mb-10">
-          Enhance your production with precision components built for efficiency and long-term reliability.       </p>
+          Enhance your production with precision components built for efficiency and long-term reliability. </p>
 
               <Link href={"/contact"} className="px-5 py-2 relative bg-white text-gray-900 text-sm font-bold rounded shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
               Contact Us

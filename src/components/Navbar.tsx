@@ -24,7 +24,7 @@ type DecodedToken = {
   [key: string]: any
 }
 
-export default function Navbar() {
+const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [userRole, setUserRole] = useState<string | null>(null)
   const router = useRouter()
@@ -162,3 +162,5 @@ export default function Navbar() {
     </Disclosure>
   )
 }
+
+export default Navbar

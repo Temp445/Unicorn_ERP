@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import image1 from '@/assets/operator.jpg';
-import { CalendarRange, Sparkles, Factory} from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import image1 from "@/assets/operator.jpg";
+import { CalendarRange, Sparkles, Factory } from "lucide-react";
 import { MdEngineering } from "react-icons/md";
 
 const WhoWeSection = () => {
@@ -16,20 +16,28 @@ const WhoWeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className=" mx-auto grid lg:grid-cols-2 gap-10 items-center">
-
+          className=" mx-auto grid lg:grid-cols-2 gap-10 items-center"
+        >
           <div className="order-2">
             <h2 className="text-2xl md:text-4xl font-extrabold text-[#071520] mb-6">
-              Who{' '}
-              <span className="text-[#205057]">
-                We Are
-              </span>
+              Who <span className="text-[#205057]">We Are</span>
             </h2>
             <p className="md:text-lg text-gray-700 leading-relaxed text-justify md:text-left">
-           <span className='text-[#205057] font-bold'>Unicorn (Bangalore) Private Limited</span> is part of a diversified group of companies that have achieved many milestones in the businesses in which they operate, setting the highest standards of excellence in corporate governance, quality standards, employee satisfaction, and industry leadership.           
+              <span className="text-[#205057] font-bold">
+                Unicorn (Bangalore) Private Limited
+              </span>{" "}
+              is part of a diversified group of companies that have achieved
+              many milestones in the businesses in which they operate, setting
+              the highest standards of excellence in corporate governance,
+              quality standards, employee satisfaction, and industry leadership.
             </p>
             <p className="md:text-lg text-gray-700 leading-relaxed text-justify md:text-left">
-           The company was started in <span className='text-[#205057] font-bold'>1957</span> , and in 2001 it was acquired by Ace Group of Companies. Presently, it is an associated company of “Infant Engineers Private Limited” and has a turnover of <span className='text-[#205057]'>INR 30 million</span>.      
+              The company was started in{" "}
+              <span className="text-[#205057] font-bold">1957</span> , and in
+              2001 it was acquired by Ace Group of Companies. Presently, it is
+              an associated company of “Infant Engineers Private Limited” and
+              has a turnover of{" "}
+              <span className="text-[#205057]">INR 30 million</span>.
             </p>
             <div className="mt-12">
               <Link
@@ -55,7 +63,6 @@ const WhoWeSection = () => {
             />
           </motion.div>
         </motion.div>
-
 
         <div className="mt-5 md:mt-16 flex flex-wrap justify-center gap-5 lg:gap-12">
           <motion.div
@@ -96,9 +103,9 @@ const WhoWeSection = () => {
             viewport={{ once: true }}
           >
             <div className="bg-white rounded-xl md:rounded-full w-36 h-36 md:w-40 md:h-40 xl:w-52 xl:h-52 flex flex-col items-center justify-center p-2 gap-4 shadow-md md:-rotate-45 border border-[#205057] md:border-0">
-              <MdEngineering  className="w-12 h-12 text-[#205057]" />
+              <MdEngineering className="w-12 h-12 text-[#205057]" />
               <h3 className="text-lg font-semibold text-gray-700 text-center">
-              High-Quality Standards
+                High-Quality Standards
               </h3>
             </div>
           </motion.div>

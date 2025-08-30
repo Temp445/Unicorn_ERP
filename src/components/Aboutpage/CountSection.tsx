@@ -1,15 +1,15 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Cog, Layers, Users, Award } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
+"use client";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Cog, Layers, Users, Award } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 const CountSection = () => {
   const stats = [
-    { label: 'Years in Business', value: '31+', icon: Layers },
-    { label: 'Satisfied Clients', value: '99%', icon: Users },
-    { label: 'Rejection Rate', value: '<100 PPM', icon: Cog },
-    { label: 'Automotive Projects', value: '500+', icon: Award },
+    { label: "Years in Business", value: "31+", icon: Layers },
+    { label: "Satisfied Clients", value: "99%", icon: Users },
+    { label: "Rejection Rate", value: "<100 PPM", icon: Cog },
+    { label: "Automotive Projects", value: "500+", icon: Award },
   ];
 
   const [counts, setCounts] = useState<(number | string)[]>(stats.map(() => 0));
@@ -18,8 +18,7 @@ const CountSection = () => {
   useEffect(() => {
     if (inView) {
       stats.forEach((stat, i) => {
-  
-        const numericValue = parseFloat(stat.value.replace(/[^\d.]/g, ''));
+        const numericValue = parseFloat(stat.value.replace(/[^\d.]/g, ""));
         const isNumeric = !isNaN(numericValue);
 
         if (isNumeric) {
@@ -37,7 +36,6 @@ const CountSection = () => {
             });
           }, 30);
         } else {
-  
           setCounts((prev) => {
             const newCounts = [...prev];
             newCounts[i] = stat.value;
@@ -56,8 +54,8 @@ const CountSection = () => {
             const Icon = stat.icon;
 
             const match = stat.value.match(/([^0-9]*)(\d+)(.*)/);
-            const prefix = match ? match[1] : '';
-            const suffix = match ? match[3] : '';
+            const prefix = match ? match[1] : "";
+            const suffix = match ? match[3] : "";
 
             return (
               <motion.div
@@ -80,7 +78,9 @@ const CountSection = () => {
                       {counts[i]}
                       {suffix}
                     </p>
-                    <p className="text-sm  md:text-base font-medium text-gray-700">{stat.label}</p>
+                    <p className="text-sm  md:text-base font-medium text-gray-700">
+                      {stat.label}
+                    </p>
                   </div>
                 </div>
               </motion.div>

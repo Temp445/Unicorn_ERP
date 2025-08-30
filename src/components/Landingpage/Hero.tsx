@@ -11,7 +11,7 @@ import image3 from '@/assets/hero3.jpg';
 import image4 from '@/assets/hero4.jpg';
 import image5 from '@/assets/hero5.jpg';
 
-export default function HeroSection() {
+const Hero = () => {
 
   return (
     <section className="relative pt-5 pb-14 lg:py-20 bg-[#205057] overflow-hidden">
@@ -121,3 +121,6 @@ export default function HeroSection() {
     </section>
   );
 }
+
+export default Hero
+

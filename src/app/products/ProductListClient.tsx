@@ -64,15 +64,14 @@ const ProductList = () => {
           <div className="text-center py-24 px-2 md:px-6 bg-[#205057] relative">
             <div className="mb-6">
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 z-20">
-               Explore Our {" "}
-                <span className="">
-                Products
-                </span>
+                Explore Our <span className="">Products</span>
               </h1>
               <div className="w-52 h-1 bg-white mx-auto rounded-full"></div>
             </div>
             <p className="text-slate-300 mt-8 max-w-4xl mx-auto  md:text-2xl font-light leading-relaxed">
-            Discover precision-engineered solutions designed to optimize production, enhance efficiency, and ensure consistent quality in your manufacturing operations.
+              Discover precision-engineered solutions designed to optimize
+              production, enhance efficiency, and ensure consistent quality in
+              your manufacturing operations.
             </p>
           </div>
 
@@ -121,16 +120,16 @@ const ProductList = () => {
                       animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                     }}
                   >
-                  <Link href={`/products/${product.productPath}`}>
-                    <div className="relative overflow-hidden h-64">
-                      {product.mainImage?.[0] && (
-                        <img
-                          src={product.mainImage[0]}
-                          alt={product.productName}
-                          className="w-full h-full  transition-transform duration-700 group-hover:scale-125"
-                        />
-                      )}
-                    </div>
+                    <Link href={`/products/${product.productPath}`}>
+                      <div className="relative overflow-hidden h-64">
+                        {product.mainImage?.[0] && (
+                          <img
+                            src={product.mainImage[0]}
+                            alt={product.productName}
+                            className="w-full h-full  transition-transform duration-700 group-hover:scale-125"
+                          />
+                        )}
+                      </div>
                     </Link>
 
                     <div className="relative p-6 space-y-4 pb-20">
@@ -141,16 +140,18 @@ const ProductList = () => {
                         {product.description}
                       </p>
                     </div>
-                    
-                    <Link href={`/products/${product.productPath}`} className="bg-[#205057] pt-1 flex absolute bottom-0 w-full ">
+
+                    <Link
+                      href={`/products/${product.productPath}`}
+                      className="bg-[#205057] pt-1 flex absolute bottom-0 w-full "
+                    >
                       <div className="flex items-center justify-center gap-6">
-                          <div className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105">
-                            View Details{" "}
-                            <span>
-                              <MoveRight />
-                            </span>
-                          </div>
-                      
+                        <div className="flex gap-2 px-6 py-3 rounded-xl text-white  font-semibold transition-transform duration-300 hover:scale-105">
+                          View Details{" "}
+                          <span>
+                            <MoveRight />
+                          </span>
+                        </div>
                       </div>
                     </Link>
                   </div>
