@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   
   title: 'Unicorn (Bangalore) Pvt. Ltd',
   description: "Since 1957, Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, manufactures precision turned components for brake & engine applications with quality & reliability.",
-   keywords: "Unicorn (Bangalore) Pvt. Ltd ",
+   keywords: "Machinery & Instruments manufacturer, Precision manufacturing machinery, Advanced machinery for components, Precision instruments for manufacturing, Manufacturing equipment supplier, Machinery for precision turned components, Instruments for automotive component manufacturing, Brake and engine component machinery, High-quality manufacturing equipment India, Industrial machinery and instruments supplier, Unicorn Bangalore machinery & instruments, Unicorn precision manufacturing equipment, Unicorn Pvt. Ltd. advanced machinery India",
    openGraph: { 
     title: 'Unicorn (Bangalore) Pvt. Ltd',
     description: 'Since 1957, Unicorn (Bangalore) Pvt. Ltd., part of Ace Group, manufactures precision turned components for brake & engine applications with quality & reliability.',

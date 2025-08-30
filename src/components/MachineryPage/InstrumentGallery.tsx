@@ -42,7 +42,7 @@ const InstrumentGallery = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-2 auto-rows-[300px] md:auto-rows-[200px] grid-flow-dense">
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-2 auto-rows-[300px] md:auto-rows-[250px] grid-flow-dense">
           {instruments.map((inst, idx) => {
             const isLarge = idx === 0 || idx === 3;
             return (
@@ -55,7 +55,7 @@ const InstrumentGallery = () => {
               : "md:col-span-2 md:row-span-1"
           }`}
               >
-                <div className="absolute top-4 left-4 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full hidden group-hover:block">
+                <div className="absolute top-2 left-2 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full hidden group-hover:block">
                   {inst.brand}
                 </div>
 
