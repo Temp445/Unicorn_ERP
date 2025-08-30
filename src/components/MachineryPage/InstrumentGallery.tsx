@@ -31,12 +31,12 @@ const instruments: Instrument[] = [
 
 const InstrumentGallery = () => {
   return (
-    <section className=" py-10 md:mb-20">
+    <section className=" py-10 md:mb-20 bg-[#205057]">
       <div className="container mx-auto px-0  lg:px-5">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl  font-extrabold mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white  font-extrabold mb-6">
             Our{" "}
-            <span className="text-[#205057]">
+            <span className="">
               Measuring & Inspection Instruments
             </span>
           </h2>
@@ -48,7 +48,7 @@ const InstrumentGallery = () => {
             return (
               <div
                 key={idx}
-                className={`relative bg-white border border-gray-800 rounded overflow-hidden  transition-all duration-500 hover:shadow-xl group
+                className={`relative bg-white border-2 border-[#e5e5e5] rounded overflow-hidden  transition-all duration-500 hover:shadow-xl group
           ${
             isLarge
               ? "md:col-span-4 md:row-span-2"
@@ -68,7 +68,7 @@ const InstrumentGallery = () => {
                   />
                 </div>
 
-                <div className="absolute bottom-0 w-full bg-black/80 p-2 hidden group-hover:block">
+                <div className="absolute bottom-0 w-full bg-[#205057] p-2 hidden group-hover:block">
                   <h3 className="text-white font-semibold text-base">
                     {inst.alt}
                   </h3>

@@ -42,7 +42,7 @@ const MachineGallery = () => {
           {machineImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative bg-white border border-gray-800 rounded-2xl overflow-hidden  transition-all duration-500  hover:shadow-xl"
+              className="relative bg-white border-4 border-[#205057]/50 rounded-2xl overflow-hidden  transition-all duration-500  hover:shadow-xl"
             >
               <div className="absolute top-4 left-4 z-20 bg-[#205057] text-white text-xs px-3 py-1 rounded-full">
                 {img.brand}
@@ -56,12 +56,12 @@ const MachineGallery = () => {
                   priority
                 />
               </div>
-        <div className="w-full h-[1px] bg-[#071520]"></div>
+                <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#205057] to-transparent"></div>
 
               <div className=" p-2 md:p-4 relative text-center">
-                <h3 className="text-[#071520] font-semibold text-sm md:text-lg mb-1 group-hover:text-[#205057] transition-colors">
-                  {img.alt}
-                </h3>
+             <h3 className="font-bold text-base md:text-base leading-tight text-[#205057] transition-colors duration-300">
+                    {img.alt}
+                  </h3>
               </div>
             </div>
           ))}

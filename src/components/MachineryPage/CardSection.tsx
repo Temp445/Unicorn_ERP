@@ -5,11 +5,11 @@ const CardSection = () => {
   return (
     <div>
       <div className="relative mb-32 md:px-10">
-        <div className="text-center bg-[#205057] rounded p-4 md:p-12">
-          <h2 className="text-2xl md:text-4xl text-white font-bold mb-6 ">
+        <div className="text-center  rounded p-4 md:p-12">
+          <h2 className="text-2xl md:text-4xl text-[#205057] font-bold mb-6 ">
             Connect with Us Today
           </h2>
-          <p className="md:text-lg text-[#e5e5e5] mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="md:text-lg text-[#071520] mb-8 max-w-3xl mx-auto leading-relaxed">
             We’re here to assist you with tailored solutions for your business
             needs, providing expert guidance, personalized support, and
             innovative strategies to help your operations achieve maximum
